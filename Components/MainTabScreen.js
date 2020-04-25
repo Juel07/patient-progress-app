@@ -123,13 +123,13 @@ const ContactsScreen = () => (
                 headerTitle: () => <Header title='Contacts' navigation={navigation} />, headerTitleAlign: 'center'
             }
         }} />
-        <ContactStack.Screen name="Feed" component={Feed} 
-        // options={({ navigation }) => {
-        //     return {
-        //         headerBackTitle: () => <HeaderBack title='Feed' navigation={navigation} />, headerTitleAlign: 'center', headerBackTitleVisible: false
-        //     }
-        // }} 
-        options={{headerTitleAlign: 'center'}}
+        <ContactStack.Screen name="Feed" component={Feed}
+            // options={({ navigation }) => {
+            //     return {
+            //         headerBackTitle: () => <HeaderBack title='Feed' navigation={navigation} />, headerTitleAlign: 'center', headerBackTitleVisible: false
+            //     }
+            // }} 
+            options={{ headerTitleAlign: 'center' }}
         />
     </ContactStack.Navigator>
 
@@ -177,12 +177,15 @@ const NurseScreen = () => (
 );
 
 const SettingScreen = () => (
-    <SettingStack.Navigator screenOptions={({ navigation }) => {
-        return {
-            headerTitle: () => <Header title='Settings' navigation={navigation} />, headerTitleAlign: 'center',
-        }
-    }}>
-        <SettingStack.Screen name="Settings" component={Settings} options={{
+    <SettingStack.Navigator >
+        <SettingStack.Screen name="Settings" component={Settings} options={({ navigation }) => {
+            return {
+                headerTitle: () => <Header title='Settings' navigation={navigation} />, headerTitleAlign: 'center',
+            }
+        }}
+        />
+        <SettingStack.Screen name="About" component={About} options={{
+            headerTitleAlign: 'center'
         }} />
     </SettingStack.Navigator>
 );
