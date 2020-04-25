@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
 
   relative: {
     flexWrap: 'wrap',
-    paddingBottom: '5%'
+    paddingBottom: '10%'
   },
 
   relativeName: {
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Regular',
     fontSize: 18,
     color: 'white',
-    lineHeight: 30
+    lineHeight: 25
   },
 
 });

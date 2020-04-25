@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     },
     stGeorgesHospital: {
         color: "#121212",
-        fontSize: 14,
+        fontSize: 16,
         //fontFamily: "montserrat-600",
         marginTop: 11,
         marginRight: 30,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     birmingham: {
         color: "#121212",
-        fontSize: 14,
+        fontSize: 16,
         //fontFamily: "montserrat-regular",
         marginTop: 12,
         marginRight: 30,
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
 
     bookingText: {
         color: "#121212",
-        fontSize: 16,
+        fontSize: 18,
         //fontFamily: "montserrat-600",
         letterSpacing: 0,
         marginTop: 4
@@ -203,43 +203,7 @@ const styles = StyleSheet.create({
         marginTop: -15
     },
 
-    //Bottom Navigation
-
-    bottomNavRectangle: {
-        width: '100%',
-        height: 70,
-        backgroundColor: "rgba(255,255,255,1)",
-        alignItems: 'stretch',
-        elevation: 27,
-        shadowOffset: {
-            height: 5,
-            width: 5
-        },
-        shadowRadius: 4,
-        shadowOpacity: 2,
-        shadowColor: "rgba(0,0,0,1)",
-        shadowRadius: 5,
-        flexDirection: "row",
-        justifyContent: 'space-between',
-        padding: 15,
-        paddingLeft: 30,
-        paddingRight: 30,
-        position: 'absolute',
-        bottom: 0
-
-    },
-    bottomNavButtonIcon: {
-        color: "rgba(88,172,168,1)",
-        fontSize: 40,
-        height: 40,
-        width: 40,
-        marginTop: 1,
-        alignItems: 'center'
-
-    },
-
     //Pop Ups
-
 
     grayOverlay: {
         flex: 1,

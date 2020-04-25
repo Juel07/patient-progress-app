@@ -2,6 +2,9 @@ import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
+import { useFonts } from '@use-expo/font';
+import { AppLoading } from 'expo';
+
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faMobile } from '@fortawesome/free-solid-svg-icons';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
@@ -9,64 +12,78 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Settings = ({ navigation }) => {
+
+  let [fontsLoaded] = useFonts({
+    'Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
+    'Bold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
+    'Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
+  });
+
+  // check if fonts are loaded
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+
+
     return (
 
 
-    <View style={styles.container}>
-     
+      <View style={styles.container}>
 
-      {/*Profile name and Avatar*/}
 
-      <View style={styles.profileContainer}>
+        {/*Profile name and Avatar*/}
+
+        <View style={styles.profileContainer}>
+          <View>
+            <Text style={styles.profile}>Profile</Text>
+            <Text style={styles.johnDoe}>John Doe</Text>
+          </View>
+          <Image
+            source={require("../assets/JohnDoe.png")}
+            resizeMode="contain"
+            style={styles.profileAvatar}
+          ></Image>
+        </View>
+
+        {/*Menu List*/}
+
         <View>
-          <Text style={styles.profile}>Profile</Text>
-          <Text style={styles.johnDoe}>John Doe</Text>
-        </View>
-        <Image
-        source={require("../assets/JohnDoe.png")}
-        resizeMode="contain"
-        style={styles.profileAvatar}
-        ></Image>
-      </View>
+          <View style={styles.menuLine} borderBottomColor={'red'}></View>
+          <View style={styles.menuItems}>
+            <FontAwesomeIcon icon={faBell} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuText}>Notifications</Text>
+          </View>
 
-      {/*Menu List*/}
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuItems}>
+            <FontAwesomeIcon icon={faMobile} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuText}>Dark Mode</Text>
+          </View>
 
-      <View>
-        <View style={styles.menuLine} borderBottomColor={'red'}></View>
-        <View style={styles.menuItems}>
-          <FontAwesomeIcon icon={faBell} style={styles.menuIcons} size= {25}/>
-          <Text style={styles.menuText}>Notifications</Text>
-        </View>
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuItems}>
+            <FontAwesomeIcon icon={faQuestionCircle} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuText}>About</Text>
+          </View>
 
-        <View style={styles.menuLine}></View>
-        <View style={styles.menuItems}>
-          <FontAwesomeIcon icon={faMobile} style={styles.menuIcons} size= {25}/>
-          <Text style={styles.menuText}>Dark Mode</Text>
-        </View>
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuItems}>
+            <FontAwesomeIcon icon={faExclamationTriangle} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuText}>Report</Text>
+          </View>
 
-        <View style={styles.menuLine}></View>
-        <View style={styles.menuItems}>
-          <FontAwesomeIcon icon={faQuestionCircle} style={styles.menuIcons} size= {25}/>
-          <Text style={styles.menuText}>About</Text>
-        </View>
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuItems}>
+            <FontAwesomeIcon icon={faSignOutAlt} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuText}>Sign Out</Text>
+          </View>
 
-        <View style={styles.menuLine}></View>
-        <View style={styles.menuItems}>
-          <FontAwesomeIcon icon={faExclamationTriangle} style={styles.menuIcons} size= {25}/>
-          <Text style={styles.menuText}>Report</Text>
         </View>
 
-        <View style={styles.menuLine}></View>
-        <View style={styles.menuItems}>
-          <FontAwesomeIcon icon={faSignOutAlt} style={styles.menuIcons} size= {25}/>
-          <Text style={styles.menuText}>Sign Out</Text>
-        </View>
 
       </View>
-
-     
-    </View>
-  );
+    );
+  }
 }
 
 export default Settings;
@@ -99,15 +116,15 @@ const styles = StyleSheet.create({
   profile: {
     color: "#121212",
     fontSize: 18,
-    //fontFamily: "montserrat-700",
+    fontFamily: 'Bold',
     marginTop: 30,
     marginRight: 20,
     textAlign: 'right'
   },
   johnDoe: {
     color: "#121212",
-    fontSize: 14,
-    //fontFamily: "montserrat-600",
+    fontSize: 18,
+    fontFamily: 'SemiBold',
     marginTop: 11,
     marginRight: 20,
     textAlign: 'right'
@@ -115,7 +132,7 @@ const styles = StyleSheet.create({
 
   //Settings Menu
 
-  menuLine:{
+  menuLine: {
     width: 300,
     height: 3,
     borderTopWidth: 1,
@@ -125,7 +142,7 @@ const styles = StyleSheet.create({
 
   },
 
-  menuItems:{
+  menuItems: {
     flexDirection: 'row',
     marginLeft: 60
   },
@@ -135,47 +152,11 @@ const styles = StyleSheet.create({
     height: 20
   },
 
-  menuText:{
-    //fontFamily: "montserrat-regular",
-    fontSize: 20,
+  menuText: {
+    fontFamily: "Regular",
+    fontSize: 18,
     marginLeft: 30,
     marginBottom: 25
   },
-
-  //Bottom Navigation
-
-  bottomNavRectangle: {
-    width: '100%',
-    height: 70,
-    backgroundColor: "rgba(255,255,255,1)",
-    alignItems: 'stretch',
-    elevation: 27,
-    shadowOffset: {
-      height: 5,
-      width: 5
-    },
-    shadowRadius: 4,
-    shadowOpacity: 2,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowRadius: 5,
-    flexDirection: "row",
-    justifyContent: 'space-between',
-    padding: 15,
-    paddingLeft: 30,
-    paddingRight: 30,
-    position: 'absolute',
-    bottom:0
-    
-  },
-  bottomNavButtonIcon: {
-    color: "rgba(88,172,168,1)",
-    fontSize: 40,
-    height: 40,
-    width: 40,
-    marginTop: 1,
-    alignItems: 'center'
-
-  }
-
 
 });
