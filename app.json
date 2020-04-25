@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "my-new-app",
+    "name": "patient-progress-app",
+    "sdkVersion": "37.0.0",
     "slug": "my-new-app",
     "platforms": [
       "ios",
