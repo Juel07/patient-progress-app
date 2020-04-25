@@ -202,7 +202,7 @@ const SignUpScreen = ({ navigation }) => {
 					</View>
 					<View style={styles.buttons}>
 						<TouchableOpacity
-							onPress={() => navigation.navigate('MainTabScreen')}
+							onPress={() => navigation.navigate('MainScreen')}
 							style={styles.signIn}>
 							<Text style={[styles.textSign, {
 								color: '#fff'
