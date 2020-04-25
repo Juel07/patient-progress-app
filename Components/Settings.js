@@ -61,10 +61,10 @@ const Settings = ({ navigation }) => {
           </View>
 
           <View style={styles.menuLine}></View>
-          <View style={styles.menuItems}>
+          <TouchableOpacity style={styles.menuItems} onPress={() => navigation.navigate('About')}>
             <FontAwesomeIcon icon={faQuestionCircle} style={styles.menuIcons} size={25} />
             <Text style={styles.menuText}>About</Text>
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.menuLine}></View>
           <View style={styles.menuItems}>
@@ -73,10 +73,10 @@ const Settings = ({ navigation }) => {
           </View>
 
           <View style={styles.menuLine}></View>
-          <View style={styles.menuItems}>
+          <TouchableOpacity style={styles.menuItems} onPress={() => navigation.navigate('SignInScreen') }>
             <FontAwesomeIcon icon={faSignOutAlt} style={styles.menuIcons} size={25} />
             <Text style={styles.menuText}>Sign Out</Text>
-          </View>
+          </TouchableOpacity>
 
         </View>
 
@@ -116,15 +116,15 @@ const styles = StyleSheet.create({
   profile: {
     color: "#121212",
     fontSize: 18,
-    fontFamily: 'Bold',
+    fontFamily: 'SemiBold',
     marginTop: 30,
     marginRight: 20,
     textAlign: 'right'
   },
   johnDoe: {
-    color: "#121212",
+    color: "#393b3a",
     fontSize: 18,
-    fontFamily: 'SemiBold',
+    fontFamily: 'Medium',
     marginTop: 11,
     marginRight: 20,
     textAlign: 'right'
