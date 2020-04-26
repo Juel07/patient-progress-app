@@ -1,5 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from 'react-native';
+import {
+  TouchableRipple,
+  Switch
+} from 'react-native-paper';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 import { useFonts } from '@use-expo/font';
@@ -12,6 +16,18 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Settings = ({ navigation }) => {
+
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  }
+
+  const [isNotif, setIsNotif] = useState(false);
+
+  const toggleNotif = () => {
+    setIsNotif(!isNotif);
+  }
 
   let [fontsLoaded] = useFonts({
     'Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
@@ -48,17 +64,36 @@ const Settings = ({ navigation }) => {
         {/*Menu List*/}
 
         <View>
-          <View style={styles.menuLine} borderBottomColor={'red'}></View>
-          <View style={styles.menuItems}>
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuTopItems}>
             <FontAwesomeIcon icon={faBell} style={styles.menuIcons} size={25} />
-            <Text style={styles.menuText}>Notifications</Text>
+            <Text style={styles.menuTopText}>Notifications</Text>
+            <TouchableRipple onPress={() => { toggleNotif() }}>
+              <View pointerEvents='none'>
+                <Switch
+                  style={styles.switch}
+                  value={isNotif}
+                  trackColor={{ false: "#767577", true: "#58ACA8" }}
+                  thumbColor={isNotif ? "#32afa9" : "#393b3a"}
+                />
+              </View>
+            </TouchableRipple>
+          </View>
+          <View style={styles.menuLine}></View>
+          <View style={styles.menuTopItems}>
+            <FontAwesomeIcon icon={faMobile} style={styles.menuIcons} size={25} />
+            <Text style={styles.menuTopText}>Dark Theme</Text>
+            <TouchableRipple onPress={() => { toggleTheme() }}>
+              <View pointerEvents="none">
+                <Switch
+                  style={styles.switch}
+                  value={isDarkTheme}
+                  trackColor={{ false: "#767577", true: "#58ACA8" }}
+                  thumbColor={isDarkTheme ? "#32afa9" : "#393b3a"} />
+              </View>
+            </TouchableRipple>
           </View>
 
-          <View style={styles.menuLine}></View>
-          <View style={styles.menuItems}>
-            <FontAwesomeIcon icon={faMobile} style={styles.menuIcons} size={25} />
-            <Text style={styles.menuText}>Dark Mode</Text>
-          </View>
 
           <View style={styles.menuLine}></View>
           <TouchableOpacity style={styles.menuItems} onPress={() => navigation.navigate('About')}>
@@ -73,7 +108,7 @@ const Settings = ({ navigation }) => {
           </View>
 
           <View style={styles.menuLine}></View>
-          <TouchableOpacity style={styles.menuItems} onPress={() => navigation.navigate('SignInScreen') }>
+          <TouchableOpacity style={styles.menuItems} onPress={() => navigation.navigate('SignInScreen')}>
             <FontAwesomeIcon icon={faSignOutAlt} style={styles.menuIcons} size={25} />
             <Text style={styles.menuText}>Sign Out</Text>
           </TouchableOpacity>
@@ -142,9 +177,17 @@ const styles = StyleSheet.create({
 
   },
 
+  menuTopItems: {
+    flexDirection: 'row',
+    marginLeft: 60,
+    marginRight: 60,
+    justifyContent: "space-between",
+  },
+
   menuItems: {
     flexDirection: 'row',
-    marginLeft: 60
+    marginLeft: 60,
+    marginRight: 60,
   },
 
   menuIcon: {
@@ -152,11 +195,18 @@ const styles = StyleSheet.create({
     height: 20
   },
 
+  menuTopText: {
+    fontFamily: "Regular",
+    fontSize: 18,
+    marginBottom: 25
+  },
+
   menuText: {
     fontFamily: "Regular",
     fontSize: 18,
-    marginLeft: 30,
-    marginBottom: 25
+    marginLeft: 50,
+    marginBottom: 25,
+    textAlign: 'center'
   },
 
 });
