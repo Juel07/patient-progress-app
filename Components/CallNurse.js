@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from '
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
+import { useFonts } from '@use-expo/font';
 
 export default function Nurse() {
 
@@ -70,16 +71,18 @@ export default function Nurse() {
                                 <View style={styles.urgentPopUpContainer}>
                                     <Text style={styles.urgentPopUpTitle}>Urgent Call</Text>
                                     <Text style={styles.urgentPopUpText}>We are very busy and urge you not to call if your relative is not in a critical condition. Do you wish to call the nurse?</Text>
-                                    <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
                                         <View style={styles.yesNoContainer}>
+                                        <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
                                             <View style={styles.noButton}>
                                                 <Text style={styles.urgentPopUpButtonText}>No</Text>
                                             </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
                                             <View style={styles.yesButton}>
                                                 <Text style={styles.urgentPopUpButtonText}>Yes</Text>
                                             </View>
+                                        </TouchableOpacity>
                                         </View>
-                                    </TouchableOpacity>
                                 </View>
                             </View>
                         </Modal>
@@ -111,17 +114,18 @@ const styles = StyleSheet.create({
     nurseAvatar: {
         width: 147,
         height: 147,
-        // marginTop: -10,
-        marginLeft: 245,
+        marginTop: 10,
+        marginLeft: 240,
     },
 
     //Nurse's Details
 
     nurseMaryPoppins: {
         color: "#121212",
-        fontSize: 20,
+        fontSize: 18,
         //fontFamily: "montserrat-700",
-        marginTop: 11,
+        fontFamily: 'SemiBold',
+        marginTop: 35,
         marginRight: 30,
         textAlign: 'right'
     },
@@ -129,6 +133,7 @@ const styles = StyleSheet.create({
         color: "#121212",
         fontSize: 16,
         //fontFamily: "montserrat-600",
+        fontFamily: 'Medium',
         marginTop: 11,
         marginRight: 30,
         textAlign: 'right'
@@ -137,6 +142,7 @@ const styles = StyleSheet.create({
         color: "#121212",
         fontSize: 16,
         //fontFamily: "montserrat-regular",
+        fontFamily: 'Regular',
         marginTop: 12,
         marginRight: 30,
         textAlign: 'right'
@@ -155,15 +161,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 50,
     shadowRadius: 4,
         flexDirection: "row",
-        marginTop: 15,
+        marginTop: 20,
         marginLeft: 60
     },
     //Booking Rectangle
 
     bookingText: {
         color: "#121212",
-        fontSize: 18,
-        //fontFamily: "montserrat-600",
+        fontSize: 16,
+        fontFamily: 'Regular',
         letterSpacing: 0,
         marginTop: 4
     },
@@ -172,7 +178,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         height: 40,
         width: 40,
-        marginLeft: 50,
+        marginLeft: 41,
         marginTop: -17
     },
 
@@ -190,16 +196,16 @@ const styles = StyleSheet.create({
     urgentCallText: {
         color: "#121212",
         fontSize: 16,
-        //fontFamily: "montserrat-600",
-        letterSpacing: 1,
-        marginTop: 8
+        fontFamily: 'Regular',
+        letterSpacing: 0,
+        marginTop: 4
     },
     urgentCallIcon: {
         color: "rgba(88,172,168,1)",
         fontSize: 40,
         height: 40,
         width: 40,
-        marginLeft: 60,
+        marginLeft: 70,
         marginTop: -15
     },
 
@@ -226,16 +232,16 @@ const styles = StyleSheet.create({
     bookPopUpTitle: {
         color: "#121212",
         fontSize: 23,
-        //fontFamily: "montserrat-600",
+        fontFamily: 'SemiBold',
         marginTop: 10,
         alignSelf: "center"
     },
     bookPopUpText: {
         color: "#121212",
         fontSize: 20,
-        //fontFamily: "montserrat-regular",
+        fontFamily: "Regular",
         textAlign: "center",
-        marginTop: 50,
+        marginTop: 30,
         alignSelf: "center"
     },
     bookPopUpButtons: {
@@ -249,7 +255,7 @@ const styles = StyleSheet.create({
     },
     bookPopUpButtonText: {
         fontSize: 20,
-        //fontFamily: "montserrat-500",
+        fontFamily: "Regular",
         color: "rgba(255,255,255,1)",
         marginTop: 4
     },
@@ -269,22 +275,23 @@ const styles = StyleSheet.create({
     urgentPopUpTitle: {
         color: "#121212",
         fontSize: 23,
-        //fontFamily: "montserrat-600",
+        fontFamily: 'SemiBold',
         marginTop: -10,
         alignSelf: "center"
     },
     urgentPopUpText: {
         color: "#121212",
         fontSize: 20,
-        //fontFamily: "montserrat-regular",
+        fontFamily: "Regular",
         textAlign: "center",
-        marginTop: 30,
+        marginTop: 20,
         alignSelf: "center"
     },
 
     yesNoContainer: {
         flexDirection: 'row',
-        marginLeft: -70
+        marginLeft: -70,
+        marginTop: -20
     },
 
     noButton: {
@@ -308,7 +315,7 @@ const styles = StyleSheet.create({
 
     urgentPopUpButtonText: {
         fontSize: 20,
-        //fontFamily: "montserrat-500",
+        fontFamily: "Regular",
         color: "rgba(255,255,255,1)",
         marginTop: 4
     }

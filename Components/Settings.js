@@ -137,7 +137,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 147,
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    marginTop: 25,
+    marginBottom: 10
   },
   profileAvatar: {
     width: 120,
