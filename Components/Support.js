@@ -4,12 +4,12 @@ import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
-// import depression from '../assets/SupportScreenImg/depression.png';
-// import healing from '../assets/SupportScreenImg/healing.png';
-// import sadness from '../assets/SupportScreenImg/sadness.png';
-// import talk from '../assets/SupportScreenImg/talk.png';
-// import communication from '../assets/SupportScreenImg/communication.png';
-// import team from '../assets/SupportScreenImg/team.png';
+import depression from '../assets/Illustrations/depression.png';
+import healing from '../assets/Illustrations/healing.png';
+import sadness from '../assets/Illustrations/sadness.png';
+import talk from '../assets/Illustrations/talk.png';
+import communication from '../assets/Illustrations/communication.png';
+import team from '../assets/Illustrations/team.png';
 
 
 export default function Support() {
@@ -30,37 +30,37 @@ export default function Support() {
             <View style={styles.container}>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={depression} style={styles.illustration}></Image> */}
+                        <Image source={depression} style={styles.illustration} />
                         <Text style={styles.boxText}>Depression</Text>
                     </View>
                 </View>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={sadness} style={styles.illustration}></Image> */}
+                        <Image source={sadness} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Stress</Text>
                     </View>
                 </View>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={healing} style={styles.illustration}></Image> */}
+                        <Image source={healing} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Anxiety</Text>
                     </View>
                 </View>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={team} style={styles.illustration}></Image> */}
+                        <Image source={team} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Charities</Text>
                     </View>
                 </View>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={talk} style={styles.illustration}></Image> */}
+                        <Image source={talk} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Therapy and Counselling</Text>
                     </View>
                 </View>
                 <View style={styles.box}>
                     <View style={styles.inner}>
-                        {/* <Image source={communication} style={styles.illustration}></Image> */}
+                        <Image source={communication} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Support Groups</Text>
                     </View>
                 </View>
@@ -104,15 +104,16 @@ const styles = StyleSheet.create({
     },
 
     boxText: {
-        fontFamily: 'Medium',
+        fontFamily: 'Regular',
         fontSize: 16,
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: 20
     },
 
     illustration: {
         justifyContent: 'center',
-        height: 50,
-        width: 50,
+        height: 70,
+        width: 70,
     }
 
 });
