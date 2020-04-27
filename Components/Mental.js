@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: 'center',
         alignItems: 'center',
-        height: height_container
+        height: height_container,
+        flex: 1
     },
 
     row: {
