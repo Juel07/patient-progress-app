@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image} fr
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
+import green from '../assets/green_circle.jpeg';
 
 export default class BasicTimeLine extends Component {
   constructor() {
@@ -81,7 +82,10 @@ export default class BasicTimeLine extends Component {
         <View style={styles.Jane}>
             <Image source={Jane}/>
         </View>
-    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
+    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES:         stable</Text>
+        </View>
+        <View style={styles.green}>
+            <Image source={green}/>
         </View>
     </ScrollView>
     );
@@ -131,19 +135,26 @@ Button: {
     //marginLeft: 70,
   },
   Jane: {
-    paddingTop:5,
+    paddingTop:33,
     marginTop: -716,
     marginBottom: 700,
     alignSelf: 'flex-end',
     //marginRight:40,
   },
   infoBox: {
-    paddingTop: 29,
+    paddingTop: 20,
     marginTop: -830,
     marginLeft: 2,
     width: 298,
     height: 120,
     marginBottom: 700,
     backgroundColor: '#FFFFFF'  
+  },
+  green: {
+    paddingTop: 20,
+    marginTop: -740,
+    marginLeft: 160,
+    paddingBottom: 650
+    //marginBottom: -20,
   }
 });
