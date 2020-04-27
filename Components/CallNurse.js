@@ -70,7 +70,7 @@ export default function Nurse() {
                             <View style={styles.grayOverlay}>
                                 <View style={styles.urgentPopUpContainer}>
                                     <Text style={styles.urgentPopUpTitle}>Urgent Call</Text>
-                                    <Text style={styles.urgentPopUpText}>We are very busy and urge you not to call if your relative is not in a critical condition. Do you wish to call the nurse?</Text>
+                                    <Text style={styles.urgentPopUpText}>We are very busy and urge you not to call if your relative is not in a critical condition. Do you still want to call the nurse?</Text>
                                         <View style={styles.yesNoContainer}>
                                         <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
                                             <View style={styles.noButton}>
