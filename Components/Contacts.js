@@ -12,8 +12,9 @@
 
 
 import React, { Component, useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, Image, CheckBox, Modal, TextInput, } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, } from "react-native";
 import { Avatar } from 'react-native-paper';
+import {TouchableRipple,Switch} from 'react-native-paper';
 
 import Feed from './Feed';
 
@@ -21,10 +22,19 @@ import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 const Contacts = ({ navigation }) => {
+ //toggle switch 
+  const [isRest, setIsRest] = useState(false);
+  const toggleRest = () => setIsRest(previousState => !previousState);
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalTwoOpen, setModalTwoOpen] = useState(false);
+  
+   const functionAdd = () =>
+    Alert.alert (
+      'Request Sent',
+      'Your request has been sent for authorisation',
+    );
+  
 
   // fonts load
   let [fontsLoaded] = useFonts({
@@ -92,11 +102,20 @@ const Contacts = ({ navigation }) => {
 
                     <View style={styles.notify}>
                       <Text style={{ fontFamily: 'Regular', fontSize: 15 }}>Notify me if my relative{"\n"}           passes away</Text>
-                      <CheckBox />
+                      <TouchableRipple onPress={() => { toggleRest() }}>
+                        <View pointerEvents='none' style={{marginLeft:'1%'}}>
+                          <Switch
+                          style={styles.switch}
+                          value={isRest}
+                          trackColor={{ false: "#767577", true: "#58ACA8" }}
+                          thumbColor={isRest ? "#32afa9" : "#393b3a"}
+                          />
+                        </View>
+                       </TouchableRipple>
                     </View>
 
                     <View style={styles.popupButtons}>
-                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                      <TouchableOpacity onPress={() => {setModalOpen(false); functionAdd()}}>
                         <View style={styles.popupAdd}>
                           <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
                         </View>
