@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from '
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
-import { useFonts } from '@use-expo/font';
 
 export default function Nurse() {
 
@@ -12,28 +11,25 @@ export default function Nurse() {
 
     return (
         <View style={styles.container}>
+            <View style={styles.topContainer}>
+                <View style={styles.nurseContainer}>
+                    <Image
+                        source={require("../assets/nurse.png")}
+                        resizeMode="contain"
+                        style={styles.nurseAvatar}
+                    ></Image>
+                </View>
 
-            <View style={styles.nurseContainer}>
-                <Image
-                    source={require("../assets/nurse.png")}
-                    resizeMode="contain"
-                    style={styles.nurseAvatar}
-                ></Image>
+                <Text style={styles.nurseMaryPoppins}>Nurse Mary Poppins</Text>
+                <Text style={styles.stGeorgesHospital}>St George's Hopsital</Text>
+                <Text style={styles.birmingham}>Birmingham</Text>
             </View>
-
-            <Text style={styles.nurseMaryPoppins}>Nurse Mary Poppins</Text>
-            <Text style={styles.stGeorgesHospital}>St George's Hopsital</Text>
-            <Text style={styles.birmingham}>Birmingham</Text>
-
-            <View>
-                <TouchableOpacity onPress={() => setModalOpen(true)}>
-                    <View style={styles.rectangle}>
-                        <View style={styles.textRow}>
-                            <Text style={styles.bookingText}>
-                                Book a time slot for{"\n"}a call with the nurse
-                            </Text>
-                            <FontAwesomeIcon icon={faCalendarPlus} style={styles.calendarIcon} size={80} />
-                        </View>
+            <View style={styles.bottomContainer}>
+                <View style={styles.rectangle}>
+                    <TouchableOpacity style={styles.inner} onPress={() => setModalOpen(true)}>
+                        <Text style={styles.bookingText}>
+                            Book a time slot for a call with the nurse</Text>
+                        <FontAwesomeIcon icon={faCalendarPlus} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
                             visible={modalOpen}
@@ -50,19 +46,13 @@ export default function Nurse() {
                                 </View>
                             </View>
                         </Modal>
-                    </View>
-                </TouchableOpacity>
-            </View>
-
-            <View>
-                <TouchableOpacity onPress={() => setModalTwoOpen(true)}>
-                    <View style={styles.rectangle}>
-                        <View style={styles.textRow}>
-                            <Text style={styles.urgentCallText}>
-                                Make an urgent {"\n"}call to the nurse
-              </Text>
-                            <FontAwesomeIcon icon={faPhoneSquareAlt} style={styles.urgentCallIcon} size={80} />
-                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.rectangle}>
+                    <TouchableOpacity style={styles.inner} onPress={() => setModalTwoOpen(true)}>
+                        <Text style={styles.bookingText}>
+                        Make an {"\n"}urgent call to the nurse</Text>
+                        <FontAwesomeIcon icon={faPhoneSquareAlt} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
                             visible={modalTwoOpen}
@@ -71,7 +61,7 @@ export default function Nurse() {
                                 <View style={styles.urgentPopUpContainer}>
                                     <Text style={styles.urgentPopUpTitle}>Urgent Call</Text>
                                     <Text style={styles.urgentPopUpText}>We are very busy and urge you not to call if your relative is not in a critical condition. Do you still want to call the nurse?</Text>
-                                        <View style={styles.yesNoContainer}>
+                                    <View style={styles.yesNoContainer}>
                                         <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
                                             <View style={styles.noButton}>
                                                 <Text style={styles.urgentPopUpButtonText}>No</Text>
@@ -82,14 +72,13 @@ export default function Nurse() {
                                                 <Text style={styles.urgentPopUpButtonText}>Yes</Text>
                                             </View>
                                         </TouchableOpacity>
-                                        </View>
+                                    </View>
                                 </View>
                             </View>
                         </Modal>
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                </View>
             </View>
-
         </View>
     );
 }
@@ -99,11 +88,55 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    containerTwo: {
-        flex: 2,
-        backgroundColor: '#fff',
+    topContainer: {
+        flex: 1,
     },
 
+    bottomContainer: {
+        flex: 1,
+        width: '100%',
+        flexDirection: 'row',
+        height: '100%',
+        backgroundColor: '#32afa9',
+        alignItems: 'center'
+    },
+
+    rectangle: {
+        width: '50%',
+        height: '70%',
+        padding: '5%',
+    },
+
+    inner: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#fff',
+        elevation: 5,
+        shadowColor: 'grey',
+        shadowOffset: {
+            width: 4,
+            height: 4
+        },
+        shadowOpacity: 50,
+        shadowRadius: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '5%'
+    },
+
+    bookingText: {
+        color: "#121212",
+        fontSize: 16,
+        fontFamily: 'Medium',
+        textAlign: 'center',
+        paddingTop: 10,
+        flex: 1
+    },
+    calendarIcon: {
+        color: "rgba(88,172,168,1)",
+        fontSize: 40,
+        flex: 1
+    },
     //Nurses Avatar
 
     nurseContainer: {
@@ -146,49 +179,6 @@ const styles = StyleSheet.create({
         marginTop: 12,
         marginRight: 30,
         textAlign: 'right'
-    },
-
-    rectangle: {
-        width: 400,
-        height: 137,
-        backgroundColor: "rgba(255,255,255,1)",
-        elevation: 5,
-       shadowColor: 'grey',
-    shadowOffset: {
-      width: 4,
-      height: 4
-    },
-    shadowOpacity: 50,
-    shadowRadius: 4,
-        flexDirection: "row",
-        marginTop: 20,
-        marginLeft: 60
-    },
-    //Booking Rectangle
-
-    bookingText: {
-        color: "#121212",
-        fontSize: 16,
-        fontFamily: 'Regular',
-        letterSpacing: 0,
-        marginTop: 4
-    },
-    calendarIcon: {
-        color: "rgba(88,172,168,1)",
-        fontSize: 40,
-        height: 40,
-        width: 40,
-        marginLeft: 41,
-        marginTop: -17
-    },
-
-    textRow: {
-        height: 80,
-        flexDirection: "row",
-        flex: 1,
-        marginRight: 40,
-        marginLeft: 40,
-        marginTop: 49
     },
 
     //Urgent Call Rectangle
