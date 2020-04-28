@@ -78,7 +78,7 @@ const SignInScreen = ({ navigation }) => {
 
 		return (
 			<View style={styles.container}>
-				<StatusBar backgroundColor='#009387' barStyle="light-content" />
+				<StatusBar backgroundColor='#32afa9' barStyle="light-content" />
 				<View style={styles.header}>
 					<Text style={styles.text_header}>Sign In</Text>
 				</View>

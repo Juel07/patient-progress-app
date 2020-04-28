@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight, ScrollView, StatusBar } from 'react-native';
 
 // importing fonts 
 import { useFonts } from '@use-expo/font';
@@ -32,7 +32,7 @@ export default function Faq() {
 
     return (
       <ScrollView style={styles.wrapper}>
-
+				<StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>1. Who is at a risk of developing severe illness?</Text>
           <View><Text style={styles.bodyTxt}>{answer}</Text></View>

@@ -1,6 +1,6 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal, StatusBar} from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
@@ -71,6 +71,7 @@ export default class BasicTimeLine extends Component {
     return (
         <ScrollView style = {{width:'100%'}}>
         <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
             <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
         </View>
         <View style={styles.add}>

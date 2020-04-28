@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,7 @@ export default function Nurse() {
 
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
             <View style={styles.topContainer}>
                 <View style={styles.nurseContainer}>
                     <Image
@@ -51,7 +52,7 @@ export default function Nurse() {
                 <View style={styles.rectangle}>
                     <TouchableOpacity style={styles.inner} onPress={() => setModalTwoOpen(true)}>
                         <Text style={styles.bookingText}>
-                        Make an {"\n"}urgent call to the nurse</Text>
+                            Make an {"\n"}urgent call to the nurse</Text>
                         <FontAwesomeIcon icon={faPhoneSquareAlt} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
