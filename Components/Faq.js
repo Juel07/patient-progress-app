@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight, ScrollView } from 'react-native';
 
 // importing fonts 
 import { useFonts } from '@use-expo/font';
@@ -31,7 +31,7 @@ export default function Faq() {
   } else {
 
     return (
-      <View style={styles.wrapper}>
+      <ScrollView style={styles.wrapper}>
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>1. Who is at a risk of developing severe illness?</Text>
@@ -65,7 +65,58 @@ export default function Faq() {
         <View style={styles.lineCont}>
           <Image source={line} />
         </View>
-      </View>
+
+
+        <View style={styles.container}>
+          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
+          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          {/* <Button title="Test" onPress={handleAnswer}/> */}
+        </View>
+
+        <View style={styles.addBtn}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+            <Image source={add} />
+          </TouchableHighlight>
+        </View>
+
+        <View style={styles.lineCont}>
+          <Image source={line} />
+        </View>
+
+
+        <View style={styles.container}>
+          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
+          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          {/* <Button title="Test" onPress={handleAnswer}/> */}
+        </View>
+
+        <View style={styles.addBtn}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+            <Image source={add} />
+          </TouchableHighlight>
+        </View>
+
+        <View style={styles.lineCont}>
+          <Image source={line} />
+        </View>
+
+
+        <View style={styles.container}>
+          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
+          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          {/* <Button title="Test" onPress={handleAnswer}/> */}
+        </View>
+
+        <View style={styles.addBtn}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+            <Image source={add} />
+          </TouchableHighlight>
+        </View>
+
+        <View style={styles.lineCont}>
+          <Image source={line} />
+        </View>
+      </ScrollView>
     );
   }
 };
@@ -74,9 +125,10 @@ export default function Faq() {
 // styles 
 const styles = StyleSheet.create({
  wrapper:{
+   flex: 1,
    padding: 30,
    flexDirection: 'column',
-   justifyContent: 'space-between',
+  //  justifyContent: 'flex-start',
    backgroundColor: '#fff'
  },
  
