@@ -87,7 +87,7 @@ const Contacts = ({ navigation }) => {
 
                     <View style={styles.popupText}>
                       <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>NHS Number:</Text>
-                      <TextInput style={styles.popupInput} minLength={10} maxLength={10}></TextInput>
+                      <TextInput style={styles.popupInput} minLength={10} maxLength={10} keyboardType='numeric'></TextInput>
                     </View>
 
                     <View style={styles.notify}>
