@@ -57,7 +57,7 @@ export default function Faq() {
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight onPress={handleSecondAnswer}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -86,13 +86,13 @@ const styles = StyleSheet.create({
   },
 
   bodyTxt: {
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 10,
     fontFamily: 'Regular'
   },
 
   bodyTxtBold: {
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 10,
     fontFamily: 'Bold'
   },
