@@ -66,7 +66,7 @@ const Contacts = ({ navigation }) => {
           {/* THIS IS THE USER INFO */}
 
           {/* THIS IS THE BUTTON */}
-          <View style={{ padding: '2%' }}>
+          <View style={{ padding: '2%', marginTop:'2%' }}>
             <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
               <View style={styles.buttonTitle}>
                 <Text style={styles.buttonText}>My relatives/friends</Text>
