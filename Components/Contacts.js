@@ -12,8 +12,9 @@
 
 
 import React, { Component, useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, Image, CheckBox, Modal, TextInput, } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, } from "react-native";
 import { Avatar } from 'react-native-paper';
+import {TouchableRipple,Switch} from 'react-native-paper';
 
 import Feed from './Feed';
 
@@ -21,10 +22,19 @@ import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 const Contacts = ({ navigation }) => {
+ //toggle switch 
+  const [isRest, setIsRest] = useState(false);
+  const toggleRest = () => setIsRest(previousState => !previousState);
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalTwoOpen, setModalTwoOpen] = useState(false);
+  
+   const functionAdd = () =>
+    Alert.alert (
+      'Request Sent',
+      'Your request has been sent for authorisation',
+    );
+  
 
   // fonts load
   let [fontsLoaded] = useFonts({
@@ -66,7 +76,7 @@ const Contacts = ({ navigation }) => {
           {/* THIS IS THE USER INFO */}
 
           {/* THIS IS THE BUTTON */}
-          <View style={{ padding: '2%' }}>
+          <View style={{ padding: '2%', marginTop:'2%' }}>
             <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
               <View style={styles.buttonTitle}>
                 <Text style={styles.buttonText}>My relatives/friends</Text>
@@ -87,16 +97,25 @@ const Contacts = ({ navigation }) => {
 
                     <View style={styles.popupText}>
                       <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>NHS Number:</Text>
-                      <TextInput style={styles.popupInput} minLength={10} maxLength={10}></TextInput>
+                      <TextInput style={styles.popupInput} minLength={10} maxLength={10} keyboardType='numeric'></TextInput>
                     </View>
 
                     <View style={styles.notify}>
                       <Text style={{ fontFamily: 'Regular', fontSize: 15 }}>Notify me if my relative{"\n"}           passes away</Text>
-                      <CheckBox />
+                      <TouchableRipple onPress={() => { toggleRest() }}>
+                        <View pointerEvents='none' style={{marginLeft:'1%'}}>
+                          <Switch
+                          style={styles.switch}
+                          value={isRest}
+                          trackColor={{ false: "#767577", true: "#58ACA8" }}
+                          thumbColor={isRest ? "#32afa9" : "#393b3a"}
+                          />
+                        </View>
+                       </TouchableRipple>
                     </View>
 
                     <View style={styles.popupButtons}>
-                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                      <TouchableOpacity onPress={() => {setModalOpen(false); functionAdd()}}>
                         <View style={styles.popupAdd}>
                           <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
                         </View>
@@ -135,9 +154,9 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}14th June</Text>
+                  <Text style={styles.date_time}>{" "}26th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}10:20</Text>
+                  <Text style={styles.date_time}>{" "}13:00</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -155,9 +174,9 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}19th June</Text>
+                  <Text style={styles.date_time}>{" "}25th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}12:45</Text>
+                  <Text style={styles.date_time}>{" "}21:45</Text>
                 </View>
               </View>
             </TouchableOpacity>
