@@ -22,4 +22,8 @@ $ expo start
 * React Native 0.62
 
 # Authors
-Add later 
+* Juel Braganza 
+* Katarina Zaprazna 
+* Sahuur Safiya Jama 
+* Temi Olukoko 
+* Tolu Akintan 
