@@ -13,6 +13,7 @@
 
 import React, { Component, useState } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Image, CheckBox, Modal, TextInput, } from "react-native";
+import { Avatar } from 'react-native-paper';
 
 import Feed from './Feed';
 
@@ -40,120 +41,126 @@ const Contacts = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
+        <View style={styles.topContainer}>
 
-        {/* THIS IS THE USER INFO */}
-        <View style={styles.user}>
+          {/* THIS IS THE USER INFO */}
+          <View style={styles.user}>
 
-          <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', padding: '1.5%' }}>
-            <Image style={styles.userImage} resizeMode='contain' source={require('../assets/JohnDoe.png')} />
-          </View>
-
-
-          <View style={styles.userInfo}>
-            <View style={styles.userContainer}>
-              <Text style={styles.userName}>John Doe</Text>
-            </View>
-
-            <View style={styles.userContainer}>
-              <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
-            </View>
-
-          </View>
-
-        </View>
-        {/* THIS IS THE USER INFO */}
-
-        {/* THIS IS THE BUTTON */}
-        <View style={{ padding: '2%' }}>
-          <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
-            <View style={styles.buttonTitle}>
-              <Text style={styles.buttonText}>My relatives/friends</Text>
-            </View>
-
-            <View style={styles.buttonImage}>
-              <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
+            <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', padding: '1.5%' }}>
+              <Image style={styles.userImage} resizeMode='contain' source={require('../assets/JohnDoe.png')} />
             </View>
 
 
-            <Modal transparent={true} visible={modalOpen} animationType='fade'>
-              <View style={styles.popupBack}>
-                <View style={styles.popup}>
-
-                  <View style={styles.popupText}>
-                    <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>New Patient</Text>
-                  </View>
-
-                  <View style={styles.popupText}>
-                    <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>NHS Number:</Text>
-                    <TextInput style={styles.popupInput} minLength={10} maxLength={10}></TextInput>
-                  </View>
-
-                  <View style={styles.notify}>
-                    <Text style={{ fontFamily: 'Regular', fontSize: 15 }}>Notify me if my relative{"\n"}           passes away</Text>
-                    <CheckBox />
-                  </View>
-
-                  <View style={styles.popupButtons}>
-                    <TouchableOpacity onPress={() => setModalOpen(false)}>
-                      <View style={styles.popupAdd}>
-                        <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
-                      </View>
-                    </TouchableOpacity>
-
-
-                    <TouchableOpacity onPress={() => setModalOpen(false)}>
-                      <View style={styles.popupCancel}>
-                        <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-
-                </View>
+            <View style={styles.userInfo}>
+              <View style={styles.userContainer}>
+                <Text style={styles.userName}>John Doe</Text>
               </View>
-            </Modal>
 
-          </TouchableOpacity>
+              <View style={styles.userContainer}>
+                <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+              </View>
 
+            </View>
+
+          </View>
+          {/* THIS IS THE USER INFO */}
+
+          {/* THIS IS THE BUTTON */}
+          <View style={{ padding: '2%' }}>
+            <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
+              <View style={styles.buttonTitle}>
+                <Text style={styles.buttonText}>My relatives/friends</Text>
+              </View>
+
+              <View style={styles.buttonImage}>
+                <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
+              </View>
+
+
+              <Modal transparent={true} visible={modalOpen} animationType='fade'>
+                <View style={styles.popupBack}>
+                  <View style={styles.popup}>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>New Patient</Text>
+                    </View>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>NHS Number:</Text>
+                      <TextInput style={styles.popupInput} minLength={10} maxLength={10}></TextInput>
+                    </View>
+
+                    <View style={styles.notify}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 15 }}>Notify me if my relative{"\n"}           passes away</Text>
+                      <CheckBox />
+                    </View>
+
+                    <View style={styles.popupButtons}>
+                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                        <View style={styles.popupAdd}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
+                        </View>
+                      </TouchableOpacity>
+
+
+                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                        <View style={styles.popupCancel}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+
+                  </View>
+                </View>
+              </Modal>
+
+            </TouchableOpacity>
+
+          </View>
         </View>
-
         {/* THIS IS THE USER BUTTON */}
 
 
         {/* THIS IS THE USER RELATIVE CODE */}
-        <View>
-          <TouchableOpacity style={styles.relativeCards} onPress={() => navigation.navigate('Feed')}
+        <View style={styles.bottomContainer}>
+          <View style={styles.rect1}>
+            <TouchableOpacity style={styles.relativeCard} onPress={() => navigation.navigate('Feed')}>
+              <View style={styles.relative}>
+                <Avatar.Image size={70} source={require('../assets/Jane.png')} />
+              </View>
+              <View style={styles.relativeInfo}>
+                <View>
+                  <Text style={styles.relativeFullName}>Jane Doe</Text>
+                  <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
+                </View>
+                <View style={styles.update}>
+                  <Text style={styles.relativeUpdate}>Last updated on</Text>
+                  <Text style={styles.date_time}>{" "}14th June</Text>
+                  <Text style={styles.relativeUpdate}>{" "}at</Text>
+                  <Text style={styles.date_time}>{" "}10:20</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </View>
 
-          >
-
-            <View style={styles.relative}>
-              <Text style={styles.relativeName}>Jane Doe</Text>
-            </View>
-
-
-            <View style={styles.relativeIcon}>
-              <Image style={styles.relatveImage} source={require('../assets/Vectorperson.png')} />
-            </View>
-
-
-            <View>
-              <Text style={styles.relativeHospital}>St.George&#39;s Hospital{"\n"}Last updated: 14th June 10:20</Text>
-            </View>
-
-          </TouchableOpacity>
-
-          <View style={styles.relativeCards}>
-            <View style={styles.relative}>
-              <Text style={styles.relativeName}>Jill Doe</Text>
-            </View>
-
-            <View style={styles.relativeIcon}>
-              <Image style={styles.relatveImage} source={require('../assets/Vectorperson.png')} />
-            </View>
-
-            <View>
-              <Text style={styles.relativeHospital}>St.George&#39;s Hospital{"\n"}Last updated: 18th June 20:00</Text>
-            </View>
-
+          <View style={styles.rect1}>
+            <TouchableOpacity style={styles.relativeCard}>
+              <View style={styles.relative}>
+                <Avatar.Image size={70} source={require('../assets/Jane.png')} />
+              </View>
+              <View style={styles.relativeInfo}>
+                <View>
+                  <Text style={styles.relativeFullName}>Jill Doe</Text>
+                  <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
+                </View>
+                <View style={styles.update}>
+                  <Text style={styles.relativeUpdate}>Last updated on</Text>
+                  <Text style={styles.date_time}>{" "}19th June</Text>
+                  <Text style={styles.relativeUpdate}>{" "}at</Text>
+                  <Text style={styles.date_time}>{" "}12:45</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
         {/* THIS IS THE USER RELATIVE CODE */}
@@ -170,6 +177,84 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
+  },
+
+  topContainer: {
+    flex: 1,
+  },
+
+  bottomContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+  },
+
+  rect1: {
+    width: '93%',
+    height: '45%',
+    marginLeft: '7%',
+    paddingBottom: 10
+  },
+
+  relativeCard: {
+    flex: 1,
+    flexDirection: 'row',
+    elevation: 5,
+    shadowColor: 'grey',
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    shadowOpacity: 50,
+    shadowRadius: 4,
+    backgroundColor: '#32afa9',
+    borderBottomLeftRadius: 50,
+    justifyContent: 'space-evenly'
+  },
+
+  relative: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  relativeInfo: {
+    flex: 3,
+    color: '#fff',
+    justifyContent: 'space-around'
+  },
+
+  relativeHosp: {
+    fontFamily: 'Regular',
+    color: '#fff',
+    fontSize: 16,
+  },
+
+  relativeUpdate: {
+    fontFamily: 'Regular',
+    color: '#fff',
+    fontSize: 16,
+    lineHeight: 18
+  },
+
+  update: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+
+  date_time: {
+    color: '#fff',
+    fontFamily: 'SemiBold',
+    fontSize: 16,
+    lineHeight: 18
+  },
+
+  relativeFullName: {
+    color: '#fff',
+    fontFamily: 'SemiBold',
+    fontSize: 18,
   },
 
   user: {
@@ -296,46 +381,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     borderRadius: 40
-  },
-
-  relativeCards: {
-    marginLeft: '10%',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    alignItems: 'flex-end',
-    flexDirection: 'row',
-    backgroundColor: '#58ACA8',
-    padding: '2%',
-    marginVertical: '2%'
-  },
-
-  relative: {
-    flexWrap: 'wrap',
-    paddingBottom: '10%'
-  },
-
-  relativeName: {
-    fontFamily: 'Medium',
-    fontSize: 22,
-    color: 'white'
-  },
-
-  relativeIcon: {
-    width: 75,
-    height: 75,
-    marginRight: '5%'
-  },
-
-  relativeImage: {
-    width: 75,
-    height: 75
-  },
-
-  relativeHospital: {
-    fontFamily: 'Regular',
-    fontSize: 18,
-    color: 'white',
-    lineHeight: 25
   },
 
 });

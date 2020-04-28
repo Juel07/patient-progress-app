@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from 'react-native';
 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
@@ -29,47 +29,45 @@ export default function Support() {
         return (
             <View style={styles.container}>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={depression} style={styles.illustration} />
                         <Text style={styles.boxText}>Depression</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={sadness} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Stress</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={healing} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Anxiety</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={team} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Charities</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={talk} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Therapy and Counselling</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.box}>
-                    <View style={styles.inner}>
+                    <TouchableOpacity style={styles.inner} activeOpacity={0.8}>
                         <Image source={communication} style={styles.illustration}></Image>
                         <Text style={styles.boxText}>Support Groups</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
     }
 }
-
-const { height } = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
 

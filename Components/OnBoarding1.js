@@ -44,7 +44,7 @@ export default function OnBoardingOne({ navigation }) {
           <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={pressHandler}>
             <Text style={{ fontSize: 18, fontFamily: 'Bold', color: '#58ACA8' }}>Next</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={() => navigation.navigate('SignUpScreen')}>
+          <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={() => navigation.navigate('MainScreen')}>
             <Text style={{ fontSize: 18, fontFamily: 'Bold', color: '#58ACA8' }}>Skip</Text>
           </TouchableOpacity>
         </View>

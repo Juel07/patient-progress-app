@@ -19,8 +19,8 @@ const StartScreen = ({ navigation }) => {
             backgroundColor: '#FFFFFF'
         }}>
             <Image source={bigger} style={{ width: 350, marginBottom: 70, height: 160, }} />
-            <CustomButton text="   Sign in   " onPress={() => navigation.navigate('SignInScreen')}></CustomButton>
-            <CustomButton text="Get Started" onPress={() => navigation.navigate('Welcome-1')}></CustomButton>
+            <CustomButton text="Sign Up" onPress={() => navigation.navigate('SignUpScreen')}></CustomButton>
+            <CustomButton text="Sign in" onPress={() => navigation.navigate('SignInScreen')}></CustomButton>
         </View>
     );
 };
