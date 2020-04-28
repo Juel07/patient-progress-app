@@ -63,7 +63,7 @@ const Settings = ({ navigation }) => {
 
         {/*Menu List*/}
 
-        <View>
+        <View style={styles.menuContainer}>
           <View style={styles.menuLine}></View>
           <View style={styles.menuTopItems}>
             <FontAwesomeIcon icon={faBell} style={styles.menuIcons} size={25} />
@@ -139,7 +139,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     marginTop: 25,
-    marginBottom: 10
+    marginBottom: 10,
+    flex: 1
   },
   profileAvatar: {
     width: 120,
@@ -168,6 +169,10 @@ const styles = StyleSheet.create({
   },
 
   //Settings Menu
+
+  menuContainer: {
+    flex: 3
+  },
 
   menuLine: {
     width: 300,
@@ -199,13 +204,13 @@ const styles = StyleSheet.create({
 
   menuTopText: {
     fontFamily: "Regular",
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 25
   },
 
   menuText: {
     fontFamily: "Regular",
-    fontSize: 18,
+    fontSize: 16,
     marginLeft: 50,
     marginBottom: 25,
     textAlign: 'center'
