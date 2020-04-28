@@ -65,8 +65,8 @@ export default class BasicTimeLine extends Component {
 
   render() {
 
-    const [modalOpen, setModalOpen] = useState(false);
-    const [modalTwoOpen, setModalTwoOpen] = useState(false);
+    //const [modalOpen, setModalOpen] = useState(false);
+    //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
     return (
         <ScrollView style = {{width:'100%'}}>
