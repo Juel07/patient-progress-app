@@ -135,9 +135,9 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}14th June</Text>
+                  <Text style={styles.date_time}>{" "}26th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}10:20</Text>
+                  <Text style={styles.date_time}>{" "}13:00</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -155,9 +155,9 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}19th June</Text>
+                  <Text style={styles.date_time}>{" "}25th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}12:45</Text>
+                  <Text style={styles.date_time}>{" "}21:45</Text>
                 </View>
               </View>
             </TouchableOpacity>
