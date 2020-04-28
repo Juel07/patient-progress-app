@@ -40,7 +40,7 @@ export default class BasicTimeLine extends Component {
         time: '09:00',
         title: '18/07/2020',
         description:
-          'Weight: 75 kg.',
+          'Weight: 75 kg - no change.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -149,7 +149,7 @@ Button: {
     paddingTop: 20,
     marginTop: -830,
     marginLeft: 2,
-    width: 298,
+    width: 296,
     height: 120,
     marginBottom: 700,
     backgroundColor: '#FFFFFF'  
