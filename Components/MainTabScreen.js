@@ -24,13 +24,13 @@ import SignInScreen from './Sign-in';
 
 import Contacts from './Contacts';
 import CallNurse from './CallNurse';
-import MentalHealth from './Mental';
+import Support from './Support';
 import Faq from './Faq';
 import Settings from './Settings';
 
 const ContactStack = createStackNavigator();
 const NurseStack = createStackNavigator();
-const MentalStack = createStackNavigator();
+const SupportStack = createStackNavigator();
 const FaqStack = createStackNavigator();
 const SettingStack = createStackNavigator();
 const FeedStack = createStackNavigator();
@@ -91,8 +91,8 @@ const BottomTabScreen = () => (
             }}
         />
         <Tab.Screen
-            name="Mental Health"
-            component={MentalScreen}
+            name="Support"
+            component={SupportScreen}
             options={{
                 tabBarColor: '#fff',
                 tabBarIcon: ({ color }) => (
@@ -136,18 +136,16 @@ const ContactsScreen = () => (
 )
 
 
-const MentalScreen = () => (
-    <MentalStack.Navigator screenOptions={({ navigation }) => {
+const SupportScreen = () => (
+    <SupportStack.Navigator screenOptions={({ navigation }) => {
         return {
-            headerTitle: () => <Header title='Mental Health' navigation={navigation} />, headerTitleAlign: 'center'
+            headerTitle: () => <Header title='Help and Support' navigation={navigation} />, headerTitleAlign: 'center'
         }
-
     }}>
-        <MentalStack.Screen name="Mental Health" component={MentalHealth} options={{
-            title: 'Mental Health',
-
+        <SupportStack.Screen name="Support" component={Support} options={{
+            title: 'Support',
         }} />
-    </MentalStack.Navigator>
+    </SupportStack.Navigator>
 );
 
 const FaqScreen = () => (
