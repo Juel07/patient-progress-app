@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { StyleSheet } from 'react-native';
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -126,36 +124,35 @@ const BottomTabScreen = () => (
 )
 
 const ContactsScreen = () => (
-
     <ContactStack.Navigator
-    screenOptions={{
-        gestureEnabled: true, gestureDirection: 'horizontal',
-        transitionSpec: { open: config, close: config },
-        cardStyleInterpolator: 
-        CardStyleInterpolators.forHorizontalIOS
-    }}
+        screenOptions={{
+            gestureEnabled: true, gestureDirection: 'horizontal',
+            transitionSpec: { open: config, close: config },
+            cardStyleInterpolator:
+                CardStyleInterpolators.forHorizontalIOS
+        }}
     >
         <ContactStack.Screen name="Contacts" component={Contacts} options={({ navigation }) => {
             return {
-                headerTitle: () => <Header title='Contacts' navigation={navigation} />, 
-                headerTitleAlign: 'center',  
-                headerStyle: {height:55}
+                headerTitle: () => <Header title='Contacts' navigation={navigation} />,
+                headerTitleAlign: 'center',
+                headerStyle: { height: 55 }
             }
-        }} />
+        }}
+        />
         <ContactStack.Screen name="Feed" component={Feed}
             options={({ navigation }) => {
                 return {
-                    headerTitle: () => <HeaderBack title='Feed' navigation={navigation} />, 
-                    headerTitleAlign: 'center', 
+                    headerTitle: () => <HeaderBack title='Feed' navigation={navigation} />,
+                    headerTitleAlign: 'center',
                     headerBackTitleVisible: false,
-                    headerStyle: {height:55}
+                    headerStyle: { height: 55 }
                 }
             }}
         />
     </ContactStack.Navigator>
 
 )
-
 
 const SupportScreen = () => (
     <SupportStack.Navigator screenOptions={({ navigation }) => {
@@ -183,7 +180,6 @@ const FaqScreen = () => (
     </FaqStack.Navigator>
 );
 
-
 const NurseScreen = () => (
     <NurseStack.Navigator screenOptions={({ navigation }) => {
         return {
@@ -196,27 +192,27 @@ const NurseScreen = () => (
 );
 
 const SettingScreen = () => (
-    <SettingStack.Navigator 
+    <SettingStack.Navigator
         screenOptions={{
             gestureEnabled: true, gestureDirection: 'horizontal',
             transitionSpec: { open: config, close: config },
-            cardStyleInterpolator: 
-            CardStyleInterpolators.forHorizontalIOS
+            cardStyleInterpolator:
+                CardStyleInterpolators.forHorizontalIOS
         }}>
         <SettingStack.Screen name="Settings" component={Settings} options={({ navigation }) => {
             return {
                 headerTitle: () => <Header title='Settings' navigation={navigation} />,
-                headerTitleAlign: 'center', 
-                headerStyle: {height:55}
+                headerTitleAlign: 'center',
+                headerStyle: { height: 55 }
             }
         }}
         />
         <SettingStack.Screen name="About" component={About} options={({ navigation }) => {
             return {
-                headerTitle: () => <HeaderBack title='About' navigation={navigation} />, 
-                headerTitleAlign: 'center', 
-                headerBackTitleVisible: false, 
-                headerStyle: {height:55}
+                headerTitle: () => <HeaderBack title='About' navigation={navigation} />,
+                headerTitleAlign: 'center',
+                headerBackTitleVisible: false,
+                headerStyle: { height: 55 }
             }
         }} />
     </SettingStack.Navigator>
