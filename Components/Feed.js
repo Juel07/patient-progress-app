@@ -79,27 +79,25 @@ export default class BasicTimeLine extends Component {
     return (
       <ScrollView style={styles.wrapper}>
         <View style={styles.joint}>
-        <View style={styles.userInfo}>
-              <View style={styles.userContainer}>
-                <Text style={styles.userName}>Jane Doe</Text>
-              </View>
+          <View style={styles.userInfo}>
 
-              <View style={styles.userContainer}>
-                <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+            <View style={styles.userContainer}>
+              <Text style={styles.userName}>Jane Doe</Text>
+              <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+              <View style={{flexDirection:'row'}}>
+                <Text style={styles.userNo}>PROGRESS:  </Text>
+                <Image source={green} />
+                <Text style={styles.userNo}>  stable</Text>
               </View>
-              
-              <View style={styles.userContainer}>
-                <Text style={styles.userNo}>PROGRESS: stable</Text>
-              </View>
-
             </View>
-          <View style={styles.Jane}>
-            <Image source={Jane} />
+
+            <View style={styles.Jane}>
+              <Image source={Jane} />
+            </View>
+
           </View>
-          <View style={styles.green}>
-          <Image source={green} />
         </View>
-        </View>
+
         <View style={styles.container}>
           <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 18 }} />
@@ -170,6 +168,7 @@ const styles = StyleSheet.create({
     //paddingHorizontal: 20,
     //width: '100%',
     //height: '100%'
+
   
   },
   wrapper: {
@@ -325,12 +324,21 @@ const styles = StyleSheet.create({
     //marginBottom: -70
   },
   userInfo: {
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
+    alignItems: 'center',
+    //justifyContent: 'space-between',
+    //backgroundColor:'salmon',
+    flexGrow:1,
+    //paddingBottom:'7.5%',
+    //paddingRight:'3%',
+   // marginRight:'10%'
+   flexDirection:'row',
+   justifyContent:'space-around'
   },
   userContainer: {
     flexWrap: 'wrap',
-    marginRight: '5%'
+    marginLeft: '5%',
+    flexDirection:'column',
+    alignItems:'flex-end'
   },
   userName: {
     fontSize: 18,

@@ -140,8 +140,8 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated:</Text>
-                  <Text style={styles.date_time}>{" "}Jul 26</Text>
-                  <Text style={styles.relativeUpdate}>{" "}@</Text>
+                  <Text style={styles.date_time}>{" "}26th July</Text>
+                  <Text style={styles.relativeUpdate}>{" "}at</Text>
                   <Text style={styles.date_time}>{" "}13:00</Text>
                 </View>
               </View>
@@ -186,6 +186,8 @@ const styles = StyleSheet.create({
 
   topContainer: {
     flex: 1,
+    //backgroundColor:'salmon',
+    paddingBottom:'15%'
   },
 
   bottomContainer: {
