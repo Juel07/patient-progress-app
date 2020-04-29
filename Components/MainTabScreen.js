@@ -134,7 +134,7 @@ const ContactsScreen = () => (
     >
         <ContactStack.Screen name="Contacts" component={Contacts} options={({ navigation }) => {
             return {
-                headerTitle: () => <Header title='Contacts' navigation={navigation} />,
+                headerTitle: () => <Header title='Home' navigation={navigation} />,
                 headerTitleAlign: 'center',
                 headerStyle: { height: 55 }
             }
