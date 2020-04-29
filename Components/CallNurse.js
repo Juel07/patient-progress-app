@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
     },
     topContainer: {
         flex: 1,
+        width: '100%',
+        height: '100%'
     },
 
     bottomContainer: {
@@ -210,8 +212,8 @@ const styles = StyleSheet.create({
 
     //Book Call Pop Up
     bookPopUpContainer: {
-        width: 305,
-        height: 300,
+        width: '70%',
+        height: '40%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
         margin: 50,
@@ -224,25 +226,28 @@ const styles = StyleSheet.create({
         color: "#121212",
         fontSize: 23,
         fontFamily: 'SemiBold',
-        marginTop: 10,
-        alignSelf: "center"
+        marginTop: -10,
+        alignSelf: "center",
+        flex: 0.5
     },
     bookPopUpText: {
         color: "#121212",
         fontSize: 20,
         fontFamily: "Regular",
         textAlign: "center",
-        marginTop: 30,
-        alignSelf: "center"
+        marginTop: -10,
+        alignSelf: "center",
+        flex: 1
     },
     bookPopUpButtons: {
         width: 100,
         height: 33,
         backgroundColor: "rgba(172,88,88,1)",
         borderRadius: 28,
-        marginTop: 40,
+        marginTop: -30,
         marginLeft: 50,
-        alignItems: 'center'
+        alignItems: 'center',
+        flex: 1
     },
     bookPopUpButtonText: {
         fontSize: 20,
@@ -253,8 +258,8 @@ const styles = StyleSheet.create({
 
     //Urgent Call Pop Up
     urgentPopUpContainer: {
-        width: 305,
-        height: 350,
+        width: '75%',
+        height: '50%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
         margin: 50,
@@ -268,7 +273,8 @@ const styles = StyleSheet.create({
         fontSize: 23,
         fontFamily: 'SemiBold',
         marginTop: -10,
-        alignSelf: "center"
+        alignSelf: "center",
+        flex: 0.5
     },
     urgentPopUpText: {
         color: "#121212",
@@ -276,13 +282,15 @@ const styles = StyleSheet.create({
         fontFamily: "Regular",
         textAlign: "center",
         marginTop: 20,
-        alignSelf: "center"
+        alignSelf: "center",
+        flex: 3
     },
 
     yesNoContainer: {
         flexDirection: 'row',
         marginLeft: -70,
-        marginTop: -20
+        marginTop: -20,
+        flex: 1
     },
 
     noButton: {
