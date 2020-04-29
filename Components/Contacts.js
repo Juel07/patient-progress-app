@@ -13,9 +13,6 @@ const Contacts = ({ navigation }) => {
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
-<<<<<<< HEAD
-  //const [modalTwoOpen, setModalTwoOpen] = useState(false);
-=======
 
   const functionAdd = () =>
     Alert.alert(
@@ -23,7 +20,6 @@ const Contacts = ({ navigation }) => {
       'Your request has been sent for authorisation',
     );
 
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 
   // fonts load
   let [fontsLoaded] = useFonts({
