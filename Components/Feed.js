@@ -1,10 +1,6 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal, Alert, TouchableHighlight} from 'react-native';
-=======
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar} from 'react-native';
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
@@ -76,12 +72,9 @@ export default class BasicTimeLine extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-=======
     const { modalVisible } = this.state;
     //const [modalOpen, setModalOpen] = useState(false);
     //const [modalTwoOpen, setModalTwoOpen] = useState(false);
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 
     return (
         <ScrollView style = {{width:'100%'}}>
@@ -97,11 +90,7 @@ export default class BasicTimeLine extends Component {
             <Image source={add}/>
         </TouchableOpacity>
         </View>
-<<<<<<< HEAD
-        {/*ThIS IS THW WHITE WITH TEXT BUTTON*/}
-=======
 {/* THIS IS THE POPUP CODE */}
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
         <View style={styles.Button}>
             <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=>{this.setModalVisible(!modalVisible);}}>
             <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
@@ -140,16 +129,9 @@ export default class BasicTimeLine extends Component {
 
            
             </TouchableOpacity>
-<<<<<<< HEAD
-        </View>
-        {/*TESTING MODAL STUFF*/}
-
-        {/*THIS IS THE JANE ICON*/}
-=======
         </View>     
 {/* THIS IS THE POPUP CODE*/}
 
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
         <View style={styles.Jane}>
             <Image source={Jane}/>
         </View>
@@ -239,15 +221,6 @@ popupBack: {
   alignItems: 'center',
   justifyContent: 'center'
 },
-<<<<<<< HEAD
-popup: {
-  borderRadius: 40,
-  height: '50%',
-  width: '75%',
-  padding: '5%',
-  backgroundColor: 'white'
-}
-=======
 bookPopUpButtonText: {
     fontSize: 20,
     fontFamily: "Regular",
@@ -322,5 +295,4 @@ popupCancel: {
   paddingRight: 20,
   borderRadius: 40
 }, 
->>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 });
