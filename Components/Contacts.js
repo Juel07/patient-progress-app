@@ -154,7 +154,7 @@ const Contacts = ({ navigation }) => {
           <View style={styles.rect1}>
             <TouchableOpacity style={styles.relativeCard}>
               <View style={styles.relative}>
-                <Avatar.Image size={70} source={require('../assets/Jane.png')} />
+                <Avatar.Image size={70} source={require('../assets/Jill.png')} />
               </View>
               <View style={styles.relativeInfo}>
                 <View>
