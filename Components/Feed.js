@@ -1,11 +1,16 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
 import green from '../assets/green_circle.jpeg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { YellowBox } from 'react-native';
+
+YellowBox.ignoreWarnings([
+  'VirtualizedLists should never be nested', // TODO: Remove when fixed
+])
 
 export default class BasicTimeLine extends Component {
   //pop-up
@@ -21,7 +26,7 @@ export default class BasicTimeLine extends Component {
     super();
     this.data = [
       {
-        time: '12:45',
+        time: '09:30',
         title: '08/07/2020',
         description:
           'Temperature of 38C.',
@@ -30,42 +35,42 @@ export default class BasicTimeLine extends Component {
         fontSize: 5,
       },
       {
-        time: '17:50',
-        title: '10/07/2020',
+        time: '12:30',
+        title: '08/07/2020',
         description:
           'Oxygen therapy administered.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '03:00',
-        title: '14/07/2020',
+        time: '15:30',
+        title: '08/07/2020',
         description:
-          'Normal blood pressure.',
+          'Regular blood pressure.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '09:00',
-        title: '18/07/2020',
+        time: '09:30',
+        title: '09/07/2020',
         description:
-          'Weight: 75 kg - no change.',
+          'Weight: 75 kg - no change from previously recorded weight.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '14:00',
-        title: '23/07/2020',
+        time: '12:30',
+        title: '09/07/2020',
         description:
-          'Normal glucose levels.',
+          'Regular glucose levels.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '13:00',
-        title: '26/07/2020',
+        time: '15:30',
+        title: '09/07/2020',
         description:
-          'Heart rate: 80 bpm - Normal heart rate.',
+          'Heart rate: 80 bpm - Regular heart rate.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
@@ -151,32 +156,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    //backgroundColor: 'pink',
-    //marginBottom: 160,
-    //marginTop: 75,
-    //paddingBottom: 190,
-    //paddingTop: 55,
-    //paddingHorizontal: 20,
-    //width: '100%',
-    //height: '100%'
-    //flexDirection: 'column'
   },
   wrapper: {
     flex: 1,
-    //padding: 30,
     flexDirection: 'column',
-    //  justifyContent: 'flex-start',
     backgroundColor: '#fff',
     width: '100%'
   },
   userInfo: {
     alignItems: 'center',
-    //justifyContent: 'space-between',
-    //backgroundColor: 'salmon',
     flexGrow: 1,
-    //paddingBottom:'7.5%',
-    //paddingRight:'3%',
-    // marginRight:'10%'
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
@@ -196,20 +185,15 @@ const styles = StyleSheet.create({
     fontFamily: 'Regular'
   },
   button: {
-    //backgroundColor: 'green',
-    //justifyContent: 'center',
     alignItems: 'center',
     padding: 10
   },
   innerButton: {
     backgroundColor: '#FFFFFF',
-    //flexGrow: 1,
     borderRadius: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
     height: hp('5%'),
-    //marginRight: '5%',
-    //marginLeft: '25%',
     padding: 25,
     paddingRight: 50,
     paddingLeft: 50,
