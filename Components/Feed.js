@@ -118,7 +118,7 @@ export default class BasicTimeLine extends Component {
             <View style={styles.popup}>
 
               <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>Request an Update</Text>
+                <Text style={{ fontFamily: 'Bold', fontSize: 23, textAlign: 'justify'}}>Request an Update</Text>
               </View>
 
               <View style={styles.popupText}>
