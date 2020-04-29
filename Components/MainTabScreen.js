@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -129,7 +129,9 @@ const ContactsScreen = () => (
             gestureEnabled: true, gestureDirection: 'horizontal',
             transitionSpec: { open: config, close: config },
             cardStyleInterpolator:
-                CardStyleInterpolators.forHorizontalIOS
+                CardStyleInterpolators.forHorizontalIOS,
+            // ...TransitionPresets.RevealFromBottomAndroid
+            // ...TransitionPresets.SlideFromRightIOS
         }}
     >
         <ContactStack.Screen name="Contacts" component={Contacts} options={({ navigation }) => {
