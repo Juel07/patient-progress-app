@@ -1,12 +1,21 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
 import green from '../assets/green_circle.jpeg';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export default class BasicTimeLine extends Component {
+  //pop-up
+  state = {
+    modalVisible: false
+  };
+
+  setModalVisible = (visible) => {
+    this.setState({ modalVisible: visible });
+  }
 
   constructor() {
     super();
@@ -62,149 +71,222 @@ export default class BasicTimeLine extends Component {
       },
     ];
   }
-
   render() {
-
+    const { modalVisible } = this.state;
     //const [modalOpen, setModalOpen] = useState(false);
     //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
     return (
-        <ScrollView style = {{width:'100%'}}>
+      <ScrollView style={styles.wrapper}>
+        <View style={styles.userInfo}>
+          {/*CODE FOR JANE DOE TEXT STARTS*/}
+          <View style={styles.userContainer}>
+            <Text style={styles.userName}>Jane Doe</Text>
+            <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.userNo}>PROGRESS:  </Text>
+              <Image source={green} />
+              <Text style={styles.userNo}>  stable</Text>
+            </View>
+          </View>
+
+          <View style={styles.Jane}>
+            <Image source={Jane} />
+          </View>
+
+        </View>
+        {/*CODE FOR JANE ENDS*/}
+
+        {/*CODE FOR FEED STARTS*/}
         <View style={styles.container}>
-            <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
+          <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 18 }} />
         </View>
-        <View style={styles.add}>
-        <TouchableOpacity onPress={()=> alert('test')}>
-            <Image source={add}/>
-        </TouchableOpacity>
+        {/*CODE FOR FEED ENDS*/}
+
+        {/*CODE FOR BUTTON STARTS*/}
+        <View style={styles.button}>
+          <TouchableOpacity style={styles.innerButton} onPress={()=> {this.setModalVisible(!modalVisible);}}>
+            <Text style={{ fontFamily: 'Bold', fontSize: 16 }}>Request an Update</Text>
+            <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
+          </TouchableOpacity>
         </View>
-        <View style={styles.Button}>
-            <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> alert('test')}>
-            <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.Jane}>
-            <Image source={Jane}/>
-        </View>
-        <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES:         stable</Text>
-        </View>
-        <View style={styles.green}>
-            <Image source={green}/>
-        </View>
-    </ScrollView>
-    );
+        {/*CODE FOR BUTTON ENDS*/}
+
+        {/*CODE FOR POP UP STARTS*/}
+        <Modal transparent={true} visible={modalVisible} animationType='fade'>
+          <View style={styles.popupBack}>
+            <View style={styles.popup}>
+
+              <View style={styles.popupText}>
+                <Text style={{ fontFamily: 'Bold', fontSize: 23, textAlign: 'justify'}}>Request an Update</Text>
+              </View>
+
+              <View style={styles.popupText}>
+                <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>Additional notes (optional):</Text>
+                <TextInput style={styles.popupInput} maxLength={250}></TextInput>
+              </View>
+
+              <View style={styles.popupButtons}>
+                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
+                  <View style={styles.popupRequest}>
+                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Request</Text>
+                  </View>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
+                  <View style={styles.popupCancel}>
+                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      </ScrollView>
+    )
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //padding: 10,
-    backgroundColor: '#FFFFFF',
-    marginBottom: 160,
-    marginTop: 75,
-    paddingBottom: 190,
-    paddingTop: 55,
-    paddingHorizontal: 20,
-},
-  
-Button: {
-    marginTop: -35,
-    marginBottom: 5,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 40,
-    paddingVertical: 10,
-    paddingHorizontal: 70,
-    marginLeft: 70,
-    marginRight: 40,
-    //borderColor: 'black',
-    borderWidth: 0.3,
-    shadowColor: "#000",
-    shadowOffset: {
-	  width: 0,
-	  height: 5,},
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-    elevation: 0,
-    
+    padding: 10,
+    //backgroundColor: 'pink',
+    //marginBottom: 160,
+    //marginTop: 75,
+    //paddingBottom: 190,
+    //paddingTop: 55,
+    //paddingHorizontal: 20,
+    //width: '100%',
+    //height: '100%'
+    //flexDirection: 'column'
   },
-  add: {
-    marginTop: -320,
-    marginLeft: 320,
+  wrapper: {
     flex: 1,
-    //position: 'absolute',
-    zIndex: 1
-    //zIndex: 999
-    //marginBottom: 5,
-    //marginLeft: 70,
+    //padding: 30,
+    flexDirection: 'column',
+    //  justifyContent: 'flex-start',
+    backgroundColor: '#fff',
+    width: '100%'
   },
-  Jane: {
-    paddingTop:33,
-    marginTop: -716,
-    marginBottom: 700,
-    alignSelf: 'flex-end',
-    //marginRight:40,
+  userInfo: {
+    alignItems: 'center',
+    //justifyContent: 'space-between',
+    //backgroundColor: 'salmon',
+    flexGrow: 1,
+    //paddingBottom:'7.5%',
+    //paddingRight:'3%',
+    // marginRight:'10%'
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   },
-  infoBox: {
-    paddingTop: 20,
-    marginTop: -830,
-    marginLeft: 2,
-    width: 296,
-    height: 120,
-    marginBottom: 700,
-    backgroundColor: '#FFFFFF'  
+  userContainer: {
+    flexWrap: 'wrap',
+    marginLeft: '5%',
+    flexDirection: 'column',
+    alignItems: 'flex-end'
   },
-  green: {
-    paddingTop: 20,
-    marginTop: -740,
-    marginLeft: 160,
-    paddingBottom: 650
-    //marginBottom: -20,
+  userName: {
+    fontSize: 18,
+    fontFamily: 'SemiBold',
+    lineHeight: 25
   },
-  grayOverlay: {
+  userNo: {
+    fontSize: 14,
+    fontFamily: 'Regular'
+  },
+  button: {
+    //backgroundColor: 'green',
+    //justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10
+  },
+  innerButton: {
+    backgroundColor: '#FFFFFF',
+    //flexGrow: 1,
+    borderRadius: 40,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    height: hp('5%'),
+    //marginRight: '5%',
+    //marginLeft: '25%',
+    padding: 25,
+    paddingRight: 50,
+    paddingLeft: 50,
+    alignItems: 'center',
+    width: wp('75%'),
+    shadowColor: 'rgba(0,0,0, .25)',
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 2,
+    shadowRadius: 4,
+    elevation: 5,
+    borderRadius: 40
+  },
+  //Pop-up styling
+  popupBack: {
     flex: 1,
     backgroundColor: "#000000aa",
-},
-//Book Call Pop Up
-bookPopUpContainer: {
-    width: 305,
-    height: 300,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 54,
-    margin: 50,
-    marginTop: 200,
-    marginLeft: 60,
-    padding: 50
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
 
-},
-bookPopUpTitle: {
-    color: "#121212",
-    fontSize: 23,
-    fontFamily: 'SemiBold',
-    marginTop: 10,
-    alignSelf: "center"
-},
-bookPopUpText: {
-    color: "#121212",
-    fontSize: 20,
-    fontFamily: "Regular",
-    textAlign: "center",
-    marginTop: 30,
-    alignSelf: "center"
-},
-bookPopUpButtons: {
-    width: 100,
-    height: 33,
-    backgroundColor: "rgba(172,88,88,1)",
-    borderRadius: 28,
-    marginTop: 40,
-    marginLeft: 50,
-    alignItems: 'center'
-},
-bookPopUpButtonText: {
-    fontSize: 20,
-    fontFamily: "Regular",
-    color: "rgba(255,255,255,1)",
-    marginTop: 4
-}
-});
+  popup: {
+    borderRadius: 40,
+    height: '30%',
+    width: '75%',
+    padding: '5%',
+    backgroundColor: 'white'
+  },
+
+  popupText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: '2%'
+  },
+
+  popupInput: {
+    height: 30,
+    width: '90%',
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    marginVertical: '5%'
+  },
+
+  notify: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: "row",
+    marginTop: '20%',
+  },
+
+  popupButtons: {
+    height: '20%',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexDirection: "row",
+    marginTop: '4%'
+  },
+
+  popupRequest: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#58ACA8',
+    padding: 5,
+    paddingLeft: 30,
+    paddingRight: 30,
+    borderRadius: 40
+  },
+
+  popupCancel: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#AC5858',
+    width: '100%',
+    padding: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 40
+  },
+})

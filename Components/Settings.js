@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity, StatusBar } from 'react-native';
 import {
   TouchableRipple,
   Switch
@@ -45,7 +45,7 @@ const Settings = ({ navigation }) => {
 
 
       <View style={styles.container}>
-
+				<StatusBar backgroundColor='#32afa9' barStyle="light-content" />
 
         {/*Profile name and Avatar*/}
 

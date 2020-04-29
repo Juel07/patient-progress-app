@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,7 @@ export default function Nurse() {
 
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
             <View style={styles.topContainer}>
                 <View style={styles.nurseContainer}>
                     <Image
@@ -38,11 +39,11 @@ export default function Nurse() {
                                 <View style={styles.bookPopUpContainer}>
                                     <Text style={styles.bookPopUpTitle}>Book Time Slot</Text>
                                     <Text style={styles.bookPopUpText}>We are currently unable to book appointments.</Text>
-                                    <TouchableOpacity onPress={() => setModalOpen(false)}>
-                                        <View style={styles.bookPopUpButtons}>
+                                    <View style={styles.bookPopUpButtons}>
+                                        <TouchableOpacity onPress={() => setModalOpen(false)} style={styles.exit}>
                                             <Text style={styles.bookPopUpButtonText}>Exit</Text>
-                                        </View>
-                                    </TouchableOpacity>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </View>
                         </Modal>
@@ -51,7 +52,7 @@ export default function Nurse() {
                 <View style={styles.rectangle}>
                     <TouchableOpacity style={styles.inner} onPress={() => setModalTwoOpen(true)}>
                         <Text style={styles.bookingText}>
-                        Make an {"\n"}urgent call to the nurse</Text>
+                            Make an {"\n"}urgent call to the nurse</Text>
                         <FontAwesomeIcon icon={faPhoneSquareAlt} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
@@ -90,6 +91,8 @@ const styles = StyleSheet.create({
     },
     topContainer: {
         flex: 1,
+        width: '100%',
+        height: '100%'
     },
 
     bottomContainer: {
@@ -156,7 +159,6 @@ const styles = StyleSheet.create({
     nurseMaryPoppins: {
         color: "#121212",
         fontSize: 18,
-        //fontFamily: "montserrat-700",
         fontFamily: 'SemiBold',
         marginTop: 35,
         marginRight: 30,
@@ -165,7 +167,6 @@ const styles = StyleSheet.create({
     stGeorgesHospital: {
         color: "#121212",
         fontSize: 16,
-        //fontFamily: "montserrat-600",
         fontFamily: 'Medium',
         marginTop: 11,
         marginRight: 30,
@@ -174,7 +175,6 @@ const styles = StyleSheet.create({
     birmingham: {
         color: "#121212",
         fontSize: 16,
-        //fontFamily: "montserrat-regular",
         fontFamily: 'Regular',
         marginTop: 12,
         marginRight: 30,
@@ -204,84 +204,99 @@ const styles = StyleSheet.create({
     grayOverlay: {
         flex: 1,
         backgroundColor: "#000000aa",
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
 
     //Book Call Pop Up
     bookPopUpContainer: {
-        width: 305,
-        height: 300,
+        width: '70%',
+        height: '50%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
-        margin: 50,
-        marginTop: 200,
-        marginLeft: 60,
-        padding: 50
-
+        flex: 0.25,
+        justifyContent: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 10
     },
+
     bookPopUpTitle: {
         color: "#121212",
-        fontSize: 23,
+        fontSize: 18,
         fontFamily: 'SemiBold',
-        marginTop: 10,
-        alignSelf: "center"
+        textAlign: 'center',
+        flex: 1,
+        marginTop: 15
     },
     bookPopUpText: {
         color: "#121212",
-        fontSize: 20,
+        fontSize: 16,
         fontFamily: "Regular",
         textAlign: "center",
-        marginTop: 30,
-        alignSelf: "center"
+        flex: 1,
     },
+
     bookPopUpButtons: {
-        width: 100,
-        height: 33,
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    exit: {
         backgroundColor: "rgba(172,88,88,1)",
         borderRadius: 28,
-        marginTop: 40,
-        marginLeft: 50,
-        alignItems: 'center'
+        alignItems: 'center',
+        height: '60%',
+        width: '30%',
+        justifyContent: 'center',
     },
+
     bookPopUpButtonText: {
-        fontSize: 20,
-        fontFamily: "Regular",
+        fontSize: 18,
+        fontFamily: "Medium",
         color: "rgba(255,255,255,1)",
-        marginTop: 4
+        textAlign: "center",
     },
 
     //Urgent Call Pop Up
     urgentPopUpContainer: {
-        width: 305,
-        height: 350,
+        width: '75%',
+        height: '50%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
-        margin: 50,
-        marginTop: 200,
-        marginLeft: 60,
-        padding: 50
-
+        flex: 0.3,
+        justifyContent: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 20
     },
+
     urgentPopUpTitle: {
         color: "#121212",
-        fontSize: 23,
+        fontSize: 18,
         fontFamily: 'SemiBold',
-        marginTop: -10,
-        alignSelf: "center"
+        alignSelf: "center",
+        flex: 1,
+        marginTop: 15
     },
     urgentPopUpText: {
         color: "#121212",
-        fontSize: 20,
+        fontSize: 16,
         fontFamily: "Regular",
         textAlign: "center",
-        marginTop: 20,
-        alignSelf: "center"
+        alignSelf: "center",
+        flex: 2.3
     },
 
     yesNoContainer: {
+        height: '100%',
+        width: '100%',
         flexDirection: 'row',
-        marginLeft: -70,
-        marginTop: -20
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        flex: 1
     },
 
     noButton: {
@@ -289,25 +304,23 @@ const styles = StyleSheet.create({
         height: 33,
         backgroundColor: "rgba(172,88,88,1)",
         borderRadius: 28,
-        marginTop: 40,
-        marginLeft: 50,
         alignItems: 'center',
+        justifyContent: 'center',
+
     },
     yesButton: {
         width: 100,
         height: 33,
         backgroundColor: "rgba(88,172,168,1)",
         borderRadius: 28,
-        marginTop: 40,
-        marginLeft: 50,
         alignItems: 'center',
+        justifyContent: 'center',
     },
 
     urgentPopUpButtonText: {
-        fontSize: 20,
-        fontFamily: "Regular",
+        fontSize: 18,
+        fontFamily: "Medium",
         color: "rgba(255,255,255,1)",
-        marginTop: 4
     }
 
 

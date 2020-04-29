@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Image } from 'react-native';
 
 // importing fonts 
 import { useFonts } from '@use-expo/font';
@@ -7,7 +7,6 @@ import { AppLoading } from 'expo';
 
 // importing icons 
 import logo from '../assets/logo-about.png';
-import x from '../assets/close.png';
 
 
 export default function aboutPage() {
@@ -31,14 +30,8 @@ export default function aboutPage() {
 
 
             <View style={{ backgroundColor: '#32AFA9', height: '100%' }}>
+				<StatusBar backgroundColor='#32afa9' barStyle="light-content" />
 
-                {/* THIS IS THE UPPER MENU CODE */}
-                {/* <View style={styles.upperMenu}>
-  <View style={styles.lineFlex}>
-    <Image source={x}/>
-  </View>
-</View> */}
-                {/* THIS IS THE UPPER MENU CODE */}
 
                 <View style={styles.container}>
                     <Text style={{ fontFamily: 'Bold', fontSize: 25, color: 'white', marginBottom: 7 }}>Patient Progress</Text>
@@ -115,36 +108,3 @@ const styles = StyleSheet.create({
 
 
 });
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { View, Text, StyleSheet} from 'react-native';
-
-
-// const About = ({ navigation }) => {
-
-//     return (
-//         <View style={styles.container}>
-//             <Text >
-//                 This is About
-//             </Text>
-//         </View>
-//     )
-// }
-
-// export default About;
-
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       backgroundColor: '#FFFFFF',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//   });
