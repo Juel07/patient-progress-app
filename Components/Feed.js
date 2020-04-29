@@ -85,6 +85,7 @@ export default class BasicTimeLine extends Component {
         
         
         <View style={styles.add}>
+        {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
         <TouchableOpacity onPress={()=> alert('test')}>
             <Image source={add}/>
         </TouchableOpacity>
@@ -136,6 +137,7 @@ export default class BasicTimeLine extends Component {
         </View>
         <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES:         stable</Text>
         </View>
+        {/*THIS IS THE GREEN BUTTON ICON*/}
         <View style={styles.green}>
             <Image source={green}/>
         </View>
@@ -213,41 +215,11 @@ Button: {
     flex: 1,
     backgroundColor: "#000000aa",
 },
-//Book Call Pop Up
-bookPopUpContainer: {
-    width: 305,
-    height: 300,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 54,
-    margin: 50,
-    marginTop: 200,
-    marginLeft: 60,
-    padding: 50
-
-},
-bookPopUpTitle: {
-    color: "#121212",
-    fontSize: 23,
-    fontFamily: 'SemiBold',
-    marginTop: 10,
-    alignSelf: "center"
-},
-bookPopUpText: {
-    color: "#121212",
-    fontSize: 20,
-    fontFamily: "Regular",
-    textAlign: "center",
-    marginTop: 30,
-    alignSelf: "center"
-},
-bookPopUpButtons: {
-    width: 100,
-    height: 33,
-    backgroundColor: "rgba(172,88,88,1)",
-    borderRadius: 28,
-    marginTop: 40,
-    marginLeft: 50,
-    alignItems: 'center'
+popupBack: {
+  flex: 1,
+  backgroundColor: "#000000aa",
+  alignItems: 'center',
+  justifyContent: 'center'
 },
 bookPopUpButtonText: {
     fontSize: 20,
