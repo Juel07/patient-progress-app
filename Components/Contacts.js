@@ -3,6 +3,8 @@ import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInpu
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
@@ -186,8 +188,8 @@ const styles = StyleSheet.create({
 
   topContainer: {
     flex: 1,
-    //backgroundColor:'salmon',
-    paddingBottom:'15%'
+    backgroundColor:'salmon',
+    paddingBottom: hp('15%')
   },
 
   bottomContainer: {
