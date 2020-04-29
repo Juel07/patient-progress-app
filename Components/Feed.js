@@ -77,20 +77,18 @@ export default class BasicTimeLine extends Component {
     //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
     return (
-        <ScrollView style = {{width:'100%'}}>
+      <ScrollView style ={styles.wrapper}>
         <View style={styles.container}>
-        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
-            <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
+          <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
+          <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
+          </View>
+          <View style={styles.add}>
+          {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
+          <TouchableOpacity onPress={()=> alert('test')}>
+              <Image source={add}/>
+          </TouchableOpacity>
         </View>
-        
-        
-        <View style={styles.add}>
-        {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
-        <TouchableOpacity onPress={()=> alert('test')}>
-            <Image source={add}/>
-        </TouchableOpacity>
-        </View>
-{/* THIS IS THE POPUP CODE */}
+        {/* THIS IS THE POPUP CODE */}
         <View style={styles.Button}>
             <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=>{this.setModalVisible(!modalVisible);}}>
             <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
@@ -156,6 +154,15 @@ const styles = StyleSheet.create({
     paddingBottom: 190,
     paddingTop: 55,
     paddingHorizontal: 20,
+    width: '100%',
+    height: '100%'
+},
+wrapper:{
+  flex: 1,
+  padding: 30,
+  flexDirection: 'column',
+ //  justifyContent: 'flex-start',
+  backgroundColor: '#fff'
 },
   
 Button: {
@@ -202,7 +209,7 @@ Button: {
     width: 296,
     height: 120,
     marginBottom: 700,
-    backgroundColor: '#FFFFFF'  
+    //backgroundColor: '#FFFFFF'  
   },
   green: {
     paddingTop: 20,
