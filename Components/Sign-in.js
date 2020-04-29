@@ -7,7 +7,7 @@ import {
 	Platform,
 	StyleSheet,
 	Dimensions,
-	StatusBar
+	StatusBar, Image
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -172,10 +172,7 @@ const SignInScreen = ({ navigation }) => {
 							}]}>Sign Up</Text>
 						</TouchableOpacity>
 					</View>
-					<Animatable.Image
-						animation="zoomIn"
-						duraton="2000"
-						// delay="1000"
+					<Image
 						source={require('../assets/bigger-logo.png')}
 						style={styles.logo}
 						resizeMode="stretch"
@@ -213,7 +210,7 @@ const styles = StyleSheet.create({
 		alignSelf: 'center'
 	},
 	footer: {
-		flex: 4,
+		flex: 5,
 		backgroundColor: '#fff',
 		borderTopLeftRadius: 30,
 		borderTopRightRadius: 30,
@@ -226,7 +223,7 @@ const styles = StyleSheet.create({
 	},
 	text_footer: {
 		color: 'black',
-		fontSize: 18,
+		fontSize: 16,
 		fontFamily: 'Medium'
 	},
 	action: {
