@@ -1,10 +1,16 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
 import green from '../assets/green_circle.jpeg';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { YellowBox } from 'react-native';
+
+YellowBox.ignoreWarnings([
+  'VirtualizedLists should never be nested', // TODO: Remove when fixed
+])
 
 export default class BasicTimeLine extends Component {
   //pop-up
@@ -20,7 +26,7 @@ export default class BasicTimeLine extends Component {
     super();
     this.data = [
       {
-        time: '12:45',
+        time: '09:30',
         title: '08/07/2020',
         description:
           'Temperature of 38C.',
@@ -29,48 +35,47 @@ export default class BasicTimeLine extends Component {
         fontSize: 5,
       },
       {
-        time: '17:50',
-        title: '10/07/2020',
+        time: '12:30',
+        title: '08/07/2020',
         description:
           'Oxygen therapy administered.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '03:00',
-        title: '14/07/2020',
+        time: '15:30',
+        title: '08/07/2020',
         description:
-          'Normal blood pressure.',
+          'Regular blood pressure.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '09:00',
-        title: '18/07/2020',
+        time: '09:30',
+        title: '09/07/2020',
         description:
-          'Weight: 75 kg - no change.',
+          'Weight: 75 kg - no change from previously recorded weight.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '14:00',
-        title: '23/07/2020',
+        time: '12:30',
+        title: '09/07/2020',
         description:
-          'Normal glucose levels.',
+          'Regular glucose levels.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
       {
-        time: '13:00',
-        title: '26/07/2020',
+        time: '15:30',
+        title: '09/07/2020',
         description:
-          'Heart rate: 80 bpm - Normal heart rate.',
+          'Heart rate: 80 bpm - Regular heart rate.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
     ];
   }
-
   render() {
     const { modalVisible } = this.state;
     //const [modalOpen, setModalOpen] = useState(false);
@@ -78,177 +83,128 @@ export default class BasicTimeLine extends Component {
 
     return (
       <ScrollView style={styles.wrapper}>
-        <View style={styles.joint}>
-          <View style={styles.userInfo}>
-
-            <View style={styles.userContainer}>
-              <Text style={styles.userName}>Jane Doe</Text>
-              <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
-              <View style={{flexDirection:'row'}}>
-                <Text style={styles.userNo}>PROGRESS:  </Text>
-                <Image source={green} />
-                <Text style={styles.userNo}>  stable</Text>
-              </View>
+        <View style={styles.userInfo}>
+          {/*CODE FOR JANE DOE TEXT STARTS*/}
+          <View style={styles.userContainer}>
+            <Text style={styles.userName}>Jane Doe</Text>
+            <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.userNo}>PROGRESS:  </Text>
+              <Image source={green} />
+              <Text style={styles.userNo}>  stable</Text>
             </View>
-
-            <View style={styles.Jane}>
-              <Image source={Jane} />
-            </View>
-
           </View>
-        </View>
 
+          <View style={styles.Jane}>
+            <Image source={Jane} />
+          </View>
+
+        </View>
+        {/*CODE FOR JANE ENDS*/}
+
+        {/*CODE FOR FEED STARTS*/}
         <View style={styles.container}>
-          <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 18 }} />
         </View>
-        <View style={styles.add}>
-          {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
-          <TouchableOpacity onPress={() => alert('test')}>
-            <Image source={add} />
+        {/*CODE FOR FEED ENDS*/}
+
+        {/*CODE FOR BUTTON STARTS*/}
+        <View style={styles.button}>
+          <TouchableOpacity style={styles.innerButton} onPress={()=> {this.setModalVisible(!modalVisible);}}>
+            <Text style={{ fontFamily: 'Bold', fontSize: 16 }}>Request an Update</Text>
+            <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
           </TouchableOpacity>
         </View>
-        {/* THIS IS THE POPUP CODE */}
-        <View style={styles.Button}>
-          <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={() => { this.setModalVisible(!modalVisible); }}>
-            <Text style={{ fontSize: 16, fontFamily: 'Bold', color: '#000000' }}>Request an update</Text>
+        {/*CODE FOR BUTTON ENDS*/}
 
-            <Modal transparent={true} visible={modalVisible} animationType='fade'>
-              <View style={styles.popupBack}>
-                <View style={styles.popup}>
+        {/*CODE FOR POP UP STARTS*/}
+        <Modal transparent={true} visible={modalVisible} animationType='fade'>
+          <View style={styles.popupBack}>
+            <View style={styles.popup}>
 
-                  <View style={styles.popupText}>
-                    <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>Request an Update</Text>
-                  </View>
-
-                  <View style={styles.popupText}>
-                    <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>Additional notes (optional):</Text>
-                    <TextInput style={styles.popupInput} maxLength={250}></TextInput>
-                  </View>
-
-                  <View style={styles.popupButtons}>
-                    <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
-                      <View style={styles.popupRequest}>
-                        <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Request</Text>
-                      </View>
-                    </TouchableOpacity>
-
-
-                    <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
-                      <View style={styles.popupCancel}>
-                        <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-
-                </View>
+              <View style={styles.popupText}>
+                <Text style={{ fontFamily: 'Bold', fontSize: 23, textAlign: 'justify'}}>Request an Update</Text>
               </View>
-            </Modal>
+
+              <View style={styles.popupText}>
+                <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>Additional notes (optional):</Text>
+                <TextInput style={styles.popupInput} maxLength={250}></TextInput>
+              </View>
+
+              <View style={styles.popupButtons}>
+                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
+                  <View style={styles.popupRequest}>
+                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Request</Text>
+                  </View>
+                </TouchableOpacity>
 
 
-          </TouchableOpacity>
-        </View>
-        {/* THIS IS THE POPUP CODE*/}
-
-        {/*THIS IS THE GREEN BUTTON ICON*/}
+                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
+                  <View style={styles.popupCancel}>
+                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
-    );
+    )
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#FFFFFF',
-    marginBottom: 160,
-    //marginTop: 75,
-    paddingBottom: 190,
-    //paddingTop: 55,
-    //paddingHorizontal: 20,
-    //width: '100%',
-    //height: '100%'
-
-  
   },
   wrapper: {
     flex: 1,
-    //padding: 30,
     flexDirection: 'column',
-    //  justifyContent: 'flex-start',
     backgroundColor: '#fff',
     width: '100%'
   },
-
-  Button: {
-    marginTop: -35,
-    marginBottom: 5,
+  userInfo: {
+    alignItems: 'center',
+    flexGrow: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  userContainer: {
+    flexWrap: 'wrap',
+    marginLeft: '5%',
+    flexDirection: 'column',
+    alignItems: 'flex-end'
+  },
+  userName: {
+    fontSize: 18,
+    fontFamily: 'SemiBold',
+    lineHeight: 25
+  },
+  userNo: {
+    fontSize: 14,
+    fontFamily: 'Regular'
+  },
+  button: {
+    alignItems: 'center',
+    padding: 10
+  },
+  innerButton: {
     backgroundColor: '#FFFFFF',
     borderRadius: 40,
-    paddingVertical: 10,
-    paddingHorizontal: 70,
-    marginLeft: 70,
-    marginRight: 40,
-    //borderColor: 'black',
-    borderWidth: 0.3,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-    elevation: 0,
-
-  },
-  add: {
-    marginTop: -320,
-    marginLeft: 320,
-    flex: 1,
-    //position: 'absolute',
-    zIndex: 1
-    //zIndex: 999
-    //marginBottom: 5,
-    //marginLeft: 70,
-  },
-  Jane: {
-    //paddingTop:30,
-    //marginTop: -750,
-    //marginBottom: 700,
-    //alignSelf: 'flex-end',
-    //marginRight:40,
-  },
-  infoBox: {
-    //paddingTop: -20,
-    //marginTop: -870,
-    //marginLeft: -15,
-    //width: 296,
-    //height: 120,
-    //marginBottom: 700,
-    //backgroundColor: '#FFFFFF'  
-  },
-  green: {
-    //paddingTop: 20,
-    //marginTop: -760,
-    //marginLeft: 145,
-    //paddingBottom: 650
-    //marginBottom: -20,
-  },
-  grayOverlay: {
-    flex: 1,
-    backgroundColor: "#000000aa",
-  },
-  popupBack: {
-    flex: 1,
-    backgroundColor: "#000000aa",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    height: hp('5%'),
+    padding: 25,
+    paddingRight: 50,
+    paddingLeft: 50,
     alignItems: 'center',
-    justifyContent: 'center'
-  },
-  bookPopUpButtonText: {
-    fontSize: 20,
-    fontFamily: "Regular",
-    color: "rgba(255,255,255,1)",
-    marginTop: 4
+    width: wp('75%'),
+    shadowColor: 'rgba(0,0,0, .25)',
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 2,
+    shadowRadius: 4,
+    elevation: 5,
+    borderRadius: 40
   },
   //Pop-up styling
   popupBack: {
@@ -297,7 +253,6 @@ const styles = StyleSheet.create({
     marginTop: '4%'
   },
 
-
   popupRequest: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -318,35 +273,4 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     borderRadius: 40
   },
-  joint: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    //marginBottom: -70
-  },
-  userInfo: {
-    alignItems: 'center',
-    //justifyContent: 'space-between',
-    //backgroundColor:'salmon',
-    flexGrow:1,
-    //paddingBottom:'7.5%',
-    //paddingRight:'3%',
-   // marginRight:'10%'
-   flexDirection:'row',
-   justifyContent:'space-around'
-  },
-  userContainer: {
-    flexWrap: 'wrap',
-    marginLeft: '5%',
-    flexDirection:'column',
-    alignItems:'flex-end'
-  },
-  userName: {
-    fontSize: 18,
-    fontFamily: 'SemiBold',
-    lineHeight: 25
-  },
-  userNo: {
-    fontSize: 14,
-    fontFamily: 'Regular'
-  },
-});
+})
