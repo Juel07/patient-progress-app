@@ -25,6 +25,15 @@ export default function Faq() {
   const [secondAnswer, setSecondAnswer] = useState('');
   const handleSecondAnswer = () => setSecondAnswer('The recovery can last from one to two weeks and varies from individual to individual.');
 
+  const [thirdAnswer, setThirdAnswer] = useState('');
+  const handleThirdAnswer = () => setThirdAnswer('The treatment will depend on the condition of the individual. At present time, there is no specific medication for treating COVID-19. Usually, the treatment involves receiving supplemental oxygen and oral antibiotics.');
+
+  const [fourthAnswer, setFourthAnswer] = useState('');
+  const handleFourthAnswer = () => setFourthAnswer('According to the latest information it seems like pregnant and non-pregnant adults have the same risk of being infected with COVID-19.');
+
+  const [fifthAnswer, setFifthAnswer] = useState('');
+  const handleFifthAnswer = () => setFifthAnswer('Mother-to-child transmission is unlikely, however after your loved one gives a birth, the newborn is susceptible to person-to-person spread.');
+
   // check if fonts are loaded
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -68,13 +77,13 @@ export default function Faq() {
 
 
         <View style={styles.container}>
-          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
-          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          <Text style={styles.bodyTxtBold}>3. How will my family member be treated? </Text>
+          <View><Text style={styles.bodyTxt}>{thirdAnswer}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleThirdAnswer}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -85,13 +94,13 @@ export default function Faq() {
 
 
         <View style={styles.container}>
-          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
-          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          <Text style={styles.bodyTxtBold}>4. Do pregnant individuals have higher chances of getting sick from COVID-19?</Text>
+          <View><Text style={styles.bodyTxt}>{fourthAnswer}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleFourthAnswer}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -102,13 +111,13 @@ export default function Faq() {
 
 
         <View style={styles.container}>
-          <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
-          <View><Text style={styles.bodyTxt}>{secondAnswer}</Text></View>
+          <Text style={styles.bodyTxtBold}>5. Is mother-to-child transmission possible? </Text>
+          <View><Text style={styles.bodyTxt}>{fifthAnswer}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={handleSecondAnswer}>
+          <TouchableHighlight underlayColor='#fff' onPress={handleFifthAnswer}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
