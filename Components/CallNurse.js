@@ -219,7 +219,8 @@ const styles = StyleSheet.create({
         margin: 50,
         marginTop: 200,
         marginLeft: 60,
-        padding: 50
+        padding: 50,
+        flex: 0.5
 
     },
     bookPopUpTitle: {
@@ -265,7 +266,8 @@ const styles = StyleSheet.create({
         margin: 50,
         marginTop: 200,
         marginLeft: 60,
-        padding: 50
+        padding: 50,
+        flex: 0.7
 
     },
     urgentPopUpTitle: {
