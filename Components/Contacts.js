@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar, KeyboardAvoidingView } from "react-native";
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
 
@@ -37,7 +37,8 @@ const Contacts = ({ navigation }) => {
 
 
     return (
-      <View style={styles.container}>
+      <View style={styles.container}
+      >
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.topContainer}>
 
@@ -64,7 +65,7 @@ const Contacts = ({ navigation }) => {
           {/* THIS IS THE USER INFO */}
 
           {/* THIS IS THE BUTTON */}
-          <View style={{ padding: '2%', marginTop: '2%' }}>
+          <View style={{ padding: '2%', marginTop: '2%' }} >
             <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
               <View style={styles.buttonTitle}>
                 <Text style={styles.buttonText}>My relatives/friends</Text>
@@ -74,13 +75,13 @@ const Contacts = ({ navigation }) => {
                 <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
               </View>
 
-
+{/* Pop-up */}
               <Modal transparent={true} visible={modalOpen} animationType='fade'>
                 <View style={styles.popupBack}>
                   <View style={styles.popup}>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: 'Bold', fontSize: 20 }}>New Patient</Text>
+                      <Text style={{ fontFamily: 'SemiBold', fontSize: 20 }}>New Patient</Text>
                     </View>
 
                     <View style={styles.popupText}>
@@ -338,13 +339,14 @@ const styles = StyleSheet.create({
     height: '50%',
     width: '75%',
     padding: '5%',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
 
   popupText: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: '2%'
+    marginVertical: '2%',
+    flex: 1
   },
 
   popupInput: {
@@ -353,7 +355,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 5,
-    marginVertical: '5%'
+    marginVertical: '5%',
   },
 
   notify: {
@@ -361,14 +363,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: "row",
-    marginTop: '20%'
   },
 
   popupButtons: {
-    height: '20%',
     alignItems: 'center',
     justifyContent: 'space-around',
-    flexDirection: "row"
+    flexDirection: "row",
+    flex: 1
   },
 
 
@@ -376,9 +377,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#58ACA8',
-    padding: 5,
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
     borderRadius: 40
   },
 
@@ -387,9 +387,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#AC5858',
     width: '100%',
-    padding: 5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
     borderRadius: 40
   },
 
