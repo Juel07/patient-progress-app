@@ -1,8 +1,7 @@
 /*React Native TimeLine ListView / Flatlist*/
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
-import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
 import green from '../assets/green_circle.jpeg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -43,10 +42,10 @@ export default class BasicTimeLine extends Component {
         lineColor: '#58ACA8'
       },
       {
-        time: '15:30',
+        time: '17:30',
         title: '08/07/2020',
         description:
-          'Regular blood pressure.',
+          'Breathing returned to normal',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -62,7 +61,7 @@ export default class BasicTimeLine extends Component {
         time: '12:30',
         title: '09/07/2020',
         description:
-          'Regular glucose levels.',
+          'Normal glucose levels and normal blood pressure.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -104,7 +103,7 @@ export default class BasicTimeLine extends Component {
 
         {/*CODE FOR FEED STARTS*/}
         <View style={styles.container}>
-          <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 18 }} />
+          <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
         {/*CODE FOR FEED ENDS*/}
 
@@ -123,11 +122,11 @@ export default class BasicTimeLine extends Component {
             <View style={styles.popup}>
 
               <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Bold', fontSize: 23, textAlign: 'justify'}}>Request an Update</Text>
+                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify'}}>Request an Update</Text>
               </View>
 
               <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>Additional notes (optional):</Text>
+                <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Additional notes (optional):</Text>
                 <TextInput style={styles.popupInput} maxLength={250}></TextInput>
               </View>
 
