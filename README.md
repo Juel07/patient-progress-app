@@ -10,7 +10,7 @@ $ npm install -g expo-cli
 ## To view this project 
 * Install the Expo app from App Store or Google Play Store on your mobile device
 * Scan the following QR code
-<img src="https://img.techpowerup.org/200429/screenshot-2020-04-29-at-19-19-22.png" width="100" height="100">
+<img src="https://img.techpowerup.org/200429/screenshot-2020-04-29-at-19-19-22.png" width="200" height="200">
 
 ## To run this project, install it locally using Expo
 ```
