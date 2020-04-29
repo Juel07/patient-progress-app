@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -49,6 +49,18 @@ const MainTabScreen = () => (
 );
 
 export default MainTabScreen;
+
+const config = {
+    animation: 'spring',
+    config: {
+        stiffness: 1000,
+        damping: 50,
+        mass: 3,
+        overshootClamping: false,
+        restDisplacementThreshold: 0.01,
+        restSpeedThreshold: 0.01,
+    },
+};
 
 const BottomTabScreen = () => (
     <Tab.Navigator
@@ -116,20 +128,29 @@ const BottomTabScreen = () => (
 const ContactsScreen = () => (
 
     <ContactStack.Navigator
-        headerTitleStyle={{}}
+    screenOptions={{
+        gestureEnabled: true, gestureDirection: 'horizontal',
+        transitionSpec: { open: config, close: config },
+        cardStyleInterpolator: 
+        CardStyleInterpolators.forHorizontalIOS
+    }}
     >
         <ContactStack.Screen name="Contacts" component={Contacts} options={({ navigation }) => {
             return {
-                headerTitle: () => <Header title='Contacts' navigation={navigation} />, headerTitleAlign: 'center'
+                headerTitle: () => <Header title='Contacts' navigation={navigation} />, 
+                headerTitleAlign: 'center',  
+                headerStyle: {height:55}
             }
         }} />
         <ContactStack.Screen name="Feed" component={Feed}
-            // options={({ navigation }) => {
-            //     return {
-            //         headerBackTitle: () => <HeaderBack title='Feed' navigation={navigation} />, headerTitleAlign: 'center', headerBackTitleVisible: false
-            //     }
-            // }} 
-            options={{ headerTitleAlign: 'center' }}
+            options={({ navigation }) => {
+                return {
+                    headerTitle: () => <HeaderBack title='Feed' navigation={navigation} />, 
+                    headerTitleAlign: 'center', 
+                    headerBackTitleVisible: false,
+                    headerStyle: {height:55}
+                }
+            }}
         />
     </ContactStack.Navigator>
 
@@ -175,15 +196,28 @@ const NurseScreen = () => (
 );
 
 const SettingScreen = () => (
-    <SettingStack.Navigator >
+    <SettingStack.Navigator 
+        screenOptions={{
+            gestureEnabled: true, gestureDirection: 'horizontal',
+            transitionSpec: { open: config, close: config },
+            cardStyleInterpolator: 
+            CardStyleInterpolators.forHorizontalIOS
+        }}>
         <SettingStack.Screen name="Settings" component={Settings} options={({ navigation }) => {
             return {
-                headerTitle: () => <Header title='Settings' navigation={navigation} />, headerTitleAlign: 'center',
+                headerTitle: () => <Header title='Settings' navigation={navigation} />,
+                headerTitleAlign: 'center', 
+                headerStyle: {height:55}
             }
         }}
         />
-        <SettingStack.Screen name="About" component={About} options={{
-            headerTitleAlign: 'center'
+        <SettingStack.Screen name="About" component={About} options={({ navigation }) => {
+            return {
+                headerTitle: () => <HeaderBack title='About' navigation={navigation} />, 
+                headerTitleAlign: 'center', 
+                headerBackTitleVisible: false, 
+                headerStyle: {height:55}
+            }
         }} />
     </SettingStack.Navigator>
 );
@@ -214,10 +248,4 @@ const AboutScreen = () => (
     </AboutStack.Navigator>
 );
 
-const styles = StyleSheet.create({
-    menuIcon: {
-        paddingLeft: 20,
-    },
-
-})
 

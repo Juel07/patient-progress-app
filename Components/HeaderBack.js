@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Feather'
 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 export default function HeaderBack({ title, navigation }) {
 
-  const goBack = () => {
-    navigation.navigate({});
-  }
+  // const goBack = () => {
+  //   navigation.navigate({});
+  // }
 
   let [fontsLoaded] = useFonts({
     'Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
@@ -23,7 +23,7 @@ export default function HeaderBack({ title, navigation }) {
     return (
 
       <View style={styles.header}>
-        <Ionicons name='ios-arrow-back' onPress={goBack} size={35} style={styles.icon} />
+        <Icon name='arrow-left' onPress={() => navigation.goBack()} size={23} style={styles.icon} />
         <View>
           <Text style={styles.headerText}>{title}</Text>
         </View>
@@ -36,16 +36,10 @@ export default function HeaderBack({ title, navigation }) {
 const styles = StyleSheet.create({
   header: {
     flex: 1,
-    width: Dimensions.get('window').width,
-    height: '100%',
+    width: Dimensions.get('screen').width,
+    elevation: 0,
+    height: 55,
     flexDirection: 'row',
-    // shadowColor: 'grey',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 4
-    // },
-    // shadowOpacity: 50,
-    // shadowRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -56,6 +50,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    left: 16,
+    left: 15,
+    // padding: 10,
+    backgroundColor: '#fff'
   }
 });
