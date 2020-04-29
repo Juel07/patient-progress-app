@@ -24,7 +24,7 @@ const Contacts = ({ navigation }) => {
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalTwoOpen, setModalTwoOpen] = useState(false);
+  //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
   // fonts load
   let [fontsLoaded] = useFonts({

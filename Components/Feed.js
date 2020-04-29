@@ -1,6 +1,6 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal, Alert, TouchableHighlight} from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
@@ -65,29 +65,32 @@ export default class BasicTimeLine extends Component {
 
   render() {
 
-    //const [modalOpen, setModalOpen] = useState(false);
-    //const [modalTwoOpen, setModalTwoOpen] = useState(false);
-
     return (
         <ScrollView style = {{width:'100%'}}>
         <View style={styles.container}>
             <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
         </View>
         <View style={styles.add}>
+        {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
         <TouchableOpacity onPress={()=> alert('test')}>
             <Image source={add}/>
         </TouchableOpacity>
         </View>
+        {/*ThIS IS THW WHITE WITH TEXT BUTTON*/}
         <View style={styles.Button}>
             <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> alert('test')}>
             <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
             </TouchableOpacity>
         </View>
+        {/*TESTING MODAL STUFF*/}
+
+        {/*THIS IS THE JANE ICON*/}
         <View style={styles.Jane}>
             <Image source={Jane}/>
         </View>
         <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES:         stable</Text>
         </View>
+        {/*THIS IS THE GREEN BUTTON ICON*/}
         <View style={styles.green}>
             <Image source={green}/>
         </View>
@@ -165,46 +168,17 @@ Button: {
     flex: 1,
     backgroundColor: "#000000aa",
 },
-//Book Call Pop Up
-bookPopUpContainer: {
-    width: 305,
-    height: 300,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 54,
-    margin: 50,
-    marginTop: 200,
-    marginLeft: 60,
-    padding: 50
-
+popupBack: {
+  flex: 1,
+  backgroundColor: "#000000aa",
+  alignItems: 'center',
+  justifyContent: 'center'
 },
-bookPopUpTitle: {
-    color: "#121212",
-    fontSize: 23,
-    fontFamily: 'SemiBold',
-    marginTop: 10,
-    alignSelf: "center"
-},
-bookPopUpText: {
-    color: "#121212",
-    fontSize: 20,
-    fontFamily: "Regular",
-    textAlign: "center",
-    marginTop: 30,
-    alignSelf: "center"
-},
-bookPopUpButtons: {
-    width: 100,
-    height: 33,
-    backgroundColor: "rgba(172,88,88,1)",
-    borderRadius: 28,
-    marginTop: 40,
-    marginLeft: 50,
-    alignItems: 'center'
-},
-bookPopUpButtonText: {
-    fontSize: 20,
-    fontFamily: "Regular",
-    color: "rgba(255,255,255,1)",
-    marginTop: 4
+popup: {
+  borderRadius: 40,
+  height: '50%',
+  width: '75%',
+  padding: '5%',
+  backgroundColor: 'white'
 }
 });
