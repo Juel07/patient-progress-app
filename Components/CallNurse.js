@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
         height: '50%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
-        flex: 0.3,
+        flex: 0.35,
         justifyContent: 'center',
         paddingVertical: 20,
         paddingHorizontal: 20
@@ -316,7 +316,8 @@ const styles = StyleSheet.create({
         fontFamily: "Regular",
         textAlign: "center",
         alignSelf: "center",
-        flex: 2.3
+        flex: 2.3,
+        paddingHorizontal: 5,
     },
 
     yesNoContainer: {
