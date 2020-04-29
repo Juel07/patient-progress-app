@@ -1,12 +1,24 @@
 /*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
+<<<<<<< HEAD
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image, Modal, Alert, TouchableHighlight} from 'react-native';
+=======
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar} from 'react-native';
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 import Timeline from 'react-native-timeline-flatlist';
 import add from '../assets/add.png';
 import Jane from '../assets/Jane.png';
 import green from '../assets/green_circle.jpeg';
 
 export default class BasicTimeLine extends Component {
+  //pop-up
+  state = {
+    modalVisible: false
+  };
+
+  setModalVisible = (visible) => {
+    this.setState({ modalVisible: visible });
+  }
 
   constructor() {
     super();
@@ -64,27 +76,80 @@ export default class BasicTimeLine extends Component {
   }
 
   render() {
+<<<<<<< HEAD
+=======
+    const { modalVisible } = this.state;
+    //const [modalOpen, setModalOpen] = useState(false);
+    //const [modalTwoOpen, setModalTwoOpen] = useState(false);
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 
     return (
         <ScrollView style = {{width:'100%'}}>
         <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
             <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
         </View>
+        
+        
         <View style={styles.add}>
         {/*THIS IS THE BLUE PLUS SIGN ON BUTTON*/}
         <TouchableOpacity onPress={()=> alert('test')}>
             <Image source={add}/>
         </TouchableOpacity>
         </View>
+<<<<<<< HEAD
         {/*ThIS IS THW WHITE WITH TEXT BUTTON*/}
+=======
+{/* THIS IS THE POPUP CODE */}
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
         <View style={styles.Button}>
-            <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> alert('test')}>
+            <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=>{this.setModalVisible(!modalVisible);}}>
             <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
+            
+            <Modal transparent={true} visible={modalVisible} animationType='fade'>
+                <View style={styles.popupBack}>
+                  <View style={styles.popup}>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>Request an Update</Text>
+                    </View>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>Additional notes (optional):</Text>
+                      <TextInput style={styles.popupInput}  maxLength={250}></TextInput>
+                    </View>
+
+                    <View style={styles.popupButtons}>
+                      <TouchableOpacity onPress={() => {this.setModalVisible(false);}}>
+                        <View style={styles.popupRequest}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Request</Text>
+                        </View>
+                      </TouchableOpacity>
+
+
+                      <TouchableOpacity onPress={() => {this.setModalVisible(false);}}>
+                        <View style={styles.popupCancel}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+
+                  </View>
+                </View>
+              </Modal>
+
+           
             </TouchableOpacity>
+<<<<<<< HEAD
         </View>
         {/*TESTING MODAL STUFF*/}
 
         {/*THIS IS THE JANE ICON*/}
+=======
+        </View>     
+{/* THIS IS THE POPUP CODE*/}
+
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
         <View style={styles.Jane}>
             <Image source={Jane}/>
         </View>
@@ -174,6 +239,7 @@ popupBack: {
   alignItems: 'center',
   justifyContent: 'center'
 },
+<<<<<<< HEAD
 popup: {
   borderRadius: 40,
   height: '50%',
@@ -181,4 +247,80 @@ popup: {
   padding: '5%',
   backgroundColor: 'white'
 }
+=======
+bookPopUpButtonText: {
+    fontSize: 20,
+    fontFamily: "Regular",
+    color: "rgba(255,255,255,1)",
+    marginTop: 4
+}, 
+//Pop-up styling
+popupBack: {
+  flex: 1,
+  backgroundColor: "#000000aa",
+  alignItems: 'center',
+  justifyContent: 'center'
+},
+
+popup: {
+  borderRadius: 40,
+  height: '30%',
+  width: '75%',
+  padding: '5%',
+  backgroundColor: 'white'
+},
+
+popupText: {
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginVertical: '2%'
+},
+
+popupInput: {
+  height: 30,
+  width: '90%',
+  borderWidth: 1,
+  borderColor: 'gray',
+  borderRadius: 5,
+  marginVertical: '5%'
+},
+
+notify: {
+  flexGrow: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: "row",
+  marginTop: '20%', 
+},
+
+popupButtons: {
+  height: '20%',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  flexDirection: "row",
+  marginTop:'4%'
+},
+
+
+popupRequest: {
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#58ACA8',
+  padding: 5,
+  paddingLeft: 30,
+  paddingRight: 30,
+  borderRadius: 40
+},
+
+popupCancel: {
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#AC5858',
+  width: '100%',
+  padding: 5,
+  paddingLeft: 20,
+  paddingRight: 20,
+  borderRadius: 40
+}, 
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 });

@@ -25,6 +25,7 @@ export default function OnBoardingThree({ navigation }) {
     return (
 
       <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Seek help</Text>
         <Text style={styles.textBox}>Your health matters as well and we offer you a full support with mental health tips.</Text>
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
 
   btn: {
     marginTop: 20,
- 
+
   }
 
 

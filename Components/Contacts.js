@@ -1,30 +1,29 @@
-
-// const Contacts  = ({ navigation }) => {
-//     return (
-//       <View style={styles.container}><Text>Contacts</Text>
-//       <Button
-//         title="Go to Feed"
-// onPress={() => navigation.navigate('Feed')}
-//       />
-//       </View>
-//     );
-// };
-
-
 import React, { Component, useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, Image, CheckBox, Modal, TextInput, } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar } from "react-native";
 import { Avatar } from 'react-native-paper';
-
-import Feed from './Feed';
+import { TouchableRipple, Switch } from 'react-native-paper';
 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 const Contacts = ({ navigation }) => {
+  //toggle switch 
+  const [isRest, setIsRest] = useState(false);
+  const toggleRest = () => setIsRest(previousState => !previousState);
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
+<<<<<<< HEAD
   //const [modalTwoOpen, setModalTwoOpen] = useState(false);
+=======
+
+  const functionAdd = () =>
+    Alert.alert(
+      'Request Sent',
+      'Your request has been sent for authorisation',
+    );
+
+>>>>>>> d1dd4772021f5d498611314d164a34d3e5da0b74
 
   // fonts load
   let [fontsLoaded] = useFonts({
@@ -41,6 +40,7 @@ const Contacts = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.topContainer}>
 
           {/* THIS IS THE USER INFO */}
@@ -66,7 +66,7 @@ const Contacts = ({ navigation }) => {
           {/* THIS IS THE USER INFO */}
 
           {/* THIS IS THE BUTTON */}
-          <View style={{ padding: '2%' }}>
+          <View style={{ padding: '2%', marginTop: '2%' }}>
             <TouchableOpacity style={styles.button} onPress={() => setModalOpen(true)}>
               <View style={styles.buttonTitle}>
                 <Text style={styles.buttonText}>My relatives/friends</Text>
@@ -82,21 +82,30 @@ const Contacts = ({ navigation }) => {
                   <View style={styles.popup}>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: 'Bold', fontSize: 23 }}>New Patient</Text>
+                      <Text style={{ fontFamily: 'Bold', fontSize: 20 }}>New Patient</Text>
                     </View>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: 'Regular', fontSize: 18 }}>NHS Number:</Text>
-                      <TextInput style={styles.popupInput} minLength={10} maxLength={10}></TextInput>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>NHS Number:</Text>
+                      <TextInput style={styles.popupInput} minLength={10} maxLength={10} keyboardType='numeric'></TextInput>
                     </View>
 
                     <View style={styles.notify}>
-                      <Text style={{ fontFamily: 'Regular', fontSize: 15 }}>Notify me if my relative{"\n"}           passes away</Text>
-                      <CheckBox />
+                      <Text style={{ fontFamily: 'Regular', fontSize: 14 }}>Notify me if my relative{"\n"}           passes away</Text>
+                      <TouchableRipple onPress={() => { toggleRest() }}>
+                        <View pointerEvents='none' style={{ marginLeft: '1%' }}>
+                          <Switch
+                            style={styles.switch}
+                            value={isRest}
+                            trackColor={{ false: "#767577", true: "#58ACA8" }}
+                            thumbColor={isRest ? "#32afa9" : "#393b3a"}
+                          />
+                        </View>
+                      </TouchableRipple>
                     </View>
 
                     <View style={styles.popupButtons}>
-                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                      <TouchableOpacity onPress={() => { setModalOpen(false); functionAdd() }}>
                         <View style={styles.popupAdd}>
                           <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
                         </View>
@@ -134,10 +143,10 @@ const Contacts = ({ navigation }) => {
                   <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
                 </View>
                 <View style={styles.update}>
-                  <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}14th June</Text>
-                  <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}10:20</Text>
+                  <Text style={styles.relativeUpdate}>Last updated:</Text>
+                  <Text style={styles.date_time}>{" "}Jul 26</Text>
+                  <Text style={styles.relativeUpdate}>{" "}@</Text>
+                  <Text style={styles.date_time}>{" "}13:00</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -154,10 +163,10 @@ const Contacts = ({ navigation }) => {
                   <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
                 </View>
                 <View style={styles.update}>
-                  <Text style={styles.relativeUpdate}>Last updated on</Text>
-                  <Text style={styles.date_time}>{" "}19th June</Text>
+                  <Text style={styles.relativeUpdate}>Last updated:</Text>
+                  <Text style={styles.date_time}>{" "}25th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}12:45</Text>
+                  <Text style={styles.date_time}>{" "}21:45</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -261,7 +270,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 20,
     justifyContent: 'flex-end',
-    paddingBottom: '0.5%'
+    paddingBottom: '1%'
   },
   userImage: {
     width: 150,
@@ -277,17 +286,18 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontFamily: 'Bold'
+    fontFamily: 'SemiBold',
+    lineHeight: 25
   },
   userNo: {
     fontSize: 16,
     fontFamily: 'Regular'
   },
   button: {
-    marginRight: '15%',
-    marginLeft: '15%',
+    marginRight: '5%',
+    marginLeft: '25%',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     flexDirection: 'row',
     backgroundColor: 'white',
     padding: 10,
@@ -299,13 +309,13 @@ const styles = StyleSheet.create({
     borderRadius: 40
   },
   buttonTitle: {
-    justifyContent: 'center',
     flexWrap: 'wrap',
     marginHorizontal: 10
   },
   buttonText: {
-    fontSize: 18,
-    fontFamily: 'Bold'
+    fontSize: 16,
+    fontFamily: 'SemiBold',
+    textAlign: 'justify'
   },
   buttonImage: {
     width: 35,

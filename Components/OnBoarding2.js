@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import logo from '../assets/logo.png';
 
 // importing fonts 
@@ -26,6 +26,7 @@ export default function OnBoardingTwo({ navigation }) {
     return (
 
       <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Track progress</Text>
         <Text style={styles.textBox}>You can add your loved ones and see how they are doing in real time. If there's something urgent, we will send you a notification.</Text>

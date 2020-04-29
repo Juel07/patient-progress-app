@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import logo from '../assets/logo.png';
 
 // importing fonts 
@@ -26,6 +26,7 @@ export default function OnBoardingOne({ navigation }) {
     return (
 
       <View style={styles.container}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Welcome</Text>
         <Text style={styles.textBox}>We know now is a difficult time and the healthcare staff is busy. With Patient Progress you can keep track on how your relatives are doing.</Text>

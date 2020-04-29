@@ -36,23 +36,19 @@ export default function Header({ title, navigation }) {
 const styles = StyleSheet.create({
   header: {
     flex: 1,
-    width: Dimensions.get('window').width,
-    height: '100%',
+    width: Dimensions.get('screen').width,
+    // height: '100%',
     flexDirection: 'row',
-    // shadowColor: 'grey',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 4
-    // },
-    // shadowOpacity: 50,
-    // shadowRadius: 4,
     alignItems: 'center',
+    // justifyContent: 'flex-end',
     justifyContent: 'center',
+    height: 55,
   },
   headerText: {
     fontFamily: 'SemiBold',
     fontSize: 20,
     color: 'black',
+    // right: 20
   },
   icon: {
     position: 'absolute',
