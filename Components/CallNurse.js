@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         paddingHorizontal: 30,
         flex: 4,
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
     },
     nurseAvatar: {
         width: 150,
@@ -190,6 +190,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 30,
         justifyContent: 'center',
+        paddingTop: 10
     },
 
     rect: {
@@ -200,7 +201,10 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 10,
         borderColor: '#58ACA8',
-        borderWidth: 2
+        borderWidth: 2,
+        marginTop: 15,
+        marginBottom: -10
+
     },
 
     supportText: {
@@ -208,7 +212,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'Regular',
         color: '#6D6A6A',
-        padding: 10
+        padding: 5
     },
 
     supportClick: {
