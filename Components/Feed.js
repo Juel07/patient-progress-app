@@ -80,6 +80,7 @@ export default class BasicTimeLine extends Component {
 
     return (
       <ScrollView style={styles.wrapper}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.userInfo}>
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>
@@ -107,7 +108,7 @@ export default class BasicTimeLine extends Component {
 
         {/*CODE FOR BUTTON STARTS*/}
         <View style={styles.button}>
-          <TouchableOpacity style={styles.innerButton} onPress={()=> {this.setModalVisible(!modalVisible);}}>
+          <TouchableOpacity style={styles.innerButton} onPress={() => { this.setModalVisible(!modalVisible); }}>
             <Text style={{ fontFamily: 'Bold', fontSize: 16 }}>Request an Update</Text>
             <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
           </TouchableOpacity>
@@ -120,7 +121,7 @@ export default class BasicTimeLine extends Component {
             <View style={styles.popup}>
 
               <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify'}}>Request an Update</Text>
+                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify' }}>Request an Update</Text>
               </View>
 
               <View style={styles.popupText}>
