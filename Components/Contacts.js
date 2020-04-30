@@ -189,7 +189,6 @@ const styles = StyleSheet.create({
 
   topContainer: {
     flex: 1,
-    backgroundColor:'salmon',
     paddingBottom: hp('15%')
   },
 
@@ -271,7 +270,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 20,
     justifyContent: 'flex-end',
-    paddingBottom: '1%'
+    // paddingBottom: '1%'
   },
   userImage: {
     width: 150,
@@ -280,10 +279,10 @@ const styles = StyleSheet.create({
   userInfo: {
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
+    marginRight: '5%',
   },
   userContainer: {
     flexWrap: 'wrap',
-    marginRight: '5%'
   },
   userName: {
     fontSize: 18,
