@@ -29,7 +29,7 @@ export default function OnBoardingTwo({ navigation }) {
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Track progress</Text>
-        <Text style={styles.textBox}>You can add your loved ones and see how they are doing in real time. You will receive a notification in the Feed everytime there's a new update.</Text>
+        <Text style={styles.textBox}>You can add your loved ones and see how they are doing in real time. You will receive a notification everytime there's a new update in the Feed.</Text>
 
         <View style={styles.dots}>
           <View style={styles.circle}></View>
