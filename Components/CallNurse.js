@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity, Linking } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +27,9 @@ export default function Nurse() {
 
                 <View style={styles.donateNHS}>
                     <View style={styles.rect}>
-                        <Text style={styles.supportText}>The NHS needs your support. To find out how you can help,{" "}<Text style={styles.supportClick} onPress={() => { '' }}>click here.</Text> </Text>
+                        <Text style={styles.supportText}>The NHS needs your support. To find out how you can help,{" "}
+                            <Text style={styles.supportClick} onPress={()=> Linking.openURL('https://www.nhscharitiestogether.co.uk/')}>click here.</Text>
+                        </Text>
                     </View>
                 </View>
             </View>
@@ -195,6 +197,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'center',
         lineHeight: 2,
+        flex: 1,
         borderRadius: 10,
         borderColor: '#58ACA8',
         borderWidth: 2
