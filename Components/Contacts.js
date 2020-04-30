@@ -81,7 +81,7 @@ const Contacts = ({ navigation }) => {
                   <View style={styles.popup}>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: 'SemiBold', fontSize: 20 }}>New Patient</Text>
+                      <Text style={{ fontFamily: 'SemiBold', fontSize: 18 }}>New Patient</Text>
                     </View>
 
                     <View style={styles.popupText}>
