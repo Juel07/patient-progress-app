@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 50,
         shadowRadius: 4,
+        borderRadius: 15,
     },
 
     boxText: {
