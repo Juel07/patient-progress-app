@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity, Linking } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, Modal, TouchableOpacity, Linking, Platform } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,19 @@ export default function Nurse() {
 
     const [modalOpen, setModalOpen] = useState(false);
     const [modalTwoOpen, setModalTwoOpen] = useState(false);
+
+    const makeCall = () => {
+
+        let phoneNumber = '';
+    
+        if (Platform.OS === 'android') {
+          phoneNumber = 'tel:${0201234567}';
+        } else {
+          phoneNumber = 'telprompt:${0201234567}';
+        }
+    
+        Linking.openURL(phoneNumber);
+      };
 
     return (
         <View style={styles.container}>
@@ -28,7 +41,7 @@ export default function Nurse() {
                 <View style={styles.donateNHS}>
                     <View style={styles.rect}>
                         <Text style={styles.supportText}>The NHS needs your support. To find out how you can help,{" "}
-                            <Text style={styles.supportClick} onPress={()=> Linking.openURL('https://www.nhscharitiestogether.co.uk/')}>click here.</Text>
+                            <Text style={styles.supportClick} onPress={() => Linking.openURL('https://www.nhscharitiestogether.co.uk/')}>click here.</Text>
                         </Text>
                     </View>
                 </View>
@@ -76,7 +89,7 @@ export default function Nurse() {
                                                 <Text style={styles.urgentPopUpButtonText}>No</Text>
                                             </View>
                                         </TouchableOpacity>
-                                        <TouchableOpacity onPress={() => setModalTwoOpen(false)}>
+                                        <TouchableOpacity onPress={makeCall}>
                                             <View style={styles.yesButton}>
                                                 <Text style={styles.urgentPopUpButtonText}>Yes</Text>
                                             </View>
