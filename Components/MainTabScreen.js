@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -130,15 +130,12 @@ const ContactsScreen = () => (
             transitionSpec: { open: config, close: config },
             cardStyleInterpolator:
                 CardStyleInterpolators.forHorizontalIOS,
-             ...TransitionPresets.RevealFromBottomAndroid
-            // ...TransitionPresets.SlideFromRightIOS
         }}
     >
         <ContactStack.Screen name="Contacts" component={Contacts} options={({ navigation }) => {
             return {
                 headerTitle: () => <Header title='Home' navigation={navigation} />,
                 headerTitleAlign: 'center',
-                //headerStyle: { height: 55 }
             }
         }}
         />
@@ -148,7 +145,6 @@ const ContactsScreen = () => (
                     headerTitle: () => <HeaderBack title='Feed' navigation={navigation} />,
                     headerTitleAlign: 'center',
                     headerBackTitleVisible: false,
-                    //headerStyle: { height: 55 }
                 }
             }}
         />
@@ -205,7 +201,6 @@ const SettingScreen = () => (
             return {
                 headerTitle: () => <Header title='Settings' navigation={navigation} />,
                 headerTitleAlign: 'center',
-                //headerStyle: { height: 55 }
             }
         }}
         />
@@ -214,7 +209,6 @@ const SettingScreen = () => (
                 headerTitle: () => <HeaderBack title='About' navigation={navigation} />,
                 headerTitleAlign: 'center',
                 headerBackTitleVisible: false,
-                // headerStyle: { height: 55 }
             }
         }} />
     </SettingStack.Navigator>
