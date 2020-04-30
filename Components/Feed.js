@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
 
   popup: {
     borderRadius: 40,
-    height: '30%',
+    height: '40%',
     width: '75%',
     padding: '5%',
     backgroundColor: 'white'
