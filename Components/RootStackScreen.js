@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 
 import StartScreen from './StartScreen';
 import SignInScreen from './Sign-in';
@@ -18,10 +18,25 @@ const RootStackScreen = ({ navigation }) => (
         <RootStack.Screen name="StartScreen" component={StartScreen} />
         <RootStack.Screen name="SignInScreen" component={SignInScreen} />
         <RootStack.Screen name="Welcome-1" component={OnBoarding1} />
-        <RootStack.Screen name="Welcome-2" component={OnBoarding2} />
-        <RootStack.Screen name="Welcome-3" component={OnBoarding3} />
+        <RootStack.Screen
+            options={{
+                gestureEnabled: true,
+                gestureDirection: 'horizontal',
+                cardStyleInterpolator:
+                    CardStyleInterpolators.forHorizontalIOS,
+            }}
+            name="Welcome-2" component={OnBoarding2}
+        />
+        <RootStack.Screen
+            options={{
+                gestureEnabled: true,
+                gestureDirection: 'horizontal',
+                cardStyleInterpolator:
+                    CardStyleInterpolators.forHorizontalIOS,
+            }}
+            name="Welcome-3" component={OnBoarding3} />
         <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
-        <RootStack.Screen name="MainScreen" component={MainTabScreen}/>
+        <RootStack.Screen name="MainScreen" component={MainTabScreen} />
     </RootStack.Navigator>
 );
 

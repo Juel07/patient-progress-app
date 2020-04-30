@@ -24,6 +24,13 @@ export default function Nurse() {
                 <Text style={styles.nurseMaryPoppins}>Nurse Mary Poppins</Text>
                 <Text style={styles.stGeorgesHospital}>St George's Hopsital</Text>
                 <Text style={styles.birmingham}>Birmingham</Text>
+
+                <View style={styles.donateNHS}>
+                    <Text>
+                        <Text style={styles.supportText}>The NHS needs your support. To find out how you can help, </Text>
+                        <Text style={styles.supportClick} onPress={() => {''}}>click here.</Text>
+                    </Text>
+                </View>
             </View>
             <View style={styles.bottomContainer}>
                 <View style={styles.rectangle}>
@@ -90,7 +97,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     topContainer: {
-        flex: 1,
+        flex: 1.3,
         width: '100%',
         height: '100%'
     },
@@ -106,7 +113,7 @@ const styles = StyleSheet.create({
 
     rectangle: {
         width: '50%',
-        height: '70%',
+        height: '80%',
         padding: '5%',
     },
 
@@ -145,13 +152,15 @@ const styles = StyleSheet.create({
     nurseContainer: {
         padding: 10,
         width: 147,
-        height: 147
+        height: 147,
+        paddingRight: 10
     },
     nurseAvatar: {
         width: 147,
         height: 147,
         marginTop: 10,
         marginLeft: 240,
+        paddingRight: 10
     },
 
     //Nurse's Details
@@ -179,6 +188,26 @@ const styles = StyleSheet.create({
         marginTop: 12,
         marginRight: 30,
         textAlign: 'right'
+    },
+    //NHS support and donation
+
+    donateNHS:{
+        flex: 1,
+        padding: 20,
+    },
+
+    supportText:{
+        textAlign: 'center',
+        fontSize: 16,
+        fontFamily: 'Regular',
+        color: '#6D6A6A'
+    },
+
+    supportClick:{
+        textAlign: 'right',
+        fontSize: 19,
+        fontFamily: 'SemiBold',
+        color: '#58ACA8'
     },
 
     //Urgent Call Rectangle
@@ -267,7 +296,7 @@ const styles = StyleSheet.create({
         height: '50%',
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 54,
-        flex: 0.3,
+        flex: 0.35,
         justifyContent: 'center',
         paddingVertical: 20,
         paddingHorizontal: 20
@@ -287,7 +316,8 @@ const styles = StyleSheet.create({
         fontFamily: "Regular",
         textAlign: "center",
         alignSelf: "center",
-        flex: 2.3
+        flex: 2.3,
+        paddingHorizontal: 5,
     },
 
     yesNoContainer: {

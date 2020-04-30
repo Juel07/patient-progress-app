@@ -18,6 +18,8 @@ import JohnDoe from '../assets/JohnDoe.png'
 
 import { Ionicons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
@@ -61,14 +63,11 @@ export function DrawerContent(props) {
                         <Drawer.Section style={styles.drawerSection}>
                             <DrawerItem inactiveTintColor='#fff'
                                 icon={({ color, size }) => (
-                                    <Icon name="home"
-                                        color={color}
-                                        size={size}
-                                    />
+                                    <FontAwesomeIcon icon={faUserFriends} color={color} size={size} />
                                 )}
                                 label="Home" labelStyle={{ fontFamily: 'Medium', fontSize: 16 }}
 
-                                onPress={() => { props.navigation.navigate('Home') }}
+                                onPress={() => { props.navigation.navigate('Contacts') }}
                             />
                             <DrawerItem inactiveTintColor='#fff'
                                 icon={({ color, size }) => (
@@ -140,6 +139,7 @@ const styles = StyleSheet.create({
     },
     paragraph: {
         fontSize: 15,
+        lineHeight: 15,
         fontFamily: 'Medium',
         marginRight: 5,
     },
