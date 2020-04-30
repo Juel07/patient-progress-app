@@ -130,7 +130,7 @@ const ContactsScreen = () => (
             transitionSpec: { open: config, close: config },
             cardStyleInterpolator:
                 CardStyleInterpolators.forHorizontalIOS,
-            // ...TransitionPresets.RevealFromBottomAndroid
+             ...TransitionPresets.RevealFromBottomAndroid
             // ...TransitionPresets.SlideFromRightIOS
         }}
     >
@@ -138,7 +138,7 @@ const ContactsScreen = () => (
             return {
                 headerTitle: () => <Header title='Home' navigation={navigation} />,
                 headerTitleAlign: 'center',
-                headerStyle: { height: 55 }
+                //headerStyle: { height: 55 }
             }
         }}
         />
@@ -148,7 +148,7 @@ const ContactsScreen = () => (
                     headerTitle: () => <HeaderBack title='Feed' navigation={navigation} />,
                     headerTitleAlign: 'center',
                     headerBackTitleVisible: false,
-                    headerStyle: { height: 55 }
+                    //headerStyle: { height: 55 }
                 }
             }}
         />
@@ -205,7 +205,7 @@ const SettingScreen = () => (
             return {
                 headerTitle: () => <Header title='Settings' navigation={navigation} />,
                 headerTitleAlign: 'center',
-                headerStyle: { height: 55 }
+                //headerStyle: { height: 55 }
             }
         }}
         />
@@ -214,7 +214,7 @@ const SettingScreen = () => (
                 headerTitle: () => <HeaderBack title='About' navigation={navigation} />,
                 headerTitleAlign: 'center',
                 headerBackTitleVisible: false,
-                headerStyle: { height: 55 }
+                // headerStyle: { height: 55 }
             }
         }} />
     </SettingStack.Navigator>

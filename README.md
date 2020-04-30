@@ -8,7 +8,7 @@ $ npm install -g expo-cli
 
 # Setup
 ## To view this project 
-* Install the Expo app from App Store or Google Play Store on your mobile device
+* Install the Expo app from App Store or Google Play Store on your mobile device (Pixel 3, iPhone 6-8)
 * Scan the following QR code (add real code later)
 <img src="https://img.techpowerup.org/200429/screenshot-2020-04-29-at-19-19-22.png" width="200" height="200">
 
