@@ -28,7 +28,7 @@ export default function OnBoardingThree({ navigation }) {
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Seek help</Text>
-        <Text style={styles.textBox}>Your health matters as well and we offer you a full support with mental health tips.</Text>
+        <Text style={styles.textBox}>Your mental health matters as well and we offer you access to help and support to help you through this difficult time.</Text>
 
         <View style={styles.dots}>
           <View style={styles.circle}></View>
