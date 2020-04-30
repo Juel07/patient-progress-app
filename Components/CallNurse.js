@@ -172,28 +172,28 @@ const styles = StyleSheet.create({
     },
     nurseAvatar: {
         width: 150,
-        height: 150,
+        height: 150
     },
 
     nurseMaryPoppins: {
         color: "#121212",
         fontSize: 18,
         fontFamily: 'SemiBold',
-        marginTop: '5%',
+        marginTop: '1%',
         textAlign: 'right'
     },
     stGeorgesHospital: {
         color: "#121212",
         fontSize: 16,
         fontFamily: 'Medium',
-        marginTop: '3%',
+        marginTop: '1%',
         textAlign: 'right'
     },
     birmingham: {
         color: "#121212",
         fontSize: 16,
         fontFamily: 'Regular',
-        marginTop: '3%',
+        marginTop: '1%',
         textAlign: 'right'
     },
     //NHS support and donation
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
         borderColor: '#58ACA8',
         borderWidth: 2,
         marginTop: 15,
-        marginBottom: -10
+        marginBottom: -15
 
     },
 
