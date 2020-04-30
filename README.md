@@ -8,8 +8,8 @@ $ npm install -g expo-cli
 
 # Setup
 ## To view this project 
-* Install the Expo app from App Store or Google Play Store on your mobile device. If viewed on an emulator, we recommed using Pixel 3 or iPhone 6-8 emulator for the best experience. 
-* Scan the following QR code (add real code later)
+* Install the Expo app from App Store or Google Play Store on your mobile device (if viewed on a hardware emulator, we recommed using Pixel 3 or iPhone 6-8 as your default device). 
+* Scan the following QR code /add real QR code later/
 <img src="https://img.techpowerup.org/200429/screenshot-2020-04-29-at-19-19-22.png" width="200" height="200">
 
 ## To run this project, install it locally using Expo
