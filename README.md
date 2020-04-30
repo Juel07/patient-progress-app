@@ -17,7 +17,12 @@ $ npm install -g expo-cli
 $ cd patient-progress-app
 $ expo start 
 ```
-If viewed on a hardware emulator, we recommed using Pixel 3 or iPhone 6-8 as your default device. 
+If viewing on a hardware emulator, we recommend choosing either of the following as your default device:
+- Pixel 3,
+- Pixel 3a XL,
+- iPhone 6,
+- iPhone 7,
+- iPhone 8 
 
 # Technologies
 * Expo CLI 3.18.2
