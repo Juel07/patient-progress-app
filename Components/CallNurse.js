@@ -19,17 +19,16 @@ export default function Nurse() {
                         resizeMode="contain"
                         style={styles.nurseAvatar}
                     ></Image>
+
+                    <Text style={styles.nurseMaryPoppins}>Nurse Mary Poppins</Text>
+                    <Text style={styles.stGeorgesHospital}>St George's Hopsital</Text>
+                    <Text style={styles.birmingham}>Birmingham</Text>
                 </View>
 
-                <Text style={styles.nurseMaryPoppins}>Nurse Mary Poppins</Text>
-                <Text style={styles.stGeorgesHospital}>St George's Hopsital</Text>
-                <Text style={styles.birmingham}>Birmingham</Text>
-
                 <View style={styles.donateNHS}>
-                    <Text>
-                        <Text style={styles.supportText}>The NHS needs your support. To find out how you can help, </Text>
-                        <Text style={styles.supportClick} onPress={() => {''}}>click here.</Text>
-                    </Text>
+                    <View style={styles.rect}>
+                        <Text style={styles.supportText}>The NHS needs your support. To find out how you can help,{" "}<Text style={styles.supportClick} onPress={() => { '' }}>click here.</Text> </Text>
+                    </View>
                 </View>
             </View>
             <View style={styles.bottomContainer}>
@@ -131,7 +130,8 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '5%'
+        padding: '5%',
+        borderRadius: 15,
     },
 
     bookingText: {
@@ -150,62 +150,66 @@ const styles = StyleSheet.create({
     //Nurses Avatar
 
     nurseContainer: {
-        padding: 10,
-        width: 147,
-        height: 147,
-        paddingRight: 10
+        paddingTop: 30,
+        paddingHorizontal: 30,
+        flex: 4,
+        alignItems: 'flex-end'
     },
     nurseAvatar: {
-        width: 147,
-        height: 147,
-        marginTop: 10,
-        marginLeft: 240,
-        paddingRight: 10
+        width: 150,
+        height: 150,
     },
-
-    //Nurse's Details
 
     nurseMaryPoppins: {
         color: "#121212",
         fontSize: 18,
         fontFamily: 'SemiBold',
-        marginTop: 35,
-        marginRight: 30,
+        marginTop: '5%',
         textAlign: 'right'
     },
     stGeorgesHospital: {
         color: "#121212",
         fontSize: 16,
         fontFamily: 'Medium',
-        marginTop: 11,
-        marginRight: 30,
+        marginTop: '3%',
         textAlign: 'right'
     },
     birmingham: {
         color: "#121212",
         fontSize: 16,
         fontFamily: 'Regular',
-        marginTop: 12,
-        marginRight: 30,
+        marginTop: '3%',
         textAlign: 'right'
     },
     //NHS support and donation
 
-    donateNHS:{
+    donateNHS: {
         flex: 1,
-        padding: 20,
+        paddingVertical: 20,
+        paddingHorizontal: 30,
+        justifyContent: 'center',
     },
 
-    supportText:{
+    rect: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        lineHeight: 2,
+        borderRadius: 10,
+        borderColor: '#58ACA8',
+        borderWidth: 2
+    },
+
+    supportText: {
         textAlign: 'center',
         fontSize: 16,
         fontFamily: 'Regular',
-        color: '#6D6A6A'
+        color: '#6D6A6A',
+        padding: 10
     },
 
-    supportClick:{
-        textAlign: 'right',
-        fontSize: 19,
+    supportClick: {
+        fontSize: 17,
         fontFamily: 'SemiBold',
         color: '#58ACA8'
     },
