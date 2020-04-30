@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    height: hp('5%'),
-    padding: 25,
-    paddingRight: 50,
-    paddingLeft: 50,
+    height: hp('10%'),
+    //padding: 10,
+    paddingRight: 10,
+    paddingLeft: 30,
     alignItems: 'center',
     width: wp('75%'),
     shadowColor: 'rgba(0,0,0, .25)',
@@ -272,4 +272,8 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     borderRadius: 40
   },
+  buttonAdd: {
+    width: 37,
+    height: 37,
+  }
 })
