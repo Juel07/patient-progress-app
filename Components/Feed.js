@@ -45,7 +45,7 @@ export default class BasicTimeLine extends Component {
         time: '17:30',
         title: '08/07/2020',
         description:
-          'Breathing returned to normal',
+          'Breathing returned to normal.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -69,7 +69,7 @@ export default class BasicTimeLine extends Component {
         time: '15:30',
         title: '09/07/2020',
         description:
-          'Heart rate: 80 bpm - Regular heart rate.',
+          'Heart rate: 80 bpm - normal resting heart rate.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
@@ -77,8 +77,6 @@ export default class BasicTimeLine extends Component {
   }
   render() {
     const { modalVisible } = this.state;
-    //const [modalOpen, setModalOpen] = useState(false);
-    //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
     return (
       <ScrollView style={styles.wrapper}>
