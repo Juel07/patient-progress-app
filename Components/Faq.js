@@ -67,7 +67,7 @@ function toggle5() {
 				<StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>1. Who is at a risk of developing severe illness?</Text>
-          <View><Text style={styles.bodyTxt}>{state ? "Usually eldery people and individuals with a compromised immune system." : ""}</Text></View>
+          <View><Text style={styles.bodyTxt}>{state ? "" : "Usually eldery people and individuals with a compromised immune system."}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
@@ -84,7 +84,7 @@ function toggle5() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>2. How long it takes to fully recover?</Text>
-          <View><Text style={styles.bodyTxt}>{state2 ? "The recovery can last from one to two weeks and varies from individual to individual." : "" }</Text></View>
+          <View><Text style={styles.bodyTxt}>{state2 ? "" : "The recovery can last from one to two weeks and varies from individual to individual."}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
@@ -101,7 +101,7 @@ function toggle5() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>3. How will my family member be treated? </Text>
-          <View><Text style={styles.bodyTxt}>{state3 ? "The treatment will depend on the condition of the individual. At present time, there is no specific medication for treating COVID-19. Usually, the treatment involves receiving supplemental oxygen and oral antibiotics." : "" }</Text></View>
+          <View><Text style={styles.bodyTxt}>{state3 ? "" : "The treatment will depend on the condition of the individual. At present time, there is no specific medication for treating COVID-19. Usually, the treatment involves receiving supplemental oxygen and oral antibiotics."}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
@@ -118,7 +118,7 @@ function toggle5() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>4. Do pregnant individuals have higher chances of getting sick from COVID-19?</Text>
-          <View><Text style={styles.bodyTxt}>{state4 ? "According to the latest information it seems like pregnant and non-pregnant adults have the same risk of being infected with COVID-19." : "" }</Text></View>
+          <View><Text style={styles.bodyTxt}>{state4 ? "" : "According to the latest information it seems like pregnant and non-pregnant adults have the same risk of being infected with COVID-19."}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
@@ -135,7 +135,7 @@ function toggle5() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>5. Is mother-to-child transmission possible? </Text>
-          <View><Text style={styles.bodyTxt}>{state5 ? "Mother-to-child transmission is unlikely, however after your loved one gives a birth, the newborn is susceptible to person-to-person spread." : "" }</Text></View>
+          <View><Text style={styles.bodyTxt}>{state5 ? "" : "Mother-to-child transmission is unlikely, however after your loved one gives a birth, the newborn is susceptible to person-to-person spread."}</Text></View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
