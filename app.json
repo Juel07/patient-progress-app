@@ -2,7 +2,7 @@
   "expo": {
     "name": "patient-progress-app",
     "sdkVersion": "37.0.0",
-    "slug": "my-new-app",
+    "slug": "patient-progress-app",
     "platforms": [
       "ios",
       "android",
@@ -10,7 +10,6 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-   
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -19,6 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
