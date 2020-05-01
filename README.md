@@ -10,6 +10,7 @@ $ npm install -g expo-cli
 ## To view this project 
 * Download the Expo app on your mobile device 
 * If using an Android device, the app can be viewed by scanning the QR below 
+<img src="assets/qrcode.png">
 
 * If you're using an Apple device or you currently cannot access a mobile device, the project can be viewed in browser on <a href="https://expo.io/@kate97z/patient-progress-app">this link</a> or as a Vimeo video <a href="https://expo.io/@kate97z/patient-progress-app">here</a>.
 
