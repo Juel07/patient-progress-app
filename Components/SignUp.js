@@ -246,7 +246,11 @@ const styles = StyleSheet.create({
 	},
 
 	footer: {
+<<<<<<< HEAD
+		flex: 6,
+=======
 		flex: 7,
+>>>>>>> ea5730d638ced4fc4f55188eb25bf885785ebbcd
 		backgroundColor: '#fff',
 		borderTopLeftRadius: 30,
 		borderTopRightRadius: 30,
