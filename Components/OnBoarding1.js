@@ -29,17 +29,13 @@ export default function OnBoardingOne({ navigation }) {
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <Image source={logo} style={{ width: 100, marginBottom: 10 }} />
         <Text style={styles.headings}>Welcome</Text>
-        <Text style={styles.textBox}>We know now is a difficult time and the healthcare staff is busy. With Patient Progress you can keep track on how your relatives are doing.</Text>
+        <Text style={styles.textBox}>We know it's a difficult time now and the healthcare staff are busy. With Patient Progress, you can keep track of how your relatives are doing.</Text>
 
         <View style={styles.dots}>
           <View style={styles.circleFirst}></View>
           <View style={styles.circle}></View>
           <View style={styles.circle}></View>
         </View>
-
-        {/* <Button title="Next" color='#58ACA8' textStyle={{fontFamily: 'Bold'}}/> */}
-
-        {/* to be used as button to get more styling control */}
 
         <View style={styles.btn}>
           <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={pressHandler}>

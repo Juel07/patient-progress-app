@@ -45,7 +45,7 @@ export default class BasicTimeLine extends Component {
         time: '17:30',
         title: '08/07/2020',
         description:
-          'Breathing returned to normal',
+          'Breathing returned to normal.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -69,7 +69,7 @@ export default class BasicTimeLine extends Component {
         time: '15:30',
         title: '09/07/2020',
         description:
-          'Heart rate: 80 bpm - Regular heart rate.',
+          'Heart rate: 80 bpm - normal resting heart rate.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
@@ -77,11 +77,10 @@ export default class BasicTimeLine extends Component {
   }
   render() {
     const { modalVisible } = this.state;
-    //const [modalOpen, setModalOpen] = useState(false);
-    //const [modalTwoOpen, setModalTwoOpen] = useState(false);
 
     return (
       <ScrollView style={styles.wrapper}>
+        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.userInfo}>
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>
@@ -109,7 +108,7 @@ export default class BasicTimeLine extends Component {
 
         {/*CODE FOR BUTTON STARTS*/}
         <View style={styles.button}>
-          <TouchableOpacity style={styles.innerButton} onPress={()=> {this.setModalVisible(!modalVisible);}}>
+          <TouchableOpacity style={styles.innerButton} onPress={() => { this.setModalVisible(!modalVisible); }}>
             <Text style={{ fontFamily: 'Bold', fontSize: 16 }}>Request an Update</Text>
             <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
           </TouchableOpacity>
@@ -122,7 +121,7 @@ export default class BasicTimeLine extends Component {
             <View style={styles.popup}>
 
               <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify'}}>Request an Update</Text>
+                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify' }}>Request an Update</Text>
               </View>
 
               <View style={styles.popupText}>
@@ -192,10 +191,10 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    height: hp('5%'),
-    padding: 25,
-    paddingRight: 50,
-    paddingLeft: 50,
+    height: hp('10%'),
+    //padding: 10,
+    paddingRight: 10,
+    paddingLeft: 30,
     alignItems: 'center',
     width: wp('75%'),
     shadowColor: 'rgba(0,0,0, .25)',
@@ -272,4 +271,8 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     borderRadius: 40
   },
+  buttonAdd: {
+    width: 37,
+    height: 37,
+  }
 })

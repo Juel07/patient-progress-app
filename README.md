@@ -8,15 +8,23 @@ $ npm install -g expo-cli
 
 # Setup
 ## To view this project 
-* Install the Expo app from App Store or Google Play Store on your mobile device. If viewed on an emulator, we recommed using Pixel 3 or iPhone 6-8 emulator for the best experience. 
-* Scan the following QR code (add real code later)
-<img src="https://img.techpowerup.org/200429/screenshot-2020-04-29-at-19-19-22.png" width="200" height="200">
+* Install the Expo app from App Store or Google Play Store on your mobile device.
+* Scan the following QR code 
+<img src="assets/QR.png" width="200" height="200">
+
+Alternatively, the app can be viewed in browser on <a href="https://expo.io/@kate97z/patient-progress-app">this link</a>
 
 ## To run this project, install it locally using Expo
 ```
 $ cd patient-progress-app
 $ expo start 
 ```
+If viewing on a hardware emulator, we recommend choosing either of the following as your default device:
+- Pixel 3,
+- Pixel 3a XL,
+- iPhone 6,
+- iPhone 7,
+- iPhone 8 
 
 # Technologies
 * Expo CLI 3.18.2
