@@ -126,11 +126,7 @@ const styles = StyleSheet.create({
         lineHeight: 15,
         fontFamily: 'Medium',
     },
-    // row: {
-    //     marginTop: 20,
-    //     flexDirection: 'row',
-    //     alignItems: 'center',
-    // },
+
     section: {
         flexDirection: 'row',
         alignItems: 'center',
