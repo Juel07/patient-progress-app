@@ -427,7 +427,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#000000aa",
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'flex-start',
+    paddingTop:'10%'
+    
   },
 
   popup: {
