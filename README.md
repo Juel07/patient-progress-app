@@ -9,8 +9,10 @@ $ npm install -g expo-cli
 # Setup
 ## To view this project 
 * Install the Expo app from App Store or Google Play Store on your mobile device.
-* Scan the following QR code /add real QR code later/
+* Scan the following QR code 
 <img src="assets/QR.png" width="200" height="200">
+
+Alternatively, the app can be viewed in browser on <a href="https://expo.io/@kate97z/patient-progress-app">this link</a>
 
 ## To run this project, install it locally using Expo
 ```
