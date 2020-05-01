@@ -244,7 +244,7 @@ const Contacts = ({ navigation }) => {
                   <Text style={styles.relativeUpdate}>Last updated:</Text>
                   <Text style={styles.date_time}>{" "}9th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
-                  <Text style={styles.date_time}>{" "}13:00</Text>
+                  <Text style={styles.date_time}>{" "}15:30</Text>
                 </View>
               </View>
             </TouchableOpacity>
