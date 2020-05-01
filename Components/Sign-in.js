@@ -101,6 +101,7 @@ const SignInScreen = ({ navigation }) => {
 							keyboardType = 'number-pad'
 							selectionColor="#32afa9"
 							autoCapitalize="none"
+							maxLength={10}
 							onChangeText={(val) => textInputChange(val)}
 						/>
 						{data.check_textInputChange ?

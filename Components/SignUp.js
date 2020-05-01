@@ -104,6 +104,7 @@ const SignUpScreen = ({ navigation }) => {
 						<TextInput
 							placeholder="10-digit number"
 							style={styles.textInput}
+							maxLength={10}
 							keyboardType='number-pad'
 							selectionColor="#32afa9"
 							autoCapitalize="none"
