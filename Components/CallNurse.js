@@ -12,15 +12,15 @@ export default function Nurse() {
     const makeCall = () => {
 
         let phoneNumber = '';
-    
+
         if (Platform.OS === 'android') {
-          phoneNumber = 'tel:${0201234567}';
+            phoneNumber = 'tel:${0201234567}';
         } else {
-          phoneNumber = 'telprompt:${0201234567}';
+            phoneNumber = 'telprompt:${0201234567}';
         }
-    
+
         Linking.openURL(phoneNumber);
-      };
+    };
 
     return (
         <View style={styles.container}>
@@ -109,6 +109,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
+        height: '100%',
+        width: '100%'
     },
     topContainer: {
         flex: 1.3,
@@ -201,7 +203,7 @@ const styles = StyleSheet.create({
     donateNHS: {
         flex: 1,
         paddingVertical: 20,
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
         justifyContent: 'center',
         paddingTop: 10
     },
@@ -210,26 +212,25 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        lineHeight: 2,
         flex: 1,
         borderRadius: 10,
         borderColor: '#58ACA8',
         borderWidth: 2,
         marginTop: 15,
-        marginBottom: -15
-
+        marginBottom: -15,
+        overflow: 'hidden'
     },
 
     supportText: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'Regular',
         color: '#6D6A6A',
         padding: 5
     },
 
     supportClick: {
-        fontSize: 17,
+        fontSize: 15,
         fontFamily: 'SemiBold',
         color: '#58ACA8'
     },
