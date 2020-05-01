@@ -206,11 +206,11 @@ const styles = StyleSheet.create({
 	logo: {
 		width: 200,
 		height: height_logo,
-		margin: 20,
+		margin: 5,
 		alignSelf: 'center'
 	},
 	footer: {
-		flex: 5,
+		flex: 7,
 		backgroundColor: '#fff',
 		borderTopLeftRadius: 30,
 		borderTopRightRadius: 30,
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
 	},
 	buttons: {
 		alignItems: 'center',
-		margin: 20,
+		margin: 10,
 	},
 	signIn: {
 		width: '60%',
