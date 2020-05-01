@@ -11,7 +11,7 @@ $ npm install -g expo-cli
 The app can be viewed in browser on <a href="https://expo.io/@kate97z/patient-progress-app">this link</a>
 
 <video height="300" controls>
-  <source src="assets/video.mp4" type="video/mp4">
+  <source src="assets/video.MP4" type="video/mp4">
 </video>
 
 ## To run this project, install it locally using Expo
