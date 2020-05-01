@@ -1,9 +1,9 @@
 import React, { Component, useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar, KeyboardAvoidingView } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar, KeyboardAvoidingView, ScrollView } from "react-native";
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
 
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
@@ -15,6 +15,8 @@ const Contacts = ({ navigation }) => {
 
   //Pop-up
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalTwoOpen, setModalTwoOpen] = useState(false);
+  const [modalThreeOpen, setModalThreeOpen] = useState(false);
 
   const functionAdd = () =>
     Alert.alert(
@@ -75,9 +77,10 @@ const Contacts = ({ navigation }) => {
                 <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
               </View>
 
-{/* Pop-up */}
+              {/* MODAL 1... */}
               <Modal transparent={true} visible={modalOpen} animationType='fade'>
                 <View style={styles.popupBack}>
+
                   <View style={styles.popup}>
 
                     <View style={styles.popupText}>
@@ -85,12 +88,79 @@ const Contacts = ({ navigation }) => {
                     </View>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>NHS Number:</Text>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Relative's Full Name:</Text>
+                      <TextInput style={styles.popupInput} minLength={2}></TextInput>
+                    </View>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Relative's D.O.B (dd/mm/yyyy):</Text>
+
+                      <View style={{ flexDirection: "row" }}>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+
+
+
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+
+
+
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                        <TextInput style={styles.popupDOB} maxLength={1} keyboardType='numeric' textAlign='center'></TextInput>
+                      </View>
+                    </View>
+
+                    <View style={styles.popupButtons}>
+                      <TouchableOpacity onPress={() => setModalOpen(false)}>
+                        <View style={styles.popupCancel}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Back</Text>
+                        </View>
+                      </TouchableOpacity>
+
+
+                      <TouchableOpacity onPress={() => { setModalOpen(false); setModalTwoOpen(true) }}>
+                        <View style={styles.popupAdd}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Next</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              </Modal>
+              {/* MODAL 1... */}
+
+
+              {/* MODAL 2... */}
+              <Modal transparent={true} visible={modalTwoOpen} animationType='fade'>
+                <View style={styles.popupBack}>
+
+                  <View style={styles.popup2}>
+
+                    <View style={styles.popupText2}>
+                      <Text style={{ fontFamily: 'SemiBold', fontSize: 18 }}>New Patient</Text>
+                    </View>
+
+                    <View style={styles.popupText2}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Relative's Full Address:</Text>
+                      <TextInput style={styles.popupInput} dataDetectorTypes='address' scrollEnabled multiline
+                        numberOfLines={6}
+                      ></TextInput>
+                    </View>
+
+                    <View style={styles.popupText2}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Relative's NHS Number:</Text>
                       <TextInput style={styles.popupInput} minLength={10} maxLength={10} keyboardType='numeric'></TextInput>
                     </View>
 
                     <View style={styles.notify}>
-                      <Text style={{ fontFamily: 'Regular', fontSize: 14 }}>Notify me if my relative{"\n"}           passes away</Text>
+                      <View>
+                        <Text style={{ fontFamily: 'Regular', fontSize: 14 }} textAlign='center'>Notify me if my relative</Text>
+                        <Text style={{ fontFamily: 'Regular', fontSize: 14 }}>            passes away</Text>
+                      </View>
+                      
                       <TouchableRipple onPress={() => { toggleRest() }}>
                         <View pointerEvents='none' style={{ marginLeft: '1%' }}>
                           <Switch
@@ -104,23 +174,52 @@ const Contacts = ({ navigation }) => {
                     </View>
 
                     <View style={styles.popupButtons}>
-                      <TouchableOpacity onPress={() => { setModalOpen(false); functionAdd() }}>
+                      <TouchableOpacity onPress={() => { setModalTwoOpen(false); setModalOpen(true) }}>
+                        <View style={styles.popupCancel}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Back</Text>
+                        </View>
+                      </TouchableOpacity>
+
+
+                      <TouchableOpacity onPress={() => { setModalTwoOpen(false); setModalThreeOpen(true) }}>
                         <View style={styles.popupAdd}>
                           <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Add</Text>
                         </View>
                       </TouchableOpacity>
-
-
-                      <TouchableOpacity onPress={() => setModalOpen(false)}>
-                        <View style={styles.popupCancel}>
-                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
-                        </View>
-                      </TouchableOpacity>
                     </View>
-
                   </View>
                 </View>
               </Modal>
+              {/* MODAL 2... */}
+
+
+              {/* MODAL 3... */}
+              <Modal transparent={true} visible={modalThreeOpen} animationType='fade'>
+                <View style={styles.popupBack}>
+
+                  <View style={styles.popup3}>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'SemiBold', fontSize: 18 }}>Request Sent</Text>
+                    </View>
+
+                    <View style={styles.popupText}>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }} textAlign='center'>Your request has been sent for</Text>
+                      <Text style={{ fontFamily: 'Regular', fontSize: 16 }} textAlign='center'>authorisation</Text>
+                    </View>
+
+                    <View style={styles.popupButtons}>
+                      <TouchableOpacity onPress={() => { setModalThreeOpen(false) }}>
+                        <View style={styles.popupAdd}>
+                          <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>OK</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              </Modal>
+              {/* MODAL 3... */}
+
 
             </TouchableOpacity>
 
@@ -143,7 +242,7 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated:</Text>
-                  <Text style={styles.date_time}>{" "}26th July</Text>
+                  <Text style={styles.date_time}>{" "}9th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
                   <Text style={styles.date_time}>{" "}13:00</Text>
                 </View>
@@ -163,7 +262,7 @@ const Contacts = ({ navigation }) => {
                 </View>
                 <View style={styles.update}>
                   <Text style={styles.relativeUpdate}>Last updated:</Text>
-                  <Text style={styles.date_time}>{" "}25th July</Text>
+                  <Text style={styles.date_time}>{" "}8th July</Text>
                   <Text style={styles.relativeUpdate}>{" "}at</Text>
                   <Text style={styles.date_time}>{" "}21:45</Text>
                 </View>
@@ -177,6 +276,7 @@ const Contacts = ({ navigation }) => {
     );
   }
 }
+
 
 export default Contacts;
 
@@ -335,22 +435,59 @@ const styles = StyleSheet.create({
 
   popup: {
     borderRadius: 40,
-    height: '50%',
-    width: '75%',
-    padding: '5%',
+    //height: '60%',
+    width: '70%',
+    padding: '1%',
     backgroundColor: 'white',
+    flex: 0.45
+  },
+
+  popup2: {
+    borderRadius: 40,
+    //height: '80%',
+    width: '75%',
+    padding: '2%',
+    backgroundColor: 'white',
+    flex: 0.5,
+    //paddingRight:'10%',
+    //paddingLeft:'10%'
+  },
+
+  popup3: {
+    borderRadius: 40,
+    //height: '80%',
+    //width: '95%',
+    //padding: '2%',
+    backgroundColor: 'white',
+    flex: 0.3,
+    paddingRight: '5%',
+    paddingLeft: '5%'
   },
 
   popupText: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: '2%',
+    //marginVertical: '5%',
     flex: 1
   },
-
+  popupText2: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: '5%',
+    flex: 1
+  },
   popupInput: {
     height: 30,
     width: '90%',
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    marginVertical: '5%',
+  },
+
+  popupDOB: {
+    height: '10%',
+    width: '10%',
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 5,
