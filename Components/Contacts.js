@@ -3,6 +3,10 @@ import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInpu
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
 
+//import 'react-responsive-modal/styles.css';
+//import { Modal } from 'react-responsive-modal';
+
+
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { useFonts } from '@use-expo/font';
@@ -17,13 +21,6 @@ const Contacts = ({ navigation }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTwoOpen, setModalTwoOpen] = useState(false);
   const [modalThreeOpen, setModalThreeOpen] = useState(false);
-
-  const functionAdd = () =>
-    Alert.alert(
-      'Request Sent',
-      'Your request has been sent for authorisation',
-    );
-
 
   // fonts load
   let [fontsLoaded] = useFonts({
@@ -145,7 +142,7 @@ const Contacts = ({ navigation }) => {
 
                     <View style={styles.popupText2}>
                       <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Relative's Full Address:</Text>
-                      <TextInput style={styles.popupInput} dataDetectorTypes='address' scrollEnabled multiline
+                      <TextInput style={styles.popupInput2} dataDetectorTypes='address' scrollEnabled multiline
                         numberOfLines={6}
                       ></TextInput>
                     </View>
@@ -448,7 +445,7 @@ const styles = StyleSheet.create({
     width: '75%',
     padding: '2%',
     backgroundColor: 'white',
-    flex: 0.5,
+    flex: 0.6,
     //paddingRight:'10%',
     //paddingLeft:'10%'
   },
@@ -474,10 +471,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: '5%',
-    flex: 1
+    flex: 0.8
   },
   popupInput: {
     height: 30,
+    width: '90%',
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    marginVertical: '5%',
+  },
+
+  popupInput2: {
+    height: '100%',
     width: '90%',
     borderWidth: 1,
     borderColor: 'gray',
@@ -499,6 +505,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: "row",
+    flex:1
   },
 
   popupButtons: {
