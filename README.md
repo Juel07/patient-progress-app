@@ -79,4 +79,4 @@ Patient Progress will use an ID verification process to determine the identity o
 * There is a possibility of using Blockchain to protect records and accounts
 
 ## 9. What is the minimum data needed to operate without collecting more than you need & being intrusive?
-* Patient info (name, address, DOB, Next of kin information). 
+Patient info (name, address, DOB, Next of kin information). 
