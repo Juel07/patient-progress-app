@@ -14,7 +14,8 @@ YellowBox.ignoreWarnings([
 export default class BasicTimeLine extends Component {
   //pop-up
   state = {
-    modalVisible: false
+    modalVisible: false,
+    userData: null
   };
 
   setModalVisible = (visible) => {
@@ -28,7 +29,7 @@ export default class BasicTimeLine extends Component {
         time: '09:30',
         title: '08/07/2020',
         description:
-          'Temperature of 38C.',
+          'Temperature of 37C.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
         fontSize: 5,
@@ -75,7 +76,20 @@ export default class BasicTimeLine extends Component {
       },
     ];
   }
+
+  componentDidMount() {
+    fetch("https://nhs-services.herokuapp.com/api/patients/2147483647")
+      .then(response => response.json())
+      .then(userData => this.setState({ userData }));
+  }
+
+
+
   render() {
+    if (this.state.userData === null) {
+      return <Text>Loading patient data...</Text>;
+    }
+
     const { modalVisible } = this.state;
 
     return (
@@ -84,8 +98,8 @@ export default class BasicTimeLine extends Component {
         <View style={styles.userInfo}>
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>
-            <Text style={styles.userName}>Jane Doe</Text>
-            <Text style={styles.userNo}>NHS NUMBER: 000 000 0000</Text>
+            <Text style={styles.userName}>{this.state.userData.full_name}</Text>
+            <Text style={styles.userNo}>NHS NUMBER: {this.state.userData.nhs_number}</Text>
             <View style={{ flexDirection: 'row' }}>
               <Text style={styles.userNo}>PROGRESS:  </Text>
               <Image source={green} />
