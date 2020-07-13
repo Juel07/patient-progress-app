@@ -28,7 +28,7 @@ export default class BasicTimeLine extends Component {
         time: '09:30',
         title: '08/07/2020',
         description:
-          'Temperature of 38C.',
+          'Temperature of 39C.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
         fontSize: 5,
