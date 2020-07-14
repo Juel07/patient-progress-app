@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import Jane from '../assets/Jane.png';
-import green_ from '../assets/green_circle.jpeg';
 import green from '../assets/green.jpg';
+import orange from '../assets/orange.jpg';
+import red from '../assets/red.jpg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { YellowBox } from 'react-native';
 
@@ -92,6 +93,21 @@ export default class BasicTimeLine extends Component {
 
     const { modalVisible } = this.state;
 
+    // Conditional rendering of the patient's condition
+    const patientCondition = this.state.userData.health_recordings[0].condition;
+    let icon;
+    let description;
+    if (patientCondition == "Stable") {
+      icon = <Image source={green} />;
+      description = <Text style={styles.userNo}>  stable</Text>;
+    } else if (patientCondition == "Unstable") {
+      icon = <Image source={orange} />;
+      description = <Text style={styles.userNo}>  unstable</Text>;
+    } else if (patientCondition == "Critical") {
+      icon = <Image source={red} />;
+      description = <Text style={styles.userNo}>  critical</Text>;
+    }
+
     return (
       <ScrollView style={styles.wrapper}>
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
@@ -102,8 +118,8 @@ export default class BasicTimeLine extends Component {
             <Text style={styles.userNo}>NHS NUMBER: {this.state.userData.nhs_number}</Text>
             <View style={{ flexDirection: 'row' }}>
               <Text style={styles.userNo}>PROGRESS:  </Text>
-              <Image source={green} />
-              <Text style={styles.userNo}>  stable</Text>
+              {icon}
+              {description}
             </View>
           </View>
 
