@@ -157,7 +157,7 @@ const Contacts = ({ navigation }) => {
                         <Text style={{ fontFamily: 'Regular', fontSize: 14 }} textAlign='center'>Notify me if my relative</Text>
                         <Text style={{ fontFamily: 'Regular', fontSize: 14 }}>            passes away</Text>
                       </View>
-                      
+
                       <TouchableRipple onPress={() => { toggleRest() }}>
                         <View pointerEvents='none' style={{ marginLeft: '1%' }}>
                           <Switch
@@ -428,8 +428,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000aa",
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingTop:'10%'
-    
+    paddingTop: '10%'
+
   },
 
   popup: {
@@ -507,7 +507,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: "row",
-    flex:1
+    flex: 1
   },
 
   popupButtons: {

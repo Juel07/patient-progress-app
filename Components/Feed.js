@@ -130,10 +130,15 @@ export default class BasicTimeLine extends Component {
         </View>
         {/*CODE FOR JANE ENDS*/}
 
-        {/*CODE FOR FEED STARTS */}
+        {/*CODE FOR FEED STARTS 
+
+
+        */}
+
         <View style={styles.container} >
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
+
         {/*CODE FOR FEED ENDS*/}
 
         {/*CODE FOR BUTTON STARTS*/}
