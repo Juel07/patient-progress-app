@@ -71,7 +71,7 @@ export default class BasicTimeLine extends Component {
       {
         time: '15:30',
         title: '09/07/2020',
-        description: 'Hey',
+        description: 'Heart rate: 80 bpm - normal resting heart rate.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
