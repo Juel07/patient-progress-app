@@ -69,8 +69,7 @@ export default class BasicTimeLine extends Component {
       {
         time: '15:30',
         title: '09/07/2020',
-        description:
-          'Heart rate: 80 bpm - normal resting heart rate.',
+        description: 'Hey',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8',
       },
@@ -114,8 +113,8 @@ export default class BasicTimeLine extends Component {
         </View>
         {/*CODE FOR JANE ENDS*/}
 
-        {/*CODE FOR FEED STARTS*/}
-        <View style={styles.container}>
+        {/*CODE FOR FEED STARTS */}
+        <View style={styles.container} >
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
         {/*CODE FOR FEED ENDS*/}
