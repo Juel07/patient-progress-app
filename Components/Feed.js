@@ -88,7 +88,7 @@ export default class BasicTimeLine extends Component {
 
   render() {
     if (this.state.userData === null) {
-      return <Text>Loading patient data...</Text>;
+      return <View style={styles.dataLoading}><Text style={styles.userName}>Loading patient data...</Text></View>;
     }
 
     const { modalVisible } = this.state;
@@ -130,10 +130,7 @@ export default class BasicTimeLine extends Component {
         </View>
         {/*CODE FOR JANE ENDS*/}
 
-        {/*CODE FOR FEED STARTS 
-
-
-        */}
+        {/*CODE FOR FEED STARTS */}
 
         <View style={styles.container} >
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
@@ -195,6 +192,15 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     width: '100%'
+  },
+  dataLoading: {
+    flex: 1,
+    backgroundColor: '#fff',
+    width: '100%',
+    textAlign: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   userInfo: {
     alignItems: 'center',
