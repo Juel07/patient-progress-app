@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar, KeyboardAvoidingView, ScrollView } from "react-native";
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
@@ -234,7 +234,7 @@ const Contacts = ({ navigation }) => {
               </View>
               <View style={styles.relativeInfo}>
                 <View>
-                  <Text style={styles.relativeFullName}>Jane Doe</Text>
+                  <Text style={styles.relativeFullName}>Ellen Wright</Text>
                   <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
                 </View>
                 <View style={styles.update}>
