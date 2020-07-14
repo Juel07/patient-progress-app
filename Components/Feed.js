@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import Jane from '../assets/Jane.png';
-import green from '../assets/green_circle.jpeg';
+import green_ from '../assets/green_circle.jpeg';
+import green from '../assets/green.jpg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { YellowBox } from 'react-native';
 
