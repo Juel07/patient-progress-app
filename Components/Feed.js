@@ -10,6 +10,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { YellowBox } from 'react-native';
 
 import TimelineInfo from './TimelineInfo';
+import TimelineEnd from './TimelineEnd';
 
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
@@ -126,7 +127,6 @@ export default class BasicTimeLine extends Component {
         {/*CODE FOR JANE ENDS*/}
 
         {/*CODE FOR FEED STARTS */}
-
         <View style={styles.container} >
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
@@ -152,55 +152,14 @@ export default class BasicTimeLine extends Component {
           extras={""}
         />
 
-        <TimelineInfo
+        <TimelineEnd
           rawData={this.state.userData}
           data={this.state.userData.ward.ward_name}
           description={dataDescription.ward.message}
           extras={""}
         />
-
         {/*CODE FOR FEED ENDS*/}
 
-        {/*CODE FOR BUTTON STARTS*/}
-        <View style={styles.button}>
-          <TouchableOpacity style={styles.innerButton} onPress={() => { this.setModalVisible(!modalVisible); }}>
-            <Text style={{ fontFamily: 'Bold', fontSize: 16 }}>Request an Update</Text>
-            <Image style={styles.buttonAdd} resizeMode='contain' source={require('../assets/Vector.png')} />
-          </TouchableOpacity>
-        </View>
-        {/*CODE FOR BUTTON ENDS*/}
-
-        {/*CODE FOR POP UP STARTS*/}
-        <Modal transparent={true} visible={modalVisible} animationType='fade'>
-          <View style={styles.popupBack}>
-            <View style={styles.popup}>
-
-              <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Bold', fontSize: 18, textAlign: 'justify' }}>Request an Update</Text>
-              </View>
-
-              <View style={styles.popupText}>
-                <Text style={{ fontFamily: 'Regular', fontSize: 16 }}>Additional notes (optional):</Text>
-                <TextInput style={styles.popupInput} maxLength={250}></TextInput>
-              </View>
-
-              <View style={styles.popupButtons}>
-                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
-                  <View style={styles.popupRequest}>
-                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Request</Text>
-                  </View>
-                </TouchableOpacity>
-
-
-                <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
-                  <View style={styles.popupCancel}>
-                    <Text style={{ fontFamily: 'Medium', fontSize: 16, color: 'white' }}>Cancel</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </Modal>
       </ScrollView>
     )
   }
