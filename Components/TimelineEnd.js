@@ -9,7 +9,7 @@ const TimelineEnd = (props) => {
             <View style={styles.parent}>
                 {/* Time */}
                 <Text style={styles.time}>
-                    {props.rawData.health_recordings[0].date_modified.slice(11, 16)}
+                    {props.rawData.date_modified.slice(11, 16)}
                 </Text>
 
                 {/* Data wrapper for Timeline & Data */}
@@ -21,9 +21,9 @@ const TimelineEnd = (props) => {
                     {/* API Data */}
                     <View>
                         <Text style={styles.date}>
-                            {props.rawData.health_recordings[0].date_modified.slice(8, 10)}/
-                            {props.rawData.health_recordings[0].date_modified.slice(5, 7)}/
-                            {props.rawData.health_recordings[0].date_modified.slice(0, 4)}
+                            {props.rawData.date_modified.slice(8, 10)}/
+                            {props.rawData.date_modified.slice(5, 7)}/
+                            {props.rawData.date_modified.slice(0, 4)}
                         </Text>
 
                         <View style={{ flexDirection: "row" }}>

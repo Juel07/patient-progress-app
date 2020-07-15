@@ -29,26 +29,6 @@ export default class BasicTimeLine extends Component {
 
   constructor() {
     super();
-    this.data = [
-      {
-        time: '09:30',
-        title: '08/07/2020',
-        description:
-          'Temperature of 37C.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8',
-        fontSize: 5,
-      },
-      {
-        time: '12:30',
-        title: '08/07/2020',
-        description:
-          'Oxygen therapy administered.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8'
-      },
-    ];
-
   }
 
   componentDidMount() {
@@ -100,7 +80,7 @@ export default class BasicTimeLine extends Component {
         message: 'COVID-19 severity: '
       },
       other: {
-        message: 'Patient also has mild symptomps of '
+        message: 'Mild symptomps of '
       }
     };
 
@@ -108,6 +88,7 @@ export default class BasicTimeLine extends Component {
       <ScrollView style={styles.wrapper}>
         <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
         <View style={styles.userInfo}>
+
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>
             <Text style={styles.userName}>{this.state.userData.full_name}</Text>
@@ -127,33 +108,68 @@ export default class BasicTimeLine extends Component {
         {/*CODE FOR JANE ENDS*/}
 
         {/*CODE FOR FEED STARTS */}
-        <View style={styles.container} >
-          <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
-        </View>
-
         <TimelineInfo
-          rawData={this.state.userData}
+          rawData={this.state.userData.health_recordings[0]}
           data={this.state.userData.health_recordings[0].temperature}
           description={dataDescription.temperature.message}
           extras={"°C"}
         />
 
         <TimelineInfo
-          rawData={this.state.userData}
+          rawData={this.state.userData.health_recordings[0]}
+          data={this.state.userData.diagnoses[2].diagnosis_name}
+          description={dataDescription.other.message}
+          extras={""}
+        />
+
+        <TimelineInfo
+          rawData={this.state.userData.health_recordings[0]}
           data={this.state.userData.health_recordings[0].heart_rate}
           description={dataDescription.heartRate.message}
           extras={" bpm"}
         />
 
         <TimelineInfo
-          rawData={this.state.userData}
+          rawData={this.state.userData.health_recordings[0]}
           data={this.state.userData.ward.nurses[0].full_name}
           description={dataDescription.nurse.message}
           extras={""}
         />
 
+
+        <TimelineInfo
+          rawData={this.state.userData.health_recordings[1]}
+          data={this.state.userData.health_recordings[1].heart_rate}
+          description={dataDescription.heartRate.message}
+          extras={" bpm"}
+        />
+
+
+        <TimelineInfo
+          rawData={this.state.userData.health_recordings[1]}
+          data={this.state.userData.diagnoses[0].treatment}
+          description={dataDescription.treatment.message}
+          extras={""}
+        />
+
+
+        <TimelineInfo
+          rawData={this.state.userData.health_recordings[1]}
+          data={this.state.userData.diagnoses[0].severity}
+          description={dataDescription.covid.message}
+          extras={""}
+        />
+
+        <TimelineInfo
+          rawData={this.state.userData.health_recordings[1]}
+          data={this.state.userData.health_recordings[1].temperature}
+          description={dataDescription.temperature.message}
+          extras={"°C"}
+        />
+
+
         <TimelineEnd
-          rawData={this.state.userData}
+          rawData={this.state.userData.health_recordings[1]}
           data={this.state.userData.ward.ward_name}
           description={dataDescription.ward.message}
           extras={""}
