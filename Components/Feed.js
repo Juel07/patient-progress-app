@@ -9,6 +9,8 @@ import red from '../assets/red.jpg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { YellowBox } from 'react-native';
 
+import TimelineInfo from './TimelineInfo';
+
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
 ])
@@ -76,6 +78,40 @@ export default class BasicTimeLine extends Component {
         lineColor: '#58ACA8',
       },
     ];
+
+
+    this.APIdescription = {
+
+      temperature: {
+        message: 'Temperature of ',
+      },
+
+      ward: {
+        message: 'was admitted to ',
+      },
+
+      nurses: {
+        message: 'Nurses assigned - ',
+      },
+
+      heartRate: {
+        message: 'Heart rate of '
+      },
+
+      treatment: {
+        message: 'Currently taking '
+      },
+
+      covid: {
+        message: 'COVID-19 severity - '
+      },
+
+      other: {
+        message: 'also has mild symptomps of '
+      }
+
+    };
+
   }
 
   componentDidMount() {
@@ -135,6 +171,8 @@ export default class BasicTimeLine extends Component {
         <View style={styles.container} >
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
+
+        <TimelineInfo data={this.state.userData} />
 
         {/*CODE FOR FEED ENDS*/}
 
