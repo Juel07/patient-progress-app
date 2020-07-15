@@ -26,7 +26,7 @@ const TimelineInfo = (props) => {
                         <Text style={styles.date}>09/05/2020</Text>
 
                         <View style={{ flexDirection: 'row' }}>
-                            <Text style={styles.description} numberOfLines={4} ellipsizeMode="tail">Your text here. Kate is testing multiline text. Hopefully it will work.</Text>
+                            <Text style={styles.description} numberOfLines={4} ellipsizeMode="tail">{props.description.temperature.message}{props.data.health_recordings[0].temperature}</Text>
                         </View>
 
 

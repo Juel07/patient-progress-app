@@ -19,7 +19,7 @@ export default class BasicTimeLine extends Component {
   //pop-up
   state = {
     modalVisible: false,
-    userData: null
+    userData: null,
   };
 
   setModalVisible = (visible) => {
@@ -48,31 +48,6 @@ export default class BasicTimeLine extends Component {
       },
     ];
 
-
-    this.APIdescription = {
-      temperature: {
-        message: 'Temperature of ',
-      },
-      ward: {
-        message: 'was admitted to ',
-      },
-      nurses: {
-        message: 'Nurses assigned - ',
-      },
-      heartRate: {
-        message: 'Heart rate of '
-      },
-      treatment: {
-        message: 'Currently taking '
-      },
-      covid: {
-        message: 'COVID-19 severity - '
-      },
-      other: {
-        message: 'also has mild symptomps of '
-      }
-    };
-
   }
 
   componentDidMount() {
@@ -80,8 +55,6 @@ export default class BasicTimeLine extends Component {
       .then(response => response.json())
       .then(userData => this.setState({ userData }));
   }
-
-
 
   render() {
     if (this.state.userData === null) {
@@ -104,6 +77,31 @@ export default class BasicTimeLine extends Component {
       icon = <Image source={red} />;
       description = <Text style={styles.userNo}>  critical</Text>;
     }
+
+    // Get data description 
+    const dataDescription = {
+      temperature: {
+        message: 'Temperature of ',
+      },
+      ward: {
+        message: 'was admitted to ',
+      },
+      nurses: {
+        message: 'Nurses assigned - ',
+      },
+      heartRate: {
+        message: 'Heart rate of '
+      },
+      treatment: {
+        message: 'Currently taking '
+      },
+      covid: {
+        message: 'COVID-19 severity - '
+      },
+      other: {
+        message: 'also has mild symptomps of '
+      }
+    };
 
     return (
       <ScrollView style={styles.wrapper}>
@@ -133,7 +131,7 @@ export default class BasicTimeLine extends Component {
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
 
-        <TimelineInfo data={this.state.userData} />
+        <TimelineInfo data={this.state.userData} description={dataDescription} />
 
         {/*CODE FOR FEED ENDS*/}
 
