@@ -25,7 +25,12 @@ const TimelineInfo = (props) => {
                     {/* API Data */}
                     <View>
                         <Text style={styles.date}>09/05/2020</Text>
-                        <Text style={styles.description}>Kateffff tesgggts stufffffff ffffffff ffffffffff.</Text>
+
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={styles.description} numberOfLines={4} ellipsizeMode="tail">Your text here. Kate is testing multiline text. Hopefully it will work.</Text>
+                        </View>
+
+
                     </View>
                 </View>
 
@@ -83,6 +88,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'Regular',
         paddingTop: 6,
-        width: '99%',
+        width: 259,
     },
 });
