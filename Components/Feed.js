@@ -84,10 +84,10 @@ export default class BasicTimeLine extends Component {
         message: 'Temperature of ',
       },
       ward: {
-        message: 'was admitted to ',
+        message: 'Patient was admitted to ',
       },
-      nurses: {
-        message: 'Nurses assigned - ',
+      nurse: {
+        message: 'Nurse assigned: ',
       },
       heartRate: {
         message: 'Heart rate of '
@@ -96,10 +96,10 @@ export default class BasicTimeLine extends Component {
         message: 'Currently taking '
       },
       covid: {
-        message: 'COVID-19 severity - '
+        message: 'COVID-19 severity: '
       },
       other: {
-        message: 'also has mild symptomps of '
+        message: 'Patient also has mild symptomps of '
       }
     };
 
@@ -131,7 +131,33 @@ export default class BasicTimeLine extends Component {
           <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize: 16, fontFamily: 'Regular' }} />
         </View>
 
-        <TimelineInfo data={this.state.userData} description={dataDescription} />
+        <TimelineInfo
+          rawData={this.state.userData}
+          data={this.state.userData.health_recordings[0].temperature}
+          description={dataDescription.temperature.message}
+          extras={"°C"}
+        />
+
+        <TimelineInfo
+          rawData={this.state.userData}
+          data={this.state.userData.health_recordings[0].heart_rate}
+          description={dataDescription.heartRate.message}
+          extras={" bpm"}
+        />
+
+        <TimelineInfo
+          rawData={this.state.userData}
+          data={this.state.userData.ward.nurses[0].full_name}
+          description={dataDescription.nurse.message}
+          extras={""}
+        />
+
+        <TimelineInfo
+          rawData={this.state.userData}
+          data={this.state.userData.ward.ward_name}
+          description={dataDescription.ward.message}
+          extras={""}
+        />
 
         {/*CODE FOR FEED ENDS*/}
 
