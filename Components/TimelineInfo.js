@@ -5,7 +5,6 @@ import OnLayout from 'react-native-on-layout';
 
 const TimelineInfo = (props) => {
 
-
     return (
         <>
 
