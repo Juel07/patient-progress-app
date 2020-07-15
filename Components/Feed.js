@@ -46,70 +46,31 @@ export default class BasicTimeLine extends Component {
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
-      {
-        time: '17:30',
-        title: '08/07/2020',
-        description:
-          'Breathing returned to normal.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8'
-      },
-      {
-        time: '09:30',
-        title: '09/07/2020',
-        description:
-          'Weight: 75 kg - no change from previously recorded weight.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8'
-      },
-      {
-        time: '12:30',
-        title: '09/07/2020',
-        description:
-          'Normal glucose levels and normal blood pressure.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8'
-      },
-      {
-        time: '15:30',
-        title: '09/07/2020',
-        description: 'Heart rate: 80 bpm - normal resting heart rate.',
-        circleColor: '#58ACA8',
-        lineColor: '#58ACA8',
-      },
     ];
 
 
     this.APIdescription = {
-
       temperature: {
         message: 'Temperature of ',
       },
-
       ward: {
         message: 'was admitted to ',
       },
-
       nurses: {
         message: 'Nurses assigned - ',
       },
-
       heartRate: {
         message: 'Heart rate of '
       },
-
       treatment: {
         message: 'Currently taking '
       },
-
       covid: {
         message: 'COVID-19 severity - '
       },
-
       other: {
         message: 'also has mild symptomps of '
       }
-
     };
 
   }
