@@ -12,7 +12,7 @@ const TimelineInfo = (props) => {
             <View style={styles.parent}>
 
                 {/* Time */}
-                <Text style={styles.time}>9:30</Text>
+                <Text style={styles.time}>{props.rawData.health_recordings[0].date_modified.slice(11, 16)}</Text>
 
                 {/* Data wrapper for Timeline & Data */}
                 <View style={styles.parentWrap}>
@@ -23,10 +23,10 @@ const TimelineInfo = (props) => {
                     </View>
                     {/* API Data */}
                     <View>
-                        <Text style={styles.date}>09/05/2020</Text>
+                        <Text style={styles.date}>{props.rawData.health_recordings[0].date_modified.slice(8, 10)}/{props.rawData.health_recordings[0].date_modified.slice(5, 7)}/{props.rawData.health_recordings[0].date_modified.slice(0, 4)}</Text>
 
                         <View style={{ flexDirection: 'row' }}>
-                            <Text style={styles.description} numberOfLines={4} ellipsizeMode="tail">{props.description.temperature.message}{props.data.health_recordings[0].temperature}</Text>
+                            <Text style={styles.description} numberOfLines={4} ellipsizeMode="tail">{props.description}{props.data}{props.extras}.</Text>
                         </View>
 
 
