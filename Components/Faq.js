@@ -24,33 +24,6 @@ export default function Faq() {
     Bold: require("../assets/fonts/Montserrat-Bold.ttf"),
   });
 
-  // hooks for buttons
-  const [answer, setAnswer] = useState("");
-  const handleAnswer = () =>
-    setAnswer(
-      "Usually eldery people and individuals with a compromised immune system."
-    );
-  const [secondAnswer, setSecondAnswer] = useState("");
-  const handleSecondAnswer = () =>
-    setSecondAnswer(
-      "The recovery can last from one to two weeks and varies from individual to individual."
-    );
-  const [thirdAnswer, setThirdAnswer] = useState("");
-  const handleThirdAnswer = () =>
-    setThirdAnswer(
-      "The treatment will depend on the condition of the individual. At present time, there is no specific medication for treating COVID-19. Usually, the treatment involves receiving supplemental oxygen and oral antibiotics."
-    );
-  const [fourthAnswer, setFourthAnswer] = useState("");
-  const handleFourthAnswer = () =>
-    setFourthAnswer(
-      "According to the latest information it seems like pregnant and non-pregnant adults have the same risk of being infected with COVID-19."
-    );
-  const [fifthAnswer, setFifthAnswer] = useState("");
-  const handleFifthAnswer = () =>
-    setFifthAnswer(
-      "Mother-to-child transmission is unlikely, however after your loved one gives a birth, the newborn is susceptible to person-to-person spread."
-    );
-
   // using functions to create toggle effect
   const [state, setState] = useState(true);
   function toggle() {

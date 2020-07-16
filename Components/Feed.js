@@ -27,9 +27,7 @@ YellowBox.ignoreWarnings([
 ]);
 
 export default class BasicTimeLine extends Component {
-  //pop-up
   state = {
-    modalVisible: false,
     userData: null,
   };
 
