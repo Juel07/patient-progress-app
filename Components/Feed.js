@@ -1,20 +1,30 @@
 /*React Native TimeLine ListView / Flatlist*/
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Image, Modal, StatusBar, FlatList, SafeAreaView } from 'react-native';
-import Timeline from 'react-native-timeline-flatlist';
-import Jane from '../assets/Jane.png';
-import green from '../assets/green.jpg';
-import orange from '../assets/orange.jpg';
-import red from '../assets/red.jpg';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { YellowBox } from 'react-native';
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  StatusBar,
+  SafeAreaView,
+} from "react-native";
+import Jane from "../assets/Jane.png";
+import green from "../assets/green.jpg";
+import orange from "../assets/orange.jpg";
+import red from "../assets/red.jpg";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
+import { YellowBox } from "react-native";
 
-import TimelineInfo from './TimelineInfo';
-import TimelineEnd from './TimelineEnd';
+import TimelineInfo from "./TimelineInfo";
+import TimelineEnd from "./TimelineEnd";
 
 YellowBox.ignoreWarnings([
-  'VirtualizedLists should never be nested', // TODO: Remove when fixed
-])
+  "VirtualizedLists should never be nested", // TODO: Remove when fixed
+]);
 
 export default class BasicTimeLine extends Component {
   //pop-up
@@ -25,7 +35,7 @@ export default class BasicTimeLine extends Component {
 
   setModalVisible = (visible) => {
     this.setState({ modalVisible: visible });
-  }
+  };
 
   constructor() {
     super();
@@ -33,13 +43,17 @@ export default class BasicTimeLine extends Component {
 
   componentDidMount() {
     fetch("https://nhs-services.herokuapp.com/api/patients/2147483647")
-      .then(response => response.json())
-      .then(userData => this.setState({ userData }));
+      .then((response) => response.json())
+      .then((userData) => this.setState({ userData }));
   }
 
   render() {
     if (this.state.userData === null) {
-      return <View style={styles.dataLoading}><Text style={styles.userName}>Loading patient data...</Text></View>;
+      return (
+        <View style={styles.dataLoading}>
+          <Text style={styles.userName}>Loading patient data...</Text>
+        </View>
+      );
     }
 
     const { modalVisible } = this.state;
@@ -50,51 +64,52 @@ export default class BasicTimeLine extends Component {
     let description;
     if (patientCondition == "Stable") {
       icon = <Image source={green} />;
-      description = <Text style={styles.userNo}>  stable</Text>;
+      description = <Text style={styles.userNo}> stable</Text>;
     } else if (patientCondition == "Unstable") {
       icon = <Image source={orange} />;
-      description = <Text style={styles.userNo}>  unstable</Text>;
+      description = <Text style={styles.userNo}> unstable</Text>;
     } else if (patientCondition == "Critical") {
       icon = <Image source={red} />;
-      description = <Text style={styles.userNo}>  critical</Text>;
+      description = <Text style={styles.userNo}> critical</Text>;
     }
 
-    // Get data description 
+    // Get data description
     const dataDescription = {
       temperature: {
-        message: 'Temperature of ',
+        message: "Temperature of ",
       },
       ward: {
-        message: 'Patient was admitted to ',
+        message: "Patient was admitted to ",
       },
       nurse: {
-        message: 'Nurse assigned: ',
+        message: "Nurse assigned: ",
       },
       heartRate: {
-        message: 'Heart rate of '
+        message: "Heart rate of ",
       },
       treatment: {
-        message: 'Currently taking '
+        message: "Currently taking ",
       },
       covid: {
-        message: 'COVID-19 severity: '
+        message: "COVID-19 severity: ",
       },
       other: {
-        message: 'Mild symptomps of '
-      }
+        message: "Mild symptomps of ",
+      },
     };
 
     return (
       <ScrollView style={styles.wrapper}>
-        <StatusBar backgroundColor='#32afa9' barStyle="light-content" />
+        <StatusBar backgroundColor='#32afa9' barStyle='light-content' />
         <View style={styles.userInfo}>
-
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>
             <Text style={styles.userName}>{this.state.userData.full_name}</Text>
-            <Text style={styles.userNo}>NHS NUMBER: {this.state.userData.nhs_number}</Text>
-            <View style={{ flexDirection: 'row' }}>
-              <Text style={styles.userNo}>PROGRESS:  </Text>
+            <Text style={styles.userNo}>
+              NHS NUMBER: {this.state.userData.nhs_number}
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.userNo}>PROGRESS: </Text>
               {icon}
               {description}
             </View>
@@ -103,7 +118,6 @@ export default class BasicTimeLine extends Component {
           <View style={styles.Jane}>
             <Image source={Jane} />
           </View>
-
         </View>
         {/*CODE FOR JANE ENDS*/}
 
@@ -136,7 +150,6 @@ export default class BasicTimeLine extends Component {
           extras={""}
         />
 
-
         <TimelineInfo
           rawData={this.state.userData.health_recordings[1]}
           data={this.state.userData.health_recordings[1].heart_rate}
@@ -144,14 +157,12 @@ export default class BasicTimeLine extends Component {
           extras={" bpm"}
         />
 
-
         <TimelineInfo
           rawData={this.state.userData.health_recordings[1]}
           data={this.state.userData.diagnoses[0].treatment}
           description={dataDescription.treatment.message}
           extras={""}
         />
-
 
         <TimelineInfo
           rawData={this.state.userData.health_recordings[1]}
@@ -167,7 +178,6 @@ export default class BasicTimeLine extends Component {
           extras={"°C"}
         />
 
-
         <TimelineEnd
           rawData={this.state.userData.health_recordings[1]}
           data={this.state.userData.ward.ward_name}
@@ -175,9 +185,8 @@ export default class BasicTimeLine extends Component {
           extras={""}
         />
         {/*CODE FOR FEED ENDS*/}
-
       </ScrollView>
-    )
+    );
   }
 }
 const styles = StyleSheet.create({
@@ -187,131 +196,131 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    width: '100%'
+    flexDirection: "column",
+    backgroundColor: "#fff",
+    width: "100%",
   },
   dataLoading: {
     flex: 1,
-    backgroundColor: '#fff',
-    width: '100%',
-    textAlign: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    width: "100%",
+    textAlign: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
   },
   userInfo: {
-    alignItems: 'center',
+    alignItems: "center",
     flexGrow: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around'
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   userContainer: {
-    flexWrap: 'wrap',
-    marginLeft: '5%',
-    flexDirection: 'column',
-    alignItems: 'flex-end'
+    flexWrap: "wrap",
+    marginLeft: "5%",
+    flexDirection: "column",
+    alignItems: "flex-end",
   },
   userName: {
     fontSize: 18,
-    fontFamily: 'SemiBold',
-    lineHeight: 25
+    fontFamily: "SemiBold",
+    lineHeight: 25,
   },
   userNo: {
     fontSize: 14,
-    fontFamily: 'Regular'
+    fontFamily: "Regular",
   },
   button: {
-    alignItems: 'center',
-    padding: 10
+    alignItems: "center",
+    padding: 10,
   },
   innerButton: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 40,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    height: hp('10%'),
+    flexDirection: "row",
+    justifyContent: "space-around",
+    height: hp("10%"),
     //padding: 10,
     paddingRight: 10,
     paddingLeft: 30,
-    alignItems: 'center',
-    width: wp('75%'),
-    shadowColor: 'rgba(0,0,0, .25)',
+    alignItems: "center",
+    width: wp("75%"),
+    shadowColor: "rgba(0,0,0, .25)",
     shadowOffset: { height: 0, width: 0 },
     shadowOpacity: 2,
     shadowRadius: 4,
     elevation: 5,
-    borderRadius: 40
+    borderRadius: 40,
   },
   //Pop-up styling
   popupBack: {
     flex: 1,
     backgroundColor: "#000000aa",
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   popup: {
     borderRadius: 40,
-    height: '40%',
-    width: '75%',
-    padding: '5%',
-    backgroundColor: 'white'
+    height: "40%",
+    width: "75%",
+    padding: "5%",
+    backgroundColor: "white",
   },
 
   popupText: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: '2%'
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: "2%",
   },
 
   popupInput: {
     height: 30,
-    width: '90%',
+    width: "90%",
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderRadius: 5,
-    marginVertical: '5%'
+    marginVertical: "5%",
   },
 
   notify: {
     flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     flexDirection: "row",
-    marginTop: '20%',
+    marginTop: "20%",
   },
 
   popupButtons: {
-    height: '20%',
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    height: "20%",
+    alignItems: "center",
+    justifyContent: "space-around",
     flexDirection: "row",
-    marginTop: '4%'
+    marginTop: "4%",
   },
 
   popupRequest: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#58ACA8',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#58ACA8",
     padding: 5,
     paddingLeft: 30,
     paddingRight: 30,
-    borderRadius: 40
+    borderRadius: 40,
   },
 
   popupCancel: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#AC5858',
-    width: '100%',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#AC5858",
+    width: "100%",
     padding: 5,
     paddingLeft: 20,
     paddingRight: 20,
-    borderRadius: 40
+    borderRadius: 40,
   },
   buttonAdd: {
     width: 37,
     height: 37,
-  }
-})
+  },
+});
