@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Image, Alert, Modal, TextInput, StatusBar, KeyboardAvoidingView, ScrollView } from "react-native";
 import { Avatar } from 'react-native-paper';
 import { TouchableRipple, Switch } from 'react-native-paper';
@@ -157,7 +157,7 @@ const Contacts = ({ navigation }) => {
                         <Text style={{ fontFamily: 'Regular', fontSize: 14 }} textAlign='center'>Notify me if my relative</Text>
                         <Text style={{ fontFamily: 'Regular', fontSize: 14 }}>            passes away</Text>
                       </View>
-                      
+
                       <TouchableRipple onPress={() => { toggleRest() }}>
                         <View pointerEvents='none' style={{ marginLeft: '1%' }}>
                           <Switch
@@ -234,7 +234,7 @@ const Contacts = ({ navigation }) => {
               </View>
               <View style={styles.relativeInfo}>
                 <View>
-                  <Text style={styles.relativeFullName}>Jane Doe</Text>
+                  <Text style={styles.relativeFullName}>Ellen Wright</Text>
                   <Text style={styles.relativeHosp}>St.George&#39;s Hospital</Text>
                 </View>
                 <View style={styles.update}>
@@ -428,8 +428,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000aa",
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingTop:'10%'
-    
+    paddingTop: '10%'
+
   },
 
   popup: {
@@ -507,7 +507,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: "row",
-    flex:1
+    flex: 1
   },
 
   popupButtons: {
