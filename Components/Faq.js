@@ -59,7 +59,7 @@ export default function Faq() {
         <StatusBar backgroundColor='#32afa9' barStyle='light-content' />
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            1. Who is at a risk of developing severe illness?
+            Who is at a risk of developing severe illness?
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
@@ -83,7 +83,7 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            2. How long it takes to fully recover?
+            How long it takes to fully recover?
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
@@ -107,7 +107,7 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            3. How will my family member be treated?{" "}
+            How will my family member be treated?{" "}
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
@@ -131,7 +131,7 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            4. Do pregnant individuals have higher chances of getting sick from
+            Do pregnant individuals have higher chances of getting sick from
             COVID-19?
           </Text>
           <View>
@@ -156,7 +156,7 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            5. Is mother-to-child transmission possible?{" "}
+            Is mother-to-child transmission possible?{" "}
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
