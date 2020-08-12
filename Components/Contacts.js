@@ -112,7 +112,7 @@ const Contacts = ({ navigation }) => {
                     </View>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: "Regular", fontSize: 16 }}>
+                      <Text style={{ fontFamily: "Regular", fontSize: 15 }}>
                         Relative's Full Name:
                       </Text>
                       <TextInput
@@ -122,7 +122,7 @@ const Contacts = ({ navigation }) => {
                     </View>
 
                     <View style={styles.popupText}>
-                      <Text style={{ fontFamily: "Regular", fontSize: 16 }}>
+                      <Text style={{ fontFamily: "Regular", fontSize: 15 }}>
                         Relative's D.O.B (dd/mm/yyyy):
                       </Text>
 
@@ -427,7 +427,7 @@ const Contacts = ({ navigation }) => {
               <View style={styles.relative}>
                 <Avatar.Image
                   size={70}
-                  source={require("../assets/Jill.png")}
+                  source={require("../assets/Jane.png")}
                 />
               </View>
               <View style={styles.relativeInfo}>
