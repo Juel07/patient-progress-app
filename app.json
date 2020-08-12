@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "A React Native project for a hackathon called CFG Hack from Home 2020.  Introducing Patient Progress, an app that would automate the process of updating the emergency contacts with the development of the COVID-19 patient in quarantine.\n\nTo view our app: \nDownload the Expo app from the app store (you don't need an Expo account).\nOpen the Expo app and click on \"Scan QR code\".\nScan the QR code provided on this page and it will load the Patient Progress app on your device.\n\nIf you experience persistent problems loading the app on your phone, you could click on the purple link to your right that says \"Open project in the browser\" and then click \"Open project\".\n\nWe recommend heading over to the repository (https://github.com/Juel07/patient-progress-app) to view the video demo provided in the ReadMe.md file.",
+    "description": "Introducing Patient Progress, an app that would automate the process of updating the emergency contacts with the development of the COVID-19 patient in quarantine.\n\nTo view our app: \nDownload the Expo app from the app store (you don't need an Expo account).\nOpen the Expo app and click on \"Scan QR code\".\nScan the QR code provided on this page and it will load the Patient Progress app on your device.\n\nIf you experience persistent problems loading the app on your phone, you could click on the purple link to your right that says \"Open project in the browser\" and then click \"Open project\".\n\nWe recommend heading over to the repository (https://github.com/Juel07/patient-progress-app) to view the video demo provided in the ReadMe.md file.",
     "githubUrl": "https://github.com/Juel07/patient-progress-app"
   }
 }
