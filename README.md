@@ -1,5 +1,5 @@
 # General info
-A React Native project for a hackathon called CFG Hack from Home 2020. Introducing Patient Progress, an app that would automate the process of updating the emergency contacts of a patient with the development of the patient in quarantine.
+Introducing Patient Progress, an app that would automate the process of updating the emergency contacts of a patient with the development of the patient in quarantine.
 
 # Prerequisities
 ```
