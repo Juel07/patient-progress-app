@@ -50,7 +50,7 @@ export default function Nurse() {
                 <View style={styles.rectangle}>
                     <TouchableOpacity style={styles.inner} onPress={() => setModalOpen(true)}>
                         <Text style={styles.bookingText}>
-                            Book a time slot for a call with the nurse</Text>
+                            Book a time slot for a call</Text>
                         <FontAwesomeIcon icon={faCalendarPlus} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
@@ -73,7 +73,7 @@ export default function Nurse() {
                 <View style={styles.rectangle}>
                     <TouchableOpacity style={styles.inner} onPress={() => setModalTwoOpen(true)}>
                         <Text style={styles.bookingText}>
-                            Make an {"\n"}urgent call to the nurse</Text>
+                            Make an {"\n"}urgent call to the ward</Text>
                         <FontAwesomeIcon icon={faPhoneSquareAlt} style={styles.calendarIcon} size={80} />
                         <Modal
                             transparent={true}
