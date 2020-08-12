@@ -1,3 +1,4 @@
+# .gitignore tells git which files (or patterns) it should ignore
 node_modules/**/*
 .expo/*
 npm-debug.*
