@@ -52,12 +52,6 @@ export function DrawerContent(props) {
                                 </View>
                                 <Avatar.Image source={JohnDoe} size={70} />
                             </View>
-                            <View style={styles.row}>
-                                <View style={styles.section}>
-                                    <Paragraph style={[styles.paragraph]}>2</Paragraph>
-                                    <Caption style={styles.caption}>Contacts</Caption>
-                                </View>
-                            </View>
                         </View>
 
                         <Drawer.Section style={styles.drawerSection}>
@@ -69,18 +63,7 @@ export function DrawerContent(props) {
 
                                 onPress={() => { props.navigation.navigate('Contacts') }}
                             />
-                            <DrawerItem inactiveTintColor='#fff'
-                                icon={({ color, size }) => (
-                                    <Icon name="inbox-arrow-down"
-                                        color={color}
-                                        size={size}
-                                    />
-                                )}
-                                label="Feed" labelStyle={{ fontFamily: 'Medium', fontSize: 16 }}
-
-                                onPress={() => { props.navigation.navigate('Feed') }}
-                            />
-
+                            
                             <DrawerItem inactiveTintColor='#fff' activeBackgroundColor='#58ACA8'
                                 icon={({ color, size }) => (
                                     <Ionicons name="md-information-circle-outline"
