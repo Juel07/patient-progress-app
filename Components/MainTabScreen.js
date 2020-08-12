@@ -89,7 +89,7 @@ const BottomTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='Call Nurse'
+      name='Call Ward'
       component={NurseScreen}
       options={{
         tabBarColor: "#fff",
@@ -224,13 +224,13 @@ const NurseScreen = () => (
     screenOptions={({ navigation }) => {
       return {
         headerTitle: () => (
-          <Header title='Call Nurse' navigation={navigation} />
+          <Header title='Call Ward' navigation={navigation} />
         ),
         headerTitleAlign: "center",
       };
     }}
   >
-    <NurseStack.Screen name='Call Nurse' component={CallNurse} options={{}} />
+    <NurseStack.Screen name='Call Ward' component={CallNurse} options={{}} />
   </NurseStack.Navigator>
 );
 
