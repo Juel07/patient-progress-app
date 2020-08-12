@@ -34,7 +34,6 @@ If viewing on a hardware emulator, we recommend choosing either of the following
 * Juel Braganza 
 * Katarina Zaprazna 
 * Sahuur Safiya Jama 
-* Temi Olukoko 
 * Tolu Akintan 
 
 # Questions & Answers
