@@ -56,7 +56,7 @@ export default function Faq() {
   } else {
     return (
       <ScrollView style={styles.wrapper}>
-        <StatusBar backgroundColor='#32afa9' barStyle='light-content' />
+        <StatusBar backgroundColor="#32afa9" barStyle="light-content" />
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
             Who is at a risk of developing severe illness?
@@ -65,14 +65,14 @@ export default function Faq() {
             <Text style={styles.bodyTxt}>
               {state
                 ? ""
-                : "Usually eldery people and individuals with a compromised immune system."}
+                : "Those at high risk from coronavirus include eldery people and individuals with a compromised immune system."}
             </Text>
           </View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={toggle}>
+          <TouchableHighlight underlayColor="#fff" onPress={toggle}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -83,7 +83,7 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            How long it takes to fully recover?
+            How long does it take to completely recover?
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
@@ -96,7 +96,7 @@ export default function Faq() {
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={toggle2}>
+          <TouchableHighlight underlayColor="#fff" onPress={toggle2}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -120,7 +120,7 @@ export default function Faq() {
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={toggle3}>
+          <TouchableHighlight underlayColor="#fff" onPress={toggle3}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -131,21 +131,20 @@ export default function Faq() {
 
         <View style={styles.container}>
           <Text style={styles.bodyTxtBold}>
-            Do pregnant individuals have higher chances of getting sick from
-            COVID-19?
+            Are pregnant women at high risk of coronovirus?
           </Text>
           <View>
             <Text style={styles.bodyTxt}>
               {state4
                 ? ""
-                : "According to the latest information it seems like pregnant and non-pregnant adults have the same risk of being infected with COVID-19."}
+                : "There's no evidence that pregnant women are more likely to get seriously ill from coronavirus. But pregnant women have been included in the list of people at moderate risk (clinically vulnerable) as a precaution. This is because pregnant women can sometimes be more at risk from viruses like flu"}
             </Text>
           </View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtn}>
-          <TouchableHighlight underlayColor='#fff' onPress={toggle4}>
+          <TouchableHighlight underlayColor="#fff" onPress={toggle4}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
@@ -162,14 +161,14 @@ export default function Faq() {
             <Text style={styles.bodyTxt}>
               {state5
                 ? ""
-                : "Mother-to-child transmission is unlikely, however after your loved one gives a birth, the newborn is susceptible to person-to-person spread."}
+                : "Mother-to-child transmission is unlikely, however after your loved one gives birth, the newborn is susceptible to person-to-person spread."}
             </Text>
           </View>
           {/* <Button title="Test" onPress={handleAnswer}/> */}
         </View>
 
         <View style={styles.addBtnLast}>
-          <TouchableHighlight underlayColor='#fff' onPress={toggle5}>
+          <TouchableHighlight underlayColor="#fff" onPress={toggle5}>
             <Image source={add} />
           </TouchableHighlight>
         </View>
