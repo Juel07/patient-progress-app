@@ -19,9 +19,9 @@ const Settings = ({ navigation }) => {
 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-  }
+  // const toggleTheme = () => {
+  //   setIsDarkTheme(!isDarkTheme);
+  // }
 
   const [isNotif, setIsNotif] = useState(false);
 
@@ -79,8 +79,7 @@ const Settings = ({ navigation }) => {
               </View>
             </TouchableRipple>
           </View>
-          <View style={styles.menuLine}></View>
-          <View style={styles.menuTopItems}>
+          {/* <View style={styles.menuTopItems}>
             <FontAwesomeIcon icon={faMobile} style={styles.menuIcons} size={25} />
             <Text style={styles.menuTopText}>Dark Theme</Text>
             <TouchableRipple onPress={() => { toggleTheme() }}>
@@ -91,8 +90,8 @@ const Settings = ({ navigation }) => {
                   trackColor={{ false: "#767577", true: "#58ACA8" }}
                   thumbColor={isDarkTheme ? "#32afa9" : "#393b3a"} />
               </View>
-            </TouchableRipple>
-          </View>
+            </TouchableRipple> 
+            </View>*/}
 
 
           <View style={styles.menuLine}></View>
