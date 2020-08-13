@@ -98,7 +98,7 @@ export default class SecondFeed extends Component {
 
     return (
       <ScrollView style={styles.wrapper}>
-        <StatusBar backgroundColor='#32afa9' barStyle='light-content' />
+        <StatusBar backgroundColor="#32afa9" barStyle="light-content" />
         <View style={styles.userInfo}>
           {/*CODE FOR JANE DOE TEXT STARTS*/}
           <View style={styles.userContainer}>

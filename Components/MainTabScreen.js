@@ -47,10 +47,10 @@ const MainTabScreen = () => (
     drawerContent={(props) => <DrawerContent {...props} />}
     drawerContentOptions={{ gestureEnabled: true }}
   >
-    <Drawer.Screen name='Home' component={BottomTabScreen} />
-    <Drawer.Screen name='Feed' component={FeedScreen} />
-    <Drawer.Screen name='About' component={AboutScreen} />
-    <Drawer.Screen name='Sign Out' component={SignInScreen} />
+    <Drawer.Screen name="Home" component={BottomTabScreen} />
+    <Drawer.Screen name="Feed" component={FeedScreen} />
+    <Drawer.Screen name="About" component={AboutScreen} />
+    <Drawer.Screen name="Sign Out" component={SignInScreen} />
   </Drawer.Navigator>
 );
 
@@ -70,7 +70,7 @@ const config = {
 
 const BottomTabScreen = () => (
   <Tab.Navigator
-    initialRouteName='Contacts'
+    initialRouteName="Contacts"
     tabBarOptions={{
       activeTintColor: "#a4d4ae",
       inactiveTintColor: "#32AFA9",
@@ -79,7 +79,7 @@ const BottomTabScreen = () => (
     height={60}
   >
     <Tab.Screen
-      name='Contacts'
+      name="Contacts"
       component={ContactsScreen}
       options={{
         tabBarColor: "#fff",
@@ -89,7 +89,7 @@ const BottomTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='Call Ward'
+      name="Call Ward"
       component={NurseScreen}
       options={{
         tabBarColor: "#fff",
@@ -99,7 +99,7 @@ const BottomTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='FAQs'
+      name="FAQs"
       component={FaqScreen}
       options={{
         tabBarColor: "#fff",
@@ -109,7 +109,7 @@ const BottomTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='Support'
+      name="Support"
       component={SupportScreen}
       options={{
         tabBarColor: "#fff",
@@ -119,7 +119,7 @@ const BottomTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='Settings'
+      name="Settings"
       component={SettingScreen}
       options={{
         tabBarColor: "#fff",
@@ -141,22 +141,22 @@ const ContactsScreen = () => (
     }}
   >
     <ContactStack.Screen
-      name='Contacts'
+      name="Contacts"
       component={Contacts}
       options={({ navigation }) => {
         return {
-          headerTitle: () => <Header title='Home' navigation={navigation} />,
+          headerTitle: () => <Header title="Home" navigation={navigation} />,
           headerTitleAlign: "center",
         };
       }}
     />
     <ContactStack.Screen
-      name='Feed'
+      name="Feed"
       component={Feed}
       options={({ navigation }) => {
         return {
           headerTitle: () => (
-            <HeaderBack title='Feed' navigation={navigation} />
+            <HeaderBack title="Feed" navigation={navigation} />
           ),
           headerTitleAlign: "center",
           headerBackTitleVisible: false,
@@ -164,12 +164,12 @@ const ContactsScreen = () => (
       }}
     />
     <ContactStack.Screen
-      name='SecondFeed'
+      name="SecondFeed"
       component={SecondFeed}
       options={({ navigation }) => {
         return {
           headerTitle: () => (
-            <HeaderBack title='Feed' navigation={navigation} />
+            <HeaderBack title="Feed" navigation={navigation} />
           ),
           headerTitleAlign: "center",
           headerBackTitleVisible: false,
@@ -184,14 +184,14 @@ const SupportScreen = () => (
     screenOptions={({ navigation }) => {
       return {
         headerTitle: () => (
-          <Header title='Help and Support' navigation={navigation} />
+          <Header title="Help and Support" navigation={navigation} />
         ),
         headerTitleAlign: "center",
       };
     }}
   >
     <SupportStack.Screen
-      name='Support'
+      name="Support"
       component={Support}
       options={{
         title: "Support",
@@ -204,13 +204,13 @@ const FaqScreen = () => (
   <FaqStack.Navigator
     screenOptions={({ navigation }) => {
       return {
-        headerTitle: () => <Header title='FAQs' navigation={navigation} />,
+        headerTitle: () => <Header title="FAQs" navigation={navigation} />,
         headerTitleAlign: "center",
       };
     }}
   >
     <FaqStack.Screen
-      name='FAQ'
+      name="FAQ"
       component={Faq}
       options={{
         title: "FAQs",
@@ -223,14 +223,12 @@ const NurseScreen = () => (
   <NurseStack.Navigator
     screenOptions={({ navigation }) => {
       return {
-        headerTitle: () => (
-          <Header title='Call Ward' navigation={navigation} />
-        ),
+        headerTitle: () => <Header title="Call Ward" navigation={navigation} />,
         headerTitleAlign: "center",
       };
     }}
   >
-    <NurseStack.Screen name='Call Ward' component={CallNurse} options={{}} />
+    <NurseStack.Screen name="Call Ward" component={CallNurse} options={{}} />
   </NurseStack.Navigator>
 );
 
@@ -244,24 +242,24 @@ const SettingScreen = () => (
     }}
   >
     <SettingStack.Screen
-      name='Settings'
+      name="Settings"
       component={Settings}
       options={({ navigation }) => {
         return {
           headerTitle: () => (
-            <Header title='Settings' navigation={navigation} />
+            <Header title="Settings" navigation={navigation} />
           ),
           headerTitleAlign: "center",
         };
       }}
     />
     <SettingStack.Screen
-      name='About'
+      name="About"
       component={About}
       options={({ navigation }) => {
         return {
           headerTitle: () => (
-            <HeaderBack title='About' navigation={navigation} />
+            <HeaderBack title="About" navigation={navigation} />
           ),
           headerTitleAlign: "center",
           headerBackTitleVisible: false,
@@ -275,13 +273,13 @@ const FeedScreen = () => (
   <FeedStack.Navigator
     screenOptions={({ navigation }) => {
       return {
-        headerTitle: () => <Header title='Feed' navigation={navigation} />,
+        headerTitle: () => <Header title="Feed" navigation={navigation} />,
         headerTitleAlign: "center",
       };
     }}
   >
     <FeedStack.Screen
-      name='Feed'
+      name="Feed"
       component={Feed}
       options={{
         title: "Feed",
@@ -294,13 +292,13 @@ const SecondFeedScreen = () => (
   <SecondFeedStack.Navigator
     screenOptions={({ navigation }) => {
       return {
-        headerTitle: () => <Header title='Feed' navigation={navigation} />,
+        headerTitle: () => <Header title="Feed" navigation={navigation} />,
         headerTitleAlign: "center",
       };
     }}
   >
     <SecondFeedStack.Screen
-      name='SecondFeed'
+      name="SecondFeed"
       component={SecondFeed}
       options={{
         title: "Feed",
@@ -313,13 +311,13 @@ const AboutScreen = () => (
   <AboutStack.Navigator
     screenOptions={({ navigation }) => {
       return {
-        headerTitle: () => <Header title='About' navigation={navigation} />,
+        headerTitle: () => <Header title="About" navigation={navigation} />,
         headerTitleAlign: "center",
       };
     }}
   >
     <AboutStack.Screen
-      name='About'
+      name="About"
       component={About}
       options={{
         title: "About",

@@ -31,7 +31,7 @@ const TimelineInfo = (props) => {
               <Text
                 style={styles.description}
                 numberOfLines={4}
-                ellipsizeMode='tail'
+                ellipsizeMode="tail"
               >
                 {props.description}
                 {props.data}
