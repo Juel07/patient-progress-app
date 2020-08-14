@@ -10,7 +10,7 @@ The patient data include the following fields: full name, NHS number, date of bi
 
 The nurse data include the following fields: full name, ward, ward number, NHS number and the patients assigned.
 
-The API itself has two publicly available end points, the first one being API/patients which returns all medical data available for all registered patients and the second one being API/patients/<nhs_number> which return all data previously mentioned associated with a patient with a particular NHS number, including the most up-to-date snapshot of physiological data which is displayed on our feed.
+The API itself has two publicly available end points, the first one being ```api/patients``` which returns all medical data available for all registered patients and the second one being ```api/patients/<nhs_number>``` which return all data previously mentioned associated with a patient with a particular NHS number, including the most up-to-date snapshot of physiological data which is displayed on our feed.
 
 The Patient Progress REST API itself has no HTML interface and returns raw JSON data which the React Native app displays. The project is hosted on Heroku, under the Free Tier subscription model.
 
@@ -21,11 +21,10 @@ $ npm install -g expo-cli
 
 # Setup
 ## To view this project 
-* Download the Expo app on your mobile device 
-* If using an Android device, the app can be viewed by scanning the QR below 
-<img src="assets/qrcode.png" height="200px">
-
-* If you're using an Apple device or you currently cannot access a mobile device, the project can be viewed in browser on <a href="https://expo.io/@kate97z/patient-progress-app">this link</a> or as a Vimeo video <a href="">here</a>.
+* Download the Expo app on your mobile device. 
+* The project can be viewed in Expo by scanning the QR code provided in the link (works for Android only). 
+* iOS users cannot view the project in Expo, due to Apple's review guidelines. 
+* If you're using an iOS device or you currently cannot access a mobile device, the project can be viewed in browser on <a href="https://expo.io/@juel07/patient-progress-app">this link</a> or as a Vimeo video <a href="https://vimeo.com/447799138">here</a>.
 
 ## To run this project, install it locally using Expo
 ```
