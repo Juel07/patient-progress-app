@@ -3,17 +3,23 @@
     "name": "patient-progress-app",
     "sdkVersion": "37.0.0",
     "slug": "patient-progress-app",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
-    "description": "Introducing Patient Progress, an app that would provide automated updates about the patient’s recovery directly to the verified emergency contact, with date and time stamps.\n\nTo view our app: \nDownload the Expo app from the app store (you don't need an Expo account).\nOpen the Expo app and click on \"Scan QR code\".\nScan the QR code provided on this page and it will load the Patient Progress app on your device.\n\nIf you experience persistent problems loading the app on your phone, you could click on the purple link to your right that says \"Open project in the browser\" and then click \"Open project\".\n\nWe recommend heading over to the repository (https://github.com/Juel07/patient-progress-app) to view the demo provided in the ReadMe.md file.",
+    "description": "To view our app: Download the Expo app from the app store (you don't need an Expo account). Open the Expo app and click on \"Scan QR code\". Scan the QR code provided on this page and it will load the Patient Progress app on your device. Unfortunately, this won't work for iOS users due to Apple's review guidelines for Expo. Alternatively, you could click on the purple link to your right that says \"Open project in the browser\" >> \"Open project\" >> \"Tap to Play\" >> once it loads, scroll down >> \"Open project using Expo\". We recommend heading over to the repository (https://github.com/Juel07/patient-progress-app) to view the video demo provided in the ReadMe.md file.",
     "githubUrl": "https://github.com/Juel07/patient-progress-app"
   }
 }
