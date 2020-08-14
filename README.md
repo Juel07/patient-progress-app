@@ -47,17 +47,15 @@ If viewing on a hardware emulator, we recommend choosing either of the following
 * Heroku (Free Tier)
 
 # Authors
-* Juel Braganza 
-* Katarina Zaprazna 
-* Sahuur Safiya Jama 
-* Tolu Akintan 
+* Juel B
+* Katarina Z 
+* Safiya J
+* Tolu A 
 
 # Questions & Answers
 
-### 1. Is there a way to ensure that people don't "spam" call the call ward/request update feature?
-On the call ward page, the user of the app is only allowed to make a call if the patient is in critical condition. Upon pressing the ‘call ward button, the user is prompted with a pop-up that states to only call the ward if there is an urgent matter due to the NHS being very busy. In addition, the user will be limited to 2 calls per patient, per day.
-
-If the patient is not in critical condition then they have the option to book a timeslot for the ward to call them. The ‘request an update feature’ could potentially include a drop-down list of more specific updates to choose from (e.g. oxygen levels, temperature, weight). This would mean the response is automated, resulting in the healthcare workers having less work to do.
+### 1. How do you verify?
+Patient Progress will use an ID verification process to determine the identity of a first-time user. This will include taking a photo of an ID and taking a short video. Our app will use a two-step verification process with returning users to ensure the app is being used by the appropriate user. Additionally, patient Progress is GDPR (General Data Protection Regulation) compliant and strives to be a world leader in patient security.
 
 ### 2. How would the app break any bad news to the family?
 When a user is setting up a connection, they would be prompted with a set of questions that would personalise their experience. This includes the option of being notified of the death of a relative through their feed. This would not replace the appropriate call from a doctor or nurse but would accompany it so that users who opt-in could see the details on their timeline. This gives users options and allows them to access data should they wish to do so.
@@ -78,8 +76,10 @@ In the post-COVID landscape, this can prove useful for in-patents wanting to upd
 * Doctor or nurse makes the decision 
 * Carers/support workers/nursing home
 
-### 6. How do you verify?
-Patient Progress will use an ID verification process to determine the identity of a first-time user. This will include taking a photo of an ID and taking a short video. Our app will use a two-step verification process with returning users to ensure the app is being used by the appropriate user. Additionally, patient Progress is GDPR (General Data Protection Regulation) compliant and strives to be a world leader in patient security.
+### 6. Is there a way to ensure that people don't "spam" call the call ward feature?
+On the call ward page, the user of the app is only allowed to make a call if the patient is in critical condition. Upon pressing the ‘call ward button, the user is prompted with a pop-up that states to only call the ward if there is an urgent matter due to the NHS being very busy. In addition, the user will be limited to 2 calls per patient, per day.
+
+If the patient is not in critical condition then they have the option to book a timeslot for the ward to call them.
 
 ### 7. How do you protect accounts?
 * User accounts would be protected by enforcing password policies.
