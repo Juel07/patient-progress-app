@@ -3,14 +3,27 @@ import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
 import OnLayout from "react-native-on-layout";
 
 const TimelineInfo = (props) => {
+  // Text formatting functions
+  const formatTime = () => {
+    return props.rawData.date_modified.slice(11, 16);
+  };
+
+  const formatDate = () => {
+    return `${props.rawData.date_modified.slice(
+      8,
+      10
+    )}/${props.rawData.date_modified.slice(
+      5,
+      7
+    )}/${props.rawData.date_modified.slice(0, 4)}`;
+  };
+
   return (
     <>
       {/* Parent View*/}
       <View style={styles.parent}>
         {/* Time */}
-        <Text style={styles.time}>
-          {props.rawData.date_modified.slice(11, 16)}
-        </Text>
+        <Text style={styles.time}>{formatTime()}</Text>
 
         {/* Data wrapper for Timeline & Data */}
         <View style={styles.parentWrap}>
@@ -21,17 +34,13 @@ const TimelineInfo = (props) => {
           </View>
           {/* API Data */}
           <View>
-            <Text style={styles.date}>
-              {props.rawData.date_modified.slice(8, 10)}/
-              {props.rawData.date_modified.slice(5, 7)}/
-              {props.rawData.date_modified.slice(0, 4)}
-            </Text>
+            <Text style={styles.date}>{formatDate()}</Text>
 
             <View style={{ flexDirection: "row" }}>
               <Text
                 style={styles.description}
                 numberOfLines={4}
-                ellipsizeMode="tail"
+                ellipsizeMode='tail'
               >
                 {props.description}
                 {props.data}
